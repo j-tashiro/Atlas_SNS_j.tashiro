@@ -5,7 +5,7 @@
 <h2>機能を実装していきましょう。</h2>
 
 <!-- 2022.11.08 -->
-        {!! Form::open(['url' => 'posts/create']) !!}
+        {!! Form::open(['url' => 'post/create']) !!}
         <div class="form-group">
             {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください']) !!}
         </div>

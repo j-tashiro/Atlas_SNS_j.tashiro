@@ -49,12 +49,13 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'username' => 'required|string|max:255',
-            'mail' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:4|confirmed',
+            'username' => 'required|min:2|max:12|string',
+            'mail' => 'required|min:5|max:40|unique:users|email|string',
+            'password' => 'required|min:8|max:20|string',
+            'password-confirm' => 'required|min:8|max:20|confirmed:password|string',
         ]);
     }
-
+//英数字のバリテーションができてない
     /**
      * Create a new user instance after a valid registration.
      *
@@ -77,8 +78,11 @@ class RegisterController extends Controller
 
     public function register(Request $request){
         if($request->isMethod('post')){
-            $data = $request->input();
-
+            $data = $request->input();//2022.10.19 入力したデータを$dataにしている
+//2022.10.19 バリデータ(validator)に飛ぶ
+$this->validator($data);
+return redirect('added');
+//2022.10.19 もしエラーが出た時
             $this->create($data);
             return redirect('added');
         }

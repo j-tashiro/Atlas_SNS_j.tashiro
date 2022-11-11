@@ -51,4 +51,11 @@ class LoginController extends Controller
         }
         return view("auth.login");
     }
+
+    // 2022.11.02 ログアウト途中 cssを整えてない
+    public function logout(){
+    Auth::logout();
+
+    return view("auth.login");
+    }
 }

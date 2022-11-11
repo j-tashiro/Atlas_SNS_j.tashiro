@@ -24,7 +24,9 @@ Route::get('/login', 'Auth\LoginController@login');
 Route::post('/login', 'Auth\LoginController@login');
 
 Route::get('/register', 'Auth\RegisterController@register');
+//2022.10.19 ページを表示させるのがget
 Route::post('/register', 'Auth\RegisterController@register');
+//2022.10.19 登録処理をするのがpost
 
 Route::get('/added', 'Auth\RegisterController@added');
 Route::post('/added', 'Auth\RegisterController@added');
@@ -38,3 +40,10 @@ Route::get('/search','UsersController@index');
 
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
+
+// 2022.11.02 ログアウト
+Route::get('/logout','Auth\LoginController@logout');
+
+//2022.11.07 投稿フォーム
+Route::get('/create','PostsController@createForm');
+

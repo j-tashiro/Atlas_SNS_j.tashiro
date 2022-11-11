@@ -1,8 +1,8 @@
 @extends('layouts.logout')
 
 @section('content')
-
-{!! Form::open() !!}
+<!-- 2022.10.19 エラー文を表示させる -->
+{!! Form::open(['url' => '/register']) !!}
 
 <h2>新規ユーザー登録</h2>
 
