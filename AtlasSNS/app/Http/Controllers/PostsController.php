@@ -11,18 +11,14 @@ class PostsController extends Controller
         return view('posts.index');
     }
 
-    // 2022.11.07 投稿フォーム
-    public function createForm(){
-        return view('posts.createForm');
-    }
-
+    // 2022.11.12 投稿フォーム用メソッド
     public function create(Request $request)
     {
         $post = $request->input('newPost');
         \DB::table('posts')->insert([
             'post' => $post
         ]);
- 
-        return redirect('index');
+
+        return redirect('top');
     }
 }

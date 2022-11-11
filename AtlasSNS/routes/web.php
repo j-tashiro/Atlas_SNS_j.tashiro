@@ -44,6 +44,6 @@ Route::get('/follower-list','PostsController@index');
 // 2022.11.02 ログアウト
 Route::get('/logout','Auth\LoginController@logout');
 
-//2022.11.07 投稿フォーム
-Route::get('/create','PostsController@createForm');
+//2022.11.12 投稿フォーム
+Route::post('/create','PostsController@create');
 
