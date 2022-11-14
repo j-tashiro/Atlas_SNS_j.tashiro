@@ -15,18 +15,19 @@ class PostsController extends Controller
     }
 
     // 2022.11.12 投稿フォーム用メソッド
-    //ログインしてるユーザーと
+    //ログインしてるユーザー(id)と
     //新しく投稿するものを紐づける必要がある
     public function create(Request $request)
     {
         $post = $request->input('newPost');
-        $user = Auth::user();
+    //2022.11.14 わからなかった所
+        $id = Auth::id();
         \DB::table('posts')->insert([
             'post' => $post,
     //2022.11.14 わからなかった所
-            'user_id' => $user,
+            'user_id' => $id,
         ]);
 
-        return redirect('posts.index');
+        return redirect('top');
     }
 }
