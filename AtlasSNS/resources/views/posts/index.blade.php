@@ -4,7 +4,7 @@
 @section('content')
 <h2>機能を実装していきましょう。</h2>
 
-<!-- 2022.11.12 -->
+<!-- 2022.11.12 投稿フォーム用-->
         {!! Form::open(['url' => 'posts/create']) !!}
         <div class="form-group">
             {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください']) !!}

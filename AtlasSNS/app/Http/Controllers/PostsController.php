@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+//下記の内容を追記する
+use Illuminate\Support\Facades\Auth;
+
 class PostsController extends Controller
 {
     //
@@ -12,13 +15,18 @@ class PostsController extends Controller
     }
 
     // 2022.11.12 投稿フォーム用メソッド
+    //ログインしてるユーザーと
+    //新しく投稿するものを紐づける必要がある
     public function create(Request $request)
     {
         $post = $request->input('newPost');
+        $user = Auth::user();
         \DB::table('posts')->insert([
-            'post' => $post
+            'post' => $post,
+    //2022.11.14 わからなかった所
+            'user' => $user,
         ]);
 
-        return redirect('top');
+        return redirect('posts.index');
     }
 }

@@ -45,5 +45,5 @@ Route::get('/follower-list','PostsController@index');
 Route::get('/logout','Auth\LoginController@logout');
 
 //2022.11.12 投稿フォーム
-Route::post('/create','PostsController@create');
+Route::post('/posts/create','PostsController@create');
 
