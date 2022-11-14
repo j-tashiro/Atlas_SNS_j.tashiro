@@ -24,7 +24,7 @@ class PostsController extends Controller
         \DB::table('posts')->insert([
             'post' => $post,
     //2022.11.14 わからなかった所
-            'user' => $user,
+            'user_id' => $user,
         ]);
 
         return redirect('posts.index');
