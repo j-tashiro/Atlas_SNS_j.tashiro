@@ -32,7 +32,8 @@ Route::get('/added', 'Auth\RegisterController@added');
 Route::post('/added', 'Auth\RegisterController@added');
 
 //ログイン中のページ
-Route::get('/top','PostsController@index');
+//2022.12.16 ログインユーザーのフォローのつぶやきを表示
+Route::get('/top','PostsController@read');
 
 Route::get('/profile','UsersController@profile');
 

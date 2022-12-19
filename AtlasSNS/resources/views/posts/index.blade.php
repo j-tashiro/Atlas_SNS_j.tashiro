@@ -12,6 +12,18 @@
         <button type="submit"><img src="images/post.png"></button>
         {!! Form::close() !!}
 
+<!-- 2022.12.16 ログインユーザーのフォローのつぶやきを表示-->
+<!-- 20行目の$postとPostscontrollerの22行目のpostが連動してる -->
+<!-- 20行目の$listsと22行目と23行目の$listsが連動してる -->
+<!-- 22行目のpostはテーブルの中のpostカラム-->
+<!-- 23行目のcreated_atはテーブルの中のcreated_atカラム -->
+@foreach ($post as $lists)
+            <tr>
+                <td>{{ $lists->post }}</td>
+                <td>{{ $lists->created_at }}</td>
+            </tr>
+@endforeach
+
 <!-- 2022.11.16 ログインユーザーのつぶやきを編集 -->
         <div class="">
             <img src="images/edit.png">
