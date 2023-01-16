@@ -39,5 +39,11 @@ class PostsController extends Controller
 
         return redirect('top');
     }
-    
+
+    //2022.12.23 削除用メソッド
+    public function delete($id)
+    {
+        Post::where('id', $id)->delete();
+        return redirect('top');
+    }
 }

@@ -49,4 +49,7 @@ Route::get('/logout','Auth\LoginController@logout');
 Route::get('/posts/create','PostsController@create');
 Route::post('/posts/create','PostsController@create');
 
+//2022.12.23 削除用メソッド
+Route::get('/post/{id}/delete','PostsController@delete');
+
 
