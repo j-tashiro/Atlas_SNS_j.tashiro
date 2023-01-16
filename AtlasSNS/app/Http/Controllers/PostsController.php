@@ -40,6 +40,13 @@ class PostsController extends Controller
         return redirect('top');
     }
 
+    //2023.01.16 ログインユーザーのつぶやきを編集
+    public function updateForm($id)
+    {
+        $post = Post::where('id', $id)->first();
+        return view('posts.index', ['post'=>$post]);
+    }
+
     //2022.12.23 削除用メソッド
     public function delete($id)
     {

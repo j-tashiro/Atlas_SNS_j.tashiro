@@ -22,27 +22,22 @@
             <tr>
                 <td>{{ $lists->post }}</td>
                 <td>{{ $lists->created_at }}</td>
-                <td><a class="btn btn-primary" href="/post/{{$lists->id}}/update-form">更新</a></td>
+
+                <!-- 2023.01.16 ログインユーザーのつぶやきを編集 最初-->
+                
+                <div class="content">
+                <!-- 投稿の編集ボタン -->
+                <td><a class="btn btn-primary js-modal-open" href="/post/{{$lists->id}}/update-form" post="{{ $lists->post }}" post_id="{{ $lists->id }}">更新</a></td>
+                </div>
+                
+                <!-- 2023.01.16 ログインユーザーのつぶやきを編集 最後-->
+
                 <td><a class="btn btn-danger" href="/post/{{$lists->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a></td>
             </tr>
 @endforeach
 
-<!-- 2023.01.16 ログインユーザーのつぶやきを編集 最初-->
-        <div class="">
-            <img src="images/edit.png">
-
-
-
-@foreach($post as $value)
-
-    <div class="content">
-        <!-- 投稿の編集ボタン -->
-        <a class="js-modal-open" href="" post="{{ $value->post }}" post_id="{{ $value->id }}">編集</a>
-    </div>
-
-@endforeach
-   <!-- モーダルの中身 -->
-    <div class="modal js-modal">
+<!-- モーダルの中身 -->
+<div class="modal js-modal">
         <div class="modal__bg js-modal-close"></div>
         <div class="modal__content">
            <form action="" method="">
@@ -55,9 +50,9 @@
         </div>
     </div>
 
-
-
-
+<!-- 2023.01.16 ログインユーザーのつぶやきを編集 最初-->
+        <div class="">
+            <img src="images/edit.png">
         </div>
 <!-- 2023.01.16 ログインユーザーのつぶやきを編集 最後-->
 
