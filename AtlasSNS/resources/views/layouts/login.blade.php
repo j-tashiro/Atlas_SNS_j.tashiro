@@ -31,6 +31,7 @@
                 <button type="button" class="menu-btn">
                     <span class="inn"></span>
                 </button>
+                
                     <nav class="menu">
                         <ul>
                             <li><a href="/top">ホーム</a></li>

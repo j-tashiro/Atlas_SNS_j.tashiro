@@ -27,34 +27,34 @@
                 
                 <div class="content">
                 <!-- 投稿の編集ボタン -->
-                <td><a class="btn btn-primary js-modal-open" href="/post/{{$lists->id}}/update-form" post="{{ $lists->post }}" post_id="{{ $lists->id }}">更新</a></td>
+                <td><a class="btn btn-primary js-modal-open" href="" post="{{ $lists->post }}" post_id="{{ $lists->id }}">更新</a></td>
                 </div>
                 
                 <!-- 2023.01.16 ログインユーザーのつぶやきを編集 最後-->
 
                 <td><a class="btn btn-danger" href="/post/{{$lists->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a></td>
             </tr>
-@endforeach
+
 
 <!-- モーダルの中身 -->
 <div class="modal js-modal">
         <div class="modal__bg js-modal-close"></div>
         <div class="modal__content">
-           <form action="" method="">
+           <form action="/post/update-form" method="">
                 <textarea name="" class="modal_post"></textarea>
-                <input type="hidden" name="" class="modal_id" value="">
+                <input type="hidden" name="頑張ります！" class="modal_id" value="頑張ります！">
                 <input type="submit" value="更新">
                 {{ csrf_field() }}
            </form>
            <a class="js-modal-close" href="">閉じる</a>
         </div>
     </div>
+@endforeach
 
-<!-- 2023.01.16 ログインユーザーのつぶやきを編集 最初-->
+
         <div class="">
             <img src="images/edit.png">
         </div>
-<!-- 2023.01.16 ログインユーザーのつぶやきを編集 最後-->
 
 
 

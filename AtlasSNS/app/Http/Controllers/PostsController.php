@@ -31,7 +31,7 @@ class PostsController extends Controller
         $post = $request->input('newPost');
     //2022.11.14 わからなかった所
         $id = Auth::id();
-        \DB::table('posts')->insert([
+        Post::insert([
             'post' => $post,
     //2022.11.14 わからなかった所
             'user_id' => $id,
@@ -41,10 +41,15 @@ class PostsController extends Controller
     }
 
     //2023.01.16 ログインユーザーのつぶやきを編集
-    public function updateForm($id)
+    public function update(Request $request)
     {
-        $post = Post::where('id', $id)->first();
-        return view('posts.index', ['post'=>$post]);
+        // 1つ目の処理
+        $id = $request->input('id');
+        $up_post = $request->input('upPost');
+        // 2つ目の処理
+        Post::where('id', $id)->update(['post' => $up_post]);
+        // 3つ目の処理
+        return redirect('top');
     }
 
     //2022.12.23 削除用メソッド

@@ -47,64 +47,32 @@ header{
     top: 1px;
     right: 1px;
     background-color: #fff;
-  　outline: initial;
-    &:focus-visible {
-      box-shadow: 0 0 0 2px blue;
-    }
-            
+    outline: initial;
+  }
     .inn {
       position: relative;
       width: 100%;
       height: 100%;
       display: block;
-   
-      &:before {
-        position: absolute;
-        content: "";
-        top: 40%;
-        left: 50%;
-        width: 15px;
-        height: 15px;
-        transform: translate(-50%, -40%) rotate(135deg);
-        border-top: 1px solid #000;
-        border-right: 1px solid #000;
-        transition: 0.3s ease;
-      }
     }
-  }
-   
   .menu-btn.is-open {
-    .inn {
-      &:before {
         top: 60%;
         transform: translate(-50%, -60%) rotate(-45deg);
       }
-    }
-  }
-   
+
+
   .menu {
     position: absolute;
     top: 60px;
-    width: 20%;
+    width: 100%;
     right: 0px;
     background-color: #fff;
     opacity: 0;
     transition: .3s ease-in-out;
     pointer-events: none;
     transform: translateY(-30px);
-            
-    ul {
-      border-bottom: 1px solid #000;
-      li {
-        height: 60px;
-        border-top: 1px solid #000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
   }
-   
+
   .menu.is-open {
     opacity: 1;
     transform: translateY(0);
