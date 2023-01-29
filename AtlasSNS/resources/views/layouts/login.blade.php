@@ -20,18 +20,22 @@
     <!--OGPタグ/twitterカード-->
 </head>
 <body>
+
     <header>
-        <div id = "head">
-        <h1><a href="/top"><img src="images/atlas.png"></a></h1>
-            <div id="">
-                <div id="">
-                    <p>〇〇さん<img src="images/arrow.png"></p>
-                <div>
+        <div class="header_content" >
+            <div class="">
+                <h1><a href="/top"><img src="images/atlas.png"></a></h1>
+                    <p>〇〇さん</p>
+            </div>
+
+
                 <!--  2022年10月29日 アコーディオンメニュー -->
+                <!-- https://b-risk.jp/blog/2021/11/accordion/ -->
+                <div class="">
                 <button type="button" class="menu-btn">
                     <span class="inn"></span>
                 </button>
-                
+
                     <nav class="menu">
                         <ul>
                             <li><a href="/top">ホーム</a></li>
@@ -44,6 +48,7 @@
                 </div>
         </div>
     </header>
+
     <div id="row">
         <div id="container">
             @yield('content')

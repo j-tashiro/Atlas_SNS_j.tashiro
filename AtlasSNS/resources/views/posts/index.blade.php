@@ -4,6 +4,7 @@
 @section('content')
 <h2>機能を実装していきましょう。</h2>
 
+
 <!-- 2022.11.12 投稿フォームの設置-->
         {!! Form::open(['url' => 'posts/create']) !!}
         <div class="form-group">

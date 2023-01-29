@@ -14,10 +14,14 @@ a img:hover{
 header{
     background:#186AC9;
 }
+.header_content{
+  display: flex;
+}
 
 /* main content */
 #row{
     display: flex;
+
     flex-flow: row wrap;
 }
 #container{
@@ -40,6 +44,7 @@ header{
 }
 
 /* 2022年10月29日 */
+
 .menu-btn {
     width: 60px;
     height: 60px;
@@ -55,10 +60,22 @@ header{
       height: 100%;
       display: block;
     }
-  .menu-btn.is-open {
-        top: 60%;
-        transform: translate(-50%, -60%) rotate(-45deg);
-      }
+    .inn::before {
+      position: absolute;
+      content: "";
+      top: 40%;
+      left: 50%;
+      width: 15px;
+      height: 15px;
+      transform: translate(-50%, -40%) rotate(135deg);
+      border-top: 1px solid #000;
+      border-right: 1px solid #000;
+      transition: 0.3s ease;
+    }
+    .menu-btn.is-open.inn:before {
+          top: 60%;
+          transform: translate(-50%, -60%) rotate(-45deg);
+    }
 
 
   .menu {
@@ -76,6 +93,16 @@ header{
   .menu.is-open {
     opacity: 1;
     transform: translateY(0);
+  }
+  .menu.is-open ul {
+    border-bottom: 1px solid #000;
+  }
+  .menu.is-open li {
+    height: 60px;
+    border-top: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
 /* 2023.01.16 ログインユーザーのつぶやきを編集 */
