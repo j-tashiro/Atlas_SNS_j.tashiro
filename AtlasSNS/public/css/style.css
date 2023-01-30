@@ -10,6 +10,8 @@ a:hover{
 a img:hover{
   opacity: 0.6;
 }
+/* ログインページ */
+
 /* header */
 header{
     background:#186AC9;
@@ -17,6 +19,7 @@ header{
 .header_content{
   display: flex;
 }
+
 
 /* main content */
 #row{

@@ -25,12 +25,12 @@
                 <td>{{ $lists->created_at }}</td>
 
                 <!-- 2023.01.16 ログインユーザーのつぶやきを編集 最初-->
-                
+
                 <div class="content">
                 <!-- 投稿の編集ボタン -->
                 <td><a class="btn btn-primary js-modal-open" href="" post="{{ $lists->post }}" post_id="{{ $lists->id }}">更新</a></td>
                 </div>
-                
+
                 <!-- 2023.01.16 ログインユーザーのつぶやきを編集 最後-->
 
                 <td><a class="btn btn-danger" href="/post/{{$lists->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a></td>
@@ -41,13 +41,14 @@
 <div class="modal js-modal">
         <div class="modal__bg js-modal-close"></div>
         <div class="modal__content">
-           <form action="/post/update-form" method="">
-                <textarea name="" class="modal_post"></textarea>
-                <input type="hidden" name="頑張ります！" class="modal_id" value="頑張ります！">
+            <!-- 45行目とweb.phpの53行目が連動してる -->
+            <form action="/post/update" method="POST">
+                <textarea name="{{$lists->id}}" rows="10" cols="100" class="modal_post"></textarea>
+                <input type="hidden" name="upPost" class="modal_id" value="頑張ります！">
                 <input type="submit" value="更新">
                 {{ csrf_field() }}
-           </form>
-           <a class="js-modal-close" href="">閉じる</a>
+            </form>
+            <a class="js-modal-close" href="">閉じる</a>
         </div>
     </div>
 @endforeach

@@ -50,7 +50,7 @@ Route::get('/posts/create','PostsController@create');
 Route::post('/posts/create','PostsController@create');
 
 //2023.01.16 ログインユーザーのつぶやきを編集
-Route::post('/post/update-form', 'PostsController@update');
+Route::post('/post/update', 'PostsController@update');
 
 //2022.12.23 削除用メソッド
 Route::get('/post/{id}/delete','PostsController@delete');
