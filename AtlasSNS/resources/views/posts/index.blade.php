@@ -14,11 +14,10 @@
         {!! Form::close() !!}
 
 <!-- 2022.12.16 ログインユーザーのフォローのつぶやきを表示-->
-<!-- 21行目の$postとPostscontrollerの22行目のpostが連動してる 単語は何でも大丈夫 連動さえしてれば-->
+<!-- 21行目の$postとPostsController.phpの22行目のpostが連動してる 単語は何でも大丈夫 連動さえしてれば-->
 <!-- 21行目の$listsと23行目と24行目の$listsが連動してる -->
 <!-- 23行目のpostはテーブルの中のpostカラム-->
 <!-- 24行目のcreated_atはテーブルの中のcreated_atカラム -->
-
 @foreach ($post as $lists)
             <tr>
                 <td>{{ $lists->post }}</td>
@@ -41,13 +40,13 @@
 <div class="modal js-modal">
         <div class="modal__bg js-modal-close"></div>
         <div class="modal__content">
-            <!-- 45行目とweb.phpの53行目が連動してる -->
+            <!-- 44行目とweb.phpの53行目が連動してる -->
             <form action="/post/update" method="POST">
-            <!-- 48行目のnameの部分とPostsController.phpの45行目とリンクしている -->
-            <!-- 48行目のmodal_postはscript.jsの22行目から受け取ったもの -->
+            <!-- 47行目のnameの部分とPostsController.phpの45行目とリンクしている -->
+            <!-- 47行目のmodal_postはscript.jsの22行目から受け取ったもの -->
                 <textarea name="upPost" rows="10" cols="100" class="modal_post"></textarea>
-            <!-- 51行目のnameの部分とPostsController.phpの44行目とリンクしている -->
-            <!-- 51行目のmodal_idはscript.jsの24行目から受け取ったもの -->
+            <!-- 50行目のnameの部分とPostsController.phpの44行目とリンクしている -->
+            <!-- 50行目のmodal_idはscript.jsの24行目から受け取ったもの -->
                 <input type="hidden" name="id" class="modal_id" value="頑張ります！">
                 <input type="submit" value="更新">
                 {{ csrf_field() }}
