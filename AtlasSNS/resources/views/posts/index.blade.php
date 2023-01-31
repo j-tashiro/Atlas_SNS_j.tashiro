@@ -27,7 +27,7 @@
                 <!-- 2023.01.16 ログインユーザーのつぶやきを編集 最初-->
 
                 <div class="content">
-                <!-- 投稿の編集ボタン -->
+                <!-- 投稿の編集ボタン 31行目のjs-modal-openでscript.jsの13行目にデータを送ってる-->
                 <td><a class="btn btn-primary js-modal-open" href="" post="{{ $lists->post }}" post_id="{{ $lists->id }}">更新</a></td>
                 </div>
 
@@ -43,8 +43,12 @@
         <div class="modal__content">
             <!-- 45行目とweb.phpの53行目が連動してる -->
             <form action="/post/update" method="POST">
-                <textarea name="{{$lists->id}}" rows="10" cols="100" class="modal_post"></textarea>
-                <input type="hidden" name="upPost" class="modal_id" value="頑張ります！">
+            <!-- 48行目のnameの部分とPostsController.phpの45行目とリンクしている -->
+            <!-- 48行目のmodal_postはscript.jsの22行目から受け取ったもの -->
+                <textarea name="upPost" rows="10" cols="100" class="modal_post"></textarea>
+            <!-- 51行目のnameの部分とPostsController.phpの44行目とリンクしている -->
+            <!-- 51行目のmodal_idはscript.jsの24行目から受け取ったもの -->
+                <input type="hidden" name="id" class="modal_id" value="頑張ります！">
                 <input type="submit" value="更新">
                 {{ csrf_field() }}
             </form>
