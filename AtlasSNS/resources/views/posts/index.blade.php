@@ -2,15 +2,15 @@
 <!--2022年10月26日 layoutsファイルの中のlogin.blade.phpを読み込んでいる -->
 
 @section('content')
-<h2>機能を実装していきましょう。</h2>
+<h2></h2>
 
 
 <!-- 2022.11.12 投稿フォームの設置-->
         {!! Form::open(['url' => 'posts/create']) !!}
         <div class="form-group">
             {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください']) !!}
+            <input type="image" src="images/post.png">
         </div>
-        <button type="submit"><img src="images/post.png"></button>
         {!! Form::close() !!}
 
 <!-- 2022.12.16 ログインユーザーのフォローのつぶやきを表示-->
@@ -47,20 +47,14 @@
                 <textarea name="upPost" rows="10" cols="100" class="modal_post"></textarea>
             <!-- 50行目のnameの部分とPostsController.phpの44行目とリンクしている -->
             <!-- 50行目のmodal_idはscript.jsの24行目から受け取ったもの -->
-                <input type="hidden" name="id" class="modal_id" value="頑張ります！">
-                <input type="submit" value="更新">
+                <input type="hidden" name="id" class="modal_id" value="">
+                <input type="image" src="images/edit.png">
                 {{ csrf_field() }}
             </form>
             <a class="js-modal-close" href="">閉じる</a>
         </div>
     </div>
 @endforeach
-
-
-        <div class="">
-            <img src="images/edit.png">
-        </div>
-
 
 
 

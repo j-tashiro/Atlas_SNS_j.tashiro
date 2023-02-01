@@ -54,6 +54,7 @@
             @yield('content')
         </div >
         <div id="side-bar">
+            
             <div id="confirm">
                 <p>〇〇さんの</p>
                 <div>
