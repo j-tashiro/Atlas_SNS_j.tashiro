@@ -21,12 +21,16 @@
 </head>
 <body>
   <header>
+
     <h1><img src="images/atlas.png"></h1>
     <p>Social Network Service</p>
   </header>
-  <div id="container">
-    @yield('content')
-  </div>
+
+      <div id="container">
+        @yield('content')
+      </div>
+
+
   <script src="JavaScriptファイルのURL"></script>
   <script src="JavaScriptファイルのURL"></script>
 </body>

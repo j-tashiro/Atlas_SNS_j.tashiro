@@ -13,4 +13,8 @@
     <div class="">
     <p>検索ワード:</p>
     </div>
+
+    <div class="">
+    <p class="btn"><a href="">フォローするorフォローを解除</a></p>
+　　　</div>
 @endsection
