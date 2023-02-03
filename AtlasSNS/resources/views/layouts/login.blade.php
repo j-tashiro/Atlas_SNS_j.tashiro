@@ -29,23 +29,7 @@
             </div>
 
 
-                <!--  2022年10月29日 アコーディオンメニュー -->
-                <!-- https://b-risk.jp/blog/2021/11/accordion/ -->
-                <div class="">
-                <button type="button" class="menu-btn">
-                    <span class="inn"></span>
-                </button>
-
-                    <nav class="menu">
-                        <ul>
-                            <li><a href="/top">ホーム</a></li>
-                            <li><a href="/profile">プロフィール</a></li>
-                            <!-- 2022.11.02 ログアウト 途中 -->
-                            <li><a href="/logout">ログアウト</a></li>
-                        </ul>
-                    </nav>
-
-                </div>
+                
         </div>
     </header>
 
@@ -54,6 +38,24 @@
             @yield('content')
         </div >
         <div id="side-bar">
+
+        <!--  2022年10月29日 アコーディオンメニュー -->
+                <!-- https://b-risk.jp/blog/2021/11/accordion/ -->
+        <div class="">
+                <button type="button" class="menu-btn ">
+                    <span class="inn"></span>
+                </button>
+
+                    <nav class="menu">
+                        <ul>
+                            <li><a href="/top">HOME</a></li>
+                            <li><a href="/profile">プロフィール編集</a></li>
+                            <li><a href="/logout">ログアウト</a></li>
+                        </ul>
+                    </nav>
+
+        </div>
+
 
             <div id="confirm">
                 <p>〇〇さんの</p>
@@ -71,6 +73,7 @@
             <p class="btn"><a href="/search">ユーザー検索</a></p>
         </div>
     </div>
+
     <footer>
     </footer>
     <script src="JavaScriptファイルのURL"></script>

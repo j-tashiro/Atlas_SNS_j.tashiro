@@ -1,10 +1,14 @@
-// 2022年10月29日 ヘッダー/アコーディオンメニューの設置
+// 2022年10月29日 アコーディオンメニューの設置
 // addClassはCSSを追加
 // removeClassはcssを削除
 // toggleClassはクラスの追加とクラスの削除を交互に行う
-$('.menu-btn').click(function(){
+$('.inn').click(function(){
     $(this).toggleClass('is-open');
-    $(this).siblings('.menu').toggleClass('is-open');
+    if($(this).hasClass('is-open')){
+        $('.menu ul li').fadeIn().addClass('is-open')}
+    else{
+        $('.menu ul li').fadeOut().removeClass('is-open')}
+    // $(this).siblings('.menu').toggleClass('is-open');
 });
 
 // 2023.01.16 ログインユーザーのつぶやきを編集
