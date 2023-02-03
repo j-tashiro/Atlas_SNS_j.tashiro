@@ -26,7 +26,7 @@
                 <!-- 2023.01.16 ログインユーザーのつぶやきを編集 最初-->
 
                 <div class="content">
-                <!-- 投稿の編集ボタン 31行目のjs-modal-openでscript.jsの13行目にデータを送ってる-->
+                <!-- 投稿の編集ボタン 30行目のjs-modal-openでscript.jsの17行目にデータを送ってる-->
                 <td><a class="btn btn-primary js-modal-open" href="" post="{{ $lists->post }}" post_id="{{ $lists->id }}">更新</a></td>
                 </div>
 
@@ -43,10 +43,10 @@
             <!-- 44行目とweb.phpの55行目が連動してる -->
             <form action="/post/update" method="POST">
             <!-- 47行目のnameのupPostとPostsController.phpの45行目のupPostがリンクしている -->
-            <!-- 47行目のmodal_postはscript.jsの22行目から受け取ったもの -->
+            <!-- 47行目のmodal_postはscript.jsの26行目のmodal_postから受け取ったもの -->
                 <textarea name="upPost" rows="10" cols="100" class="modal_post"></textarea>
             <!-- 50行目のnameの部分とPostsController.phpの44行目とリンクしている -->
-            <!-- 50行目のmodal_idはscript.jsの24行目から受け取ったもの -->
+            <!-- 50行目のmodal_idはscript.jsの28行目のmodal_idから受け取ったもの -->
                 <input type="hidden" name="id" class="modal_id" value="">
                 <input type="image" src="images/edit.png">
                 {{ csrf_field() }}

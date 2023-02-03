@@ -16,5 +16,5 @@
 
     <div class="">
     <p class="btn"><a href="">フォローするorフォローを解除</a></p>
-　　　</div>
+    </div>
 @endsection

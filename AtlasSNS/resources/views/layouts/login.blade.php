@@ -27,9 +27,6 @@
                 <h1><a href="/top"><img src="images/atlas.png"></a></h1>
                     <p>〇〇さん</p>
             </div>
-
-
-                
         </div>
     </header>
 

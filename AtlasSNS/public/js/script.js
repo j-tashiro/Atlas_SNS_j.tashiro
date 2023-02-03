@@ -1,7 +1,7 @@
 // 2022年10月29日 アコーディオンメニューの設置
-// addClassはCSSを追加
-// removeClassはcssを削除
+// addClassはCSSを追加 removeClassはcssを削除
 // toggleClassはクラスの追加とクラスの削除を交互に行う
+// hasClassは任意のクラス名を指定することで対象のHTML要素にそのクラスがあるかを確認する
 $('.inn').click(function(){
     $(this).toggleClass('is-open');
     if($(this).hasClass('is-open')){
