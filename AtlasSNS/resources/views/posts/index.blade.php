@@ -5,11 +5,12 @@
 <h2></h2>
 
 
-<!-- 2022.11.12 投稿フォームの設置-->
+<!--投稿フォームの設置-->
         {!! Form::open(['url' => 'posts/create']) !!}
         <div class="form-group">
+            <p>ユーザーアイコン</p>
             {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください']) !!}
-            <input type="image" src="images/post.png">
+            <input class="form-img" type="image" src="images/post.png">
         </div>
         {!! Form::close() !!}
 
@@ -20,19 +21,18 @@
 <!-- 24行目のcreated_atはテーブルの中のcreated_atカラム -->
 @foreach ($post as $lists)
             <tr>
-                <td>{{ $lists->post }}</td>
-                <td>{{ $lists->created_at }}</td>
-
-                <!-- 2023.01.16 ログインユーザーのつぶやきを編集 最初-->
-
                 <div class="content">
-                <!-- 投稿の編集ボタン 30行目のjs-modal-openでscript.jsの17行目にデータを送ってる-->
-                <td><a class="btn btn-primary js-modal-open" href="" post="{{ $lists->post }}" post_id="{{ $lists->id }}">更新</a></td>
+                    <td>{{ $lists->post }}</td>
+                    <td>{{ $lists->created_at }}</td>
+
+
+                    <!-- 投稿の編集ボタン 30行目のjs-modal-openでscript.jsの17行目にデータを送ってる-->
+                    <td><a class="js-modal-open" href="" post="{{ $lists->post }}" post_id="{{ $lists->id }}"><img src="images/edit.png" alt="編集"></a></td>
+
+
+
+                    <td><a class="btn-danger" href="/post/{{$lists->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="images/trash-h.png" alt="削除"></a></td>
                 </div>
-
-                <!-- 2023.01.16 ログインユーザーのつぶやきを編集 最後-->
-
-                <td><a class="btn btn-danger" href="/post/{{$lists->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a></td>
             </tr>
 
 

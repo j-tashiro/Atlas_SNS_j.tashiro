@@ -12,9 +12,25 @@ a img:hover{
 }
 /* ログインページ */
 
+
+/* 投稿フォームの設置 レイアウト */
+.form-group{
+  display: flex;
+}
+.form-control{
+  max-width: 900px;
+  width: 100%;
+}
+.form-img{
+  max-width: 100px;
+  width: 100%;
+}
+
+
+
 /* header */
 header{
-    background:#186AC9;
+  background:#186AC9;
 }
 .header_content{
   display: flex;
@@ -23,16 +39,16 @@ header{
 
 /* main content */
 #row{
-    display: flex;
+  display: flex;
 
-    flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 #container{
-    flex: 0 0 80%;
+  flex: 0 0 80%;
 }
 #side-bar{
-    flex: 0 0 19%;
-    border-left: 1px solid #727272;
+  flex: 0 0 19%;
+  border-left: 1px solid #727272;
 }
 
 

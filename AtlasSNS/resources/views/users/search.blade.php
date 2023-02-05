@@ -10,6 +10,8 @@
         {!! Form::close() !!}
     </div>
 
+    
+
     <div class="">
     <p>検索ワード:</p>
     </div>
