@@ -33,3 +33,7 @@ header p{
 #container p{
     white-space: nowrap;
 }
+
+.form-group{
+    display: flex;
+}

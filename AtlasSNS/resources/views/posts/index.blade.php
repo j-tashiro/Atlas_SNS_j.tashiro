@@ -6,13 +6,13 @@
 
 
 <!--投稿フォームの設置-->
-        {!! Form::open(['url' => 'posts/create']) !!}
+    {!! Form::open(['url' => 'posts/create']) !!}
         <div class="form-group">
             <p>ユーザーアイコン</p>
             {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください']) !!}
             <input class="form-img" type="image" src="images/post.png">
         </div>
-        {!! Form::close() !!}
+    {!! Form::close() !!}
 
 <!-- 2022.12.16 ログインユーザーのフォローのつぶやきを表示-->
 <!-- 21行目の$postとPostsController.phpの22行目のpostが連動してる 単語は何でも大丈夫 連動さえしてれば-->

@@ -66,15 +66,15 @@ header{
 
 /* 2022年10月29日 */
 
-.menu-btn {
+.menu-btn{
     width: 60px;
     height: 60px;
     position: absolute;
     top: 1px;
     right: 1px;
     background-color: #fff;
-  }
-    .inn {
+}
+.inn{
       position: relative;
       width: 100%;
       height: 100%;
@@ -90,15 +90,15 @@ header{
       border-top: 1px solid #000;
       border-right: 1px solid #000;
       transition: 0.3s ease;
-    }
+}
 
-    .inn.is-open {
+.inn.is-open{
           top: 60%;
           transform: translate(-50%, -60%) rotate(-45deg);
-    }
+}
 
 
-  .menu {
+.menu{
     position: absolute;
     top: 60px;
     width: 100%;
@@ -108,24 +108,19 @@ header{
     transition: .3s ease-in-out;
     pointer-events: none;
     transform: translateY(-30px);
-  }
+}
 
-  .menu {
+.menu{
     opacity: 1;
     transform: translateY(0);
-  }
-  .menu ul {
-
-
-  }
-  .menu li {
+}
+.menu li {
     height: 60px;
     border-top: 1px solid #000;
     display: none;
     text-align: center;
     border-bottom: 1px solid #000;
-
-  }
+}
 
 /* 2023.01.16 ログインユーザーのつぶやきを編集 */
 .content{
