@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// 9行目のUserとUser.phpの10行目のclass Userを
+// 同じ名前にすることでテーブルがリンクされ情報を受け取れるようになる
+use App\User;
 
 
 class UsersController extends Controller
@@ -11,13 +14,15 @@ class UsersController extends Controller
     public function profile(){
         return view('users.profile');
     }
-    public function search(){
-        return view('users.search');
-    }
     // 2023.02.01 検索入力フォームの設置
-    public function userSearch()
-    {
-        $user = Post::get();
+    public function search(){
+        $user = User::get();
         return view('users.search',['user'=>$user]);
     }
+    // 2023.02.01 検索入力フォームの設置
+    // public function userSearch()
+    // {
+    //     $user = User::get();
+    //     return view('users.search',['user'=>$user]);
+    // }
 }

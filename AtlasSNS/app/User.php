@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+// 10行目のUserとUsersControllerのUserを
+// 同じ名前にすることでテーブルがリンクされ情報を受け取れるようになる
 class User extends Authenticatable
 {
     use Notifiable;
