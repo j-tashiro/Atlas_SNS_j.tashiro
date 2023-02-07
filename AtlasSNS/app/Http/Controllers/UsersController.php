@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 // 9行目のUserとUser.phpの10行目のclass Userを
-// 同じ名前にすることでテーブルがリンクされ情報を受け取れるようになる
+// 同じ名前にすることでテーブルがリンクされ19行目のUser::が情報を受け取れるようになる
 use App\User;
 
 

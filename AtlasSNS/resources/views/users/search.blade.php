@@ -6,10 +6,9 @@
     {!! Form::open(['url' => '/userSearch']) !!}
         <div class="form-group"><!--required 意味 必要-->
             {!! Form::input('text', 'searchName', null, ['required', 'class' => 'form-control', 'placeholder' => 'ユーザー名']) !!}
-            <!-- <input type="text" name="searchName" value="" class="form-control" placeholder="ユーザー"> -->
+            <!-- <input type="text" name="searchName" value="" class="form-control" placeholder="ユーザー名"> -->
             {!! Form::image('images/post.png', 'img', ['class' => 'form-img']) !!}
             <!-- <input type="image" src="images/post.png" class="form-img" name="img" > -->
-
         </div>
     {!! Form::close() !!}
 
@@ -18,7 +17,7 @@
         <p>検索ワード:
         @if
             <!-- ↓直す必要あり -->
-           
+
             <?php
             if (!empty($_POST['search'])) {
                 echo $_POST['search'];

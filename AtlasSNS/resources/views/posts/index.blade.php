@@ -42,7 +42,7 @@
         <div class="modal__content">
             <!-- 44行目とweb.phpの55行目が連動してる -->
             <form action="/post/update" method="POST">
-            <!-- 47行目のnameのupPostとPostsController.phpの46行目のupPostがリンクしている -->
+            <!-- 47行目のnameのupPostとPostsController.phpの48行目のupPostがリンクしている -->
             <!-- 47行目のmodal_postはscript.jsの26行目のmodal_postから受け取ったもの -->
                 <textarea name="upPost" rows="10" cols="100" class="modal_post"></textarea>
             <!-- 50行目のnameのidとPostsController.phpの45行目とリンクしている -->
