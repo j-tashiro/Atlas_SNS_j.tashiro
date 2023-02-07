@@ -18,15 +18,16 @@
 
 //Auth::routes();
 
+//ページを表示させるのがget
+//登録処理をするのがpost
 
 //ログアウト中のページ
 Route::get('/login', 'Auth\LoginController@login');
 Route::post('/login', 'Auth\LoginController@login');
 
 Route::get('/register', 'Auth\RegisterController@register');
-//2022.10.19 ページを表示させるのがget
 Route::post('/register', 'Auth\RegisterController@register');
-//2022.10.19 登録処理をするのがpost
+
 
 Route::get('/added', 'Auth\RegisterController@added');
 Route::post('/added', 'Auth\RegisterController@added');
@@ -37,8 +38,8 @@ Route::get('/top','PostsController@read');
 
 Route::get('/profile','UsersController@profile');
 
-//2023.02.03 検索入力フォームの設置
-Route::get('/search','UsersController@search');
+//2023.02.07 検索入力フォームの設置
+Route::get('/search','UsersController@searchRead');
 Route::post('/userSearch','UsersController@userSearch');
 
 Route::get('/follow-list','PostsController@index');
