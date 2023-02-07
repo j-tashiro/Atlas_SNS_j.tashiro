@@ -15,7 +15,6 @@ class PostsController extends Controller
 {
     //
     //2022.12.16 postsテーブルのつぶやきをすべて表示させる
-    //CRUDのrに当たるread処理を行ってる
     //21行目の$listと22行目の$listが連動してる
     public function read()
     {
@@ -30,7 +29,10 @@ class PostsController extends Controller
     public function create(Request $request)
     {
         $post = $request->input('newPost');
+        // Auth::はログインしてるユーザーの情報が取れる
+        // この場合はログインしてるユーザーのidが取れる
         $id = Auth::id();
+        // dd($id);
         Post::insert([
             'post' => $post,
             'user_id' => $id,
