@@ -14,18 +14,13 @@
 
     <div class="">
     @foreach($user as $users)
-        <p>検索ワード:
-        @if
-            <!-- ↓直す必要あり -->
+        <p>検索ワード:</p>
+        @if(!empty($_POST['searchName']))
+        <p></p>
+        @else$_POST['searchName'];
+        <p>{{ $users->username }}</p>
 
-            <?php
-            if (!empty($_POST['search'])) {
-                echo $_POST['search'];
-            }
-            ?>
-            <!--  上直す必要あり -->
-            {{ $users->username }}
-        </p>
+        @enndif
         <!-- select * from users where username like "%レコード名%"; -->
     @endforeach
         <p class="btn"><a href="">フォローするorフォローを解除</a></p>

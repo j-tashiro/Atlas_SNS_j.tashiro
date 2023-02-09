@@ -21,11 +21,11 @@ class UsersController extends Controller
         return view('users.search',['user'=>$user]);
     }
     //25行目のRequest $requestはsearch.blade.phpの
-    // userSearchからweb.phpを通してデータをまるまる受け取ってる
+    // /userSearchからweb.phpを通してデータをまるまる受け取ってる
     public function userSearch(Request $request)
     {
         $searchName = $request->input('searchName');
-        // ddとは デバック関数 変数に何が入ってる確認できる
+        // ddとはデバック関数である 変数に何が入ってる確認できる
         // dd($searchName);
 
     }

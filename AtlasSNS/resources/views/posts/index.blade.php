@@ -10,7 +10,7 @@
         <div class="form-group">
             <p>ユーザーアイコン</p>
             {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください']) !!}
-            <input class="form-img" type="image" src="images/post.png">
+            {!! Form::image('images/post.png', 'img', ['class' => 'form-img']) !!}
         </div>
     {!! Form::close() !!}
 
@@ -47,7 +47,7 @@
                 <textarea name="upPost" rows="10" cols="100" class="modal_post"></textarea>
             <!-- 50行目のnameのidとPostsController.phpの45行目とリンクしている -->
             <!-- 50行目のmodal_idはscript.jsの28行目のmodal_idから受け取ったもの -->
-                <input type="hidden" name="id" class="modal_id" value="">
+                <input type="hidden" name="id" class="modal_id">
                 <input type="image" src="images/edit.png">
                 {{ csrf_field() }}
             </form>

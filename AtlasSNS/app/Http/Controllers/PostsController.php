@@ -22,10 +22,11 @@ class PostsController extends Controller
         return view('posts.index',['post'=>$list]);
     }
 
-    // 2022.11.12 投稿フォーム用メソッド
     //ログインしてるユーザー(id)と
     //新しく投稿するものを紐づける必要がある
-    //CRUDのCに当たるcreate処理を行ってる
+    //30行目のRequest $requestはindex.blade.phpの
+    // /posts/createからweb.phpを通してデータをまるまる受け取ってる
+
     public function create(Request $request)
     {
         $post = $request->input('newPost');
