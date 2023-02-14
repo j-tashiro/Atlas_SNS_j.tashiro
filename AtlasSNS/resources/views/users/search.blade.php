@@ -13,12 +13,24 @@
     {!! Form::close() !!}
 
     <div class="">
-    @foreach($user as $users)
         <p>検索ワード:</p>
-        <p>$searcName</p>
+
+        <?php
+        $searchName = " {{$users}} ";
+        $noSearch ="なし";
+        if ($searchName == " フォームの内容 ") {
+            echo $searchName ;
+        }
+        else if ($searchName != " 条件分岐 ") {
+            echo $noSearch;
+        }
+        ?>
+
+    @foreach($users as $user)
         <!-- select * from users where username like "%レコード名%"; -->
-    @endforeach
+
         <p class="btn"><a href="">フォローするorフォローを解除</a></p>
+    @endforeach
     </div>
 
 
