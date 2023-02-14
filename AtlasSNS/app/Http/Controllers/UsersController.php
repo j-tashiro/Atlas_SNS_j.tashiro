@@ -17,16 +17,18 @@ class UsersController extends Controller
     // 2023.02.07 検索入力フォームの設置
     public function searchRead(){
         $user = User::get();
+        // ddとはデバック関数である 変数に何が入ってる確認できる
         // dd($user);
         return view('users.search',['user'=>$user]);
     }
-    //25行目のRequest $requestはsearch.blade.phpの
+    //26行目のRequest $requestはsearch.blade.phpの
     // /userSearchからweb.phpを通してデータをまるまる受け取ってる
     public function userSearch(Request $request)
     {
         $searchName = $request->input('searchName');
         // ddとはデバック関数である 変数に何が入ってる確認できる
         // dd($searchName);
+        return view('users.search',['user'=>$searchName]);
 
     }
 }

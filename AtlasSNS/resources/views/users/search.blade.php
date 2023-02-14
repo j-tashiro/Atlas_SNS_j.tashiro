@@ -15,12 +15,7 @@
     <div class="">
     @foreach($user as $users)
         <p>検索ワード:</p>
-        @if(!empty($_POST['searchName']))
-        <p></p>
-        @else$_POST['searchName'];
-        <p>{{ $users->username }}</p>
-
-        @enndif
+        <p>$searcName</p>
         <!-- select * from users where username like "%レコード名%"; -->
     @endforeach
         <p class="btn"><a href="">フォローするorフォローを解除</a></p>
