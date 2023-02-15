@@ -39,8 +39,8 @@ Route::get('/top','PostsController@read');
 Route::get('/profile','UsersController@profile');
 
 //2023.02.07 検索入力フォームの設置
-Route::get('/search','UsersController@searchRead');
-Route::post('/userSearch','UsersController@userSearch');
+Route::get('/search','UsersController@search');
+Route::post('/search','UsersController@search');
 
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
