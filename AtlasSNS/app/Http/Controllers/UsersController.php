@@ -19,15 +19,18 @@ class UsersController extends Controller
     // ['url' => '/search']からweb.phpを通してデータをまるまる受け取ってる
     public function search(Request $request){
         $users = User::get();
-        $searchName = $request->input('searchName');
+        $searchWord = $request->input('searchWord');
         // dd($request);
         // ddとはデバック関数である 変数に何が入ってるか確認できる
-        if(!$request->search){
+        // ! は「False(ではない)」という意味
+        if(!$request->searchWord){
         // select * from users where username like "%レコード名%";
-        return view('users.search',['searchName'=>$searchName,'users'=>$users]);
+        return redirect('users.search',['searchWord'=>$searchWord,'users'=>$users]);
         }
+        // 検索フォームに入力がない場合はユーザー一覧を表示
         else{
-            
+        return redirect('users.search',['searchWord'=>$searchWord,'users'=>$users]);
         }
+        // それ以外 検索フォームに入力があった場合は入力ワードを出力
     }
 }
