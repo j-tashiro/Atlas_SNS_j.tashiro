@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 // 9行目のUserとUser.phpの10行目のclass Userを
-// 同じ名前にすることでテーブルがリンクされ19行目のUser::が情報を受け取れるようになる
+// 同じ名前にすることでテーブルがリンクされ21行目のUser::が情報を受け取れるようになる
 use App\User;
 
 
@@ -29,6 +29,7 @@ class UsersController extends Controller
         }
         // 検索フォームに入力がない場合はユーザー一覧を表示
         else{
+
         return redirect('users.search',['searchWord'=>$searchWord,'users'=>$users]);
         }
         // それ以外 検索フォームに入力があった場合は入力ワードを出力

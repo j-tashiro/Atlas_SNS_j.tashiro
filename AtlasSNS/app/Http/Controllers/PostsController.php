@@ -15,7 +15,7 @@ class PostsController extends Controller
 {
     //
     //2022.12.16 postsテーブルのつぶやきをすべて表示させる
-    //21行目の$listと22行目の$listが連動してる
+    //9行目のPostと21行目のPostが連動している
     public function read()
     {
         $list = Post::get();

@@ -13,7 +13,7 @@
     {!! Form::close() !!}
 
     <div class="">
-        <p>検索ワード:</p>
+        <p>検索ワード:{{ $searchWord }}</p>
 
 
 
