@@ -5,7 +5,7 @@
 <h2></h2>
 
 <!--投稿フォームの設置-->
-    {!! Form::open(['url' => '/posts/create']) !!}
+    {!! Form::open(['url' => '/post/create']) !!}
         <div class="form-group">
             <p>ユーザーアイコン</p>
             {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください']) !!}

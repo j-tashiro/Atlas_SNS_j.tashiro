@@ -49,8 +49,8 @@ Route::get('/follower-list','PostsController@index');
 Route::get('/logout','Auth\LoginController@logout');
 
 //2022.11.12 投稿フォーム
-Route::get('/posts/create','PostsController@create');
-Route::post('/posts/create','PostsController@create');
+Route::get('/post/create','PostsController@create');
+Route::post('/post/create','PostsController@create');
 
 //2023.01.16 ログインユーザーのつぶやきを編集
 Route::post('/post/update', 'PostsController@update');

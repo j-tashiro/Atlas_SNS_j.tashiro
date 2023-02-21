@@ -14,18 +14,15 @@
 
     <div class="">
         <p>検索ワード:{{ $searchWord }}</p>
+    </div>
 
-
-
-
-
-
+    <div class="all_user">
     @foreach($users as $user)
         {{ $user->username }}
         <p class="btn"><a href="">フォローするorフォローを解除</a></p>
     @endforeach
     </div>
-
+<!-- usersテーブルのusernameが検索に引っかかったときのワードのみ表示 -->
 
 
 @endsection
