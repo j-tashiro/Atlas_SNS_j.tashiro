@@ -6,10 +6,10 @@
 
 <!--投稿フォームの設置-->
     {!! Form::open(['url' => '/post/create']) !!}
-        <div class="form-group">
+        <div class="post_group">
             <p>ユーザーアイコン</p>
-            {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください']) !!}
-            {!! Form::image('images/post.png', 'img', ['class' => 'form-img']) !!}
+            {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form_post', 'placeholder' => '投稿内容を入力してください']) !!}
+            {!! Form::image('images/post.png', 'img', ['class' => 'post_img']) !!}
         </div>
     {!! Form::close() !!}
 

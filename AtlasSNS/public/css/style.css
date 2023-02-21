@@ -14,14 +14,26 @@ a img:hover{
 
 
 /* 投稿フォームの設置 レイアウト */
-.form-group{
+.post_group{
   display: flex;
 }
-.form-control{
+.form_post{
   max-width: 900px;
   width: 100%;
 }
-.form-img{
+.post_img{
+  max-width: 100px;
+  width: 100%;
+}
+/* 検索フォームのレイアウト */
+.search_group{
+  display: flex;
+}
+.form_search{
+  max-width: 400px;
+  width: 100%;
+}
+.search_img{
   max-width: 100px;
   width: 100%;
 }
@@ -149,3 +161,4 @@ header{
   transform: translate(-50%,-50%);
   width: 60%;
 }
+

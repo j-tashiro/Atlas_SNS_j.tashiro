@@ -21,15 +21,7 @@ class UsersController extends Controller
         $users = User::get();
         $searchWord = $request->input('searchWord');
         // dd($searchWord);
-        // ! は「False(ではない)」という意味
-        if(!$request->searchWord){
-        // select * from users where username like "%レコード名%";
         return view('users.search',['searchWord'=>$searchWord,'users'=>$users]);
-        }
-        // 検索フォームに入力がない場合はユーザー一覧を表示
-        else{
-        return view('users.search',['searchWord'=>$searchWord,'users'=>$users]);
-        }
-        // それ以外 検索フォームに入力があった場合は入力ワードを出力
+        // return redirect('users.search',['searchWord'=>$searchWord,'users'=>$users]);
     }
 }
