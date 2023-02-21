@@ -4,7 +4,7 @@
 @section('content')
 
 <!-- 2023.02.14 検索入力フォームの設置 -->
-    {!! Form::open(['url' => '/search']) !!}
+    {!! Form::open(['url' => '/userSearch']) !!}
         <div class="search_group"><!--required 意味 必要-->
             {!! Form::input('text', 'searchWord', null, ['required', 'class' => 'form_search', 'placeholder' => 'ユーザー名']) !!}
             <!-- <input type="text" name="searchWord" value="" class="form_search" placeholder="ユーザー名"> -->
@@ -14,22 +14,13 @@
     {!! Form::close() !!}
 
     <div class="">
-        <p>検索ワード:{{ $searchWord }}</p>
+        <p>検索ワード:</p>
     </div>
 
     <div class="all_user">
     @foreach($users as $user)
     <!-- ! は「False(ではない)」という意味 -->
-    <?php
-    if(!$searchWord->username){
-        // select * from users where username like "%レコード名%";
-
-        }
-        // 検索フォームに入力がない場合はユーザー一覧を表示
-        else{
-
-        }
-    ?>
+    
         {{ $user->username }}
         <p class="btn"><a href="">フォローするorフォローを解除</a></p>
     @endforeach

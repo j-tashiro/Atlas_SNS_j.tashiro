@@ -18,8 +18,12 @@
 
 //Auth::routes();
 
-//ページを表示させるのがget
-//登録処理をするのがpost
+//ページを表示させるのがget Controllerの処理がviewで終わる
+// 本来の意味は「このページをくれよ」なお願い
+
+//登録処理や更新処理をするのがpost Controllerの処理がredirectで終わる
+// 本来の意味は「このデータをやるから追加しとけ」なお願い
+
 
 //ログアウト中のページ
 Route::get('/login', 'Auth\LoginController@login');
@@ -40,7 +44,7 @@ Route::get('/profile','UsersController@profile');
 
 //2023.02.07 検索入力フォームの設置
 Route::get('/search','UsersController@search');
-Route::post('/search','UsersController@search');
+Route::post('/userSearch','UsersController@userSearch');
 
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');

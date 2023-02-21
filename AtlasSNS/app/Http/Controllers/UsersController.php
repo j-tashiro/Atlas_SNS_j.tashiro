@@ -15,13 +15,16 @@ class UsersController extends Controller
         return view('users.profile');
     }
     // 2023.02.14 検索入力フォームの設置
-    //20行目のRequest $requestはsearch.blade.phpの
-    // ['url' => '/search']からweb.phpを通してデータをまるまる受け取ってる
-    public function search(Request $request){
+    public function search(){
         $users = User::get();
+        return view('users.search',['users'=>$users]);
+    }
+    //24行目のRequest $requestはsearch.blade.phpの
+    // ['url' => '/userSearch']からweb.phpを通してデータをまるまる受け取ってる
+    public function userSearch(Request $request){
         $searchWord = $request->input('searchWord');
+
         // dd($searchWord);
-        return view('users.search',['searchWord'=>$searchWord,'users'=>$users]);
-        // return redirect('users.search',['searchWord'=>$searchWord,'users'=>$users]);
+        return redirect('users.search',['searchWord'=>$searchWord,'users'=>$users]);
     }
 }
