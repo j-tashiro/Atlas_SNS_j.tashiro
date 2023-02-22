@@ -14,13 +14,13 @@
     {!! Form::close() !!}
 
     <div class="">
-        <p>検索ワード:</p>
+        <p>検索ワード:
+            {{$searchWord}}
+        </p>
     </div>
 
     <div class="all_user">
     @foreach($users as $user)
-    <!-- ! は「False(ではない)」という意味 -->
-    
         {{ $user->username }}
         <p class="btn"><a href="">フォローするorフォローを解除</a></p>
     @endforeach
