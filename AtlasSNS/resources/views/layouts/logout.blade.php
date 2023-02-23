@@ -21,8 +21,7 @@
 </head>
 <body>
   <header>
-
-    <h1><img src="images/atlas.png"></h1>
+    <h1><img src="images/atlas.png" alt="ロゴ画像"></h1>
     <p>Social Network Service</p>
   </header>
 
