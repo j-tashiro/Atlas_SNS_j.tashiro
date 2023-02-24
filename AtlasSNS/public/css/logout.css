@@ -12,6 +12,7 @@ body{
     background-color: #D9AFD9;
     background-image: linear-gradient(0deg, #FFFF77 0%, #136FFF 100%);
 }
+
 header{
     margin-bottom: 30px;
 }
@@ -27,11 +28,22 @@ header p{
 }
 
 #container{
-    text-align: center;
     color: azure;
 }
-#container p{
+#container h2{
     font-size: 20px;
+}
+.form_login{
+    text-align: center;
+}
+.form_mail input{
+    margin: 0 auto;
+}
+.form_password input{
+    margin: 0 auto;
+}
+.input{
+    display: block;
 }
 .form_login a{
     color: azure;

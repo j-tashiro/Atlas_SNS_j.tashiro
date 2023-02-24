@@ -7,7 +7,7 @@
 
 <div class="form_login">
 
-<p>AtlasSNSへようこそ</p>
+<h2>AtlasSNSへようこそ</h2>
 
     <div class="form_mail">
         {{ Form::label('mail adress') }}
@@ -19,6 +19,8 @@
         {{ Form::password('password',['class' => 'input']) }}
     </div>
 
+    
+
     <div class="form_submit">
         {{ Form::submit('LOGIN') }}
     </div>
@@ -26,6 +28,7 @@
 <p><a href="/register">新規ユーザーの方はこちら</a></p>
 
 </div>
+
 {!! Form::close() !!}
 
 
