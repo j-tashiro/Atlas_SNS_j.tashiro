@@ -17,7 +17,7 @@ header{
 }
 header img{
     width: 150px;
-    display: block;
+    display: block; /*超大切*/
     margin: 100px auto 0;
 }
 header p{
@@ -33,5 +33,10 @@ header p{
 #container p{
     font-size: 20px;
 }
-
+.form_login a{
+    color: azure;
+}
+.form_login a:hover{
+    opacity: 0.6;
+}
 
