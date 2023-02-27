@@ -27,6 +27,7 @@ class UsersController extends Controller
         }
         else{
             $users = User::get();
+            // 自分以外のユーザーを表示させる Auth::id();を使う? 自分をフォローするって意味わからなくない？
         }
         return view('users.search',['searchWord'=>$searchWord,'users'=>$users]);
     }

@@ -48,7 +48,7 @@ class PostsController extends Controller
     {
         $id = $request->input('id');
         $up_post = $request->input('upPost');
-        // 52行目 省略できる =の部分
+        // 52行目の=は省略できる ->updateの->の部分にもしっかり意味がある
         Post::where('id','=', $id)->update(['post' => $up_post]);
         return redirect('top');
     }
@@ -56,6 +56,7 @@ class PostsController extends Controller
     //2022.12.23 削除用メソッド
     public function delete($id)
     {
+        // 60行目には=が省略されてる ->deleteの->の部分にもしっかり意味がある
         Post::where('id', $id)->delete();
         return redirect('top');
     }
