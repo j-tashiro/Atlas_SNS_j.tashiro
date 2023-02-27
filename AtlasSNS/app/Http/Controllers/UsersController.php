@@ -30,9 +30,9 @@ class UsersController extends Controller
         $searchWord = $request->input('searchWord');
 
         if($request->isMethod('post')){
-            return view('users.search',['searchWord'=>$searchWord]);
+            return view('users.search',['searchWord'=>$searchWord,'users'=>$users]);
         }else{
-            return view('users.search',['users'=>$users]);
+            return view('users.search',['searchWord'=>$searchWord]);
         }
     }
 }

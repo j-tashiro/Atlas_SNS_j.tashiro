@@ -15,9 +15,9 @@
 
 <!-- 2022.12.16 ログインユーザーのフォローのつぶやきを表示-->
 <!-- 21行目の$postとPostsController.phpの22行目のpostが連動してる 単語は何でも大丈夫 連動さえしてれば-->
-<!-- 21行目の$listsと23行目と24行目の$listsが連動してる -->
-<!-- 23行目のpostはテーブルの中のpostカラム-->
-<!-- 24行目のcreated_atはテーブルの中のcreated_atカラム -->
+<!-- 21行目の$listsと24行目と25行目の$listsが連動してる -->
+<!-- 24行目のpostはテーブルの中のpostカラム-->
+<!-- 25行目のcreated_atはテーブルの中のcreated_atカラム -->
 @foreach ($post as $lists)
             <tr>
                 <div class="content">

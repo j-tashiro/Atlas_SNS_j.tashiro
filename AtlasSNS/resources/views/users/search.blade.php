@@ -15,7 +15,11 @@
 
     <div class="">
         <p>検索ワード:
-            {{$searchWord}}
+        @if(!empty($searchWord))
+            {{ $searchWord }}
+        @else
+            <p></p>
+        @endif
         </p>
     </div>
 
