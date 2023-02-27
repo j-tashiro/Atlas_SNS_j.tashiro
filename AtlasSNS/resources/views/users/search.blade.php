@@ -4,7 +4,7 @@
 @section('content')
 
 <!-- 2023.02.14 検索入力フォームの設置 -->
-    {!! Form::open(['url' => '/userSearch']) !!}
+    {!! Form::open(['url' => '/search']) !!}
         <div class="search_group"><!--required 意味 必要-->
             {!! Form::input('text', 'searchWord', null, ['required', 'class' => 'form_search', 'placeholder' => 'ユーザー名']) !!}
             <!-- <input type="text" name="searchWord" value="" class="form_search" placeholder="ユーザー名"> -->
@@ -14,13 +14,11 @@
     {!! Form::close() !!}
 
     <div class="">
-        <p>検索ワード:
         @if(!empty($searchWord))
-            {{ $searchWord }}
+            <p>検索ワード:{{ $searchWord }}</p>
         @else
             <p></p>
         @endif
-        </p>
     </div>
 
     <div class="all_user">

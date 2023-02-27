@@ -18,21 +18,16 @@ class UsersController extends Controller
         return view('users.profile');
     }
     // 2023.02.14 検索入力フォームの設置
-    public function search(){
-        $users = User::get();
-        // dd($users);
-        return view('users.search',['users'=>$users]);
-    }
-    //28行目のRequest $requestはsearch.blade.phpの
-    // ['url' => '/userSearch']からweb.phpを通してデータをまるまる受け取ってる
-    public function userSearch(Request $request){
-        $users = User::get();
+    public function search(Request $request){
         $searchWord = $request->input('searchWord');
-
-        if($request->isMethod('post')){
-            return view('users.search',['searchWord'=>$searchWord,'users'=>$users]);
-        }else{
-            return view('users.search',['searchWord'=>$searchWord]);
+         // dd($searchWord);
+        //  Laravel あいまい検索 で調べると分かりやすい
+        if(!empty($searchWord)){
+            $users = User::where ('username', 'LIKE', '%'.$searchWord.'%')->get();
         }
+        else{
+            $users = User::get();
+        }
+        return view('users.search',['searchWord'=>$searchWord,'users'=>$users]);
     }
 }

@@ -48,7 +48,8 @@ class PostsController extends Controller
     {
         $id = $request->input('id');
         $up_post = $request->input('upPost');
-        Post::where('id', $id)->update(['post' => $up_post]);
+        // 52行目 省略できる =の部分
+        Post::where('id','=', $id)->update(['post' => $up_post]);
         return redirect('top');
     }
 
