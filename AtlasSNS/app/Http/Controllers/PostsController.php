@@ -22,17 +22,17 @@ class PostsController extends Controller
         return view('posts.index',['post'=>$list]);
     }
 
-    //ログインしてるユーザー(id)と
-    //新しく投稿するものを紐づける必要がある
-    //30行目のRequest $requestはindex.blade.phpの
+    // ログインしてるユーザー(id)と新しい投稿(post)を紐づける必要がある
+    //
+    // 30行目のRequest $requestはindex.blade.phpの
     // /posts/createからweb.phpを通してデータをまるまる受け取ってる
 
     public function create(Request $request)
     {
         $post = $request->input('newPost');
-        // Auth::はログインしてるユーザーの情報が取れる
-        // この場合はログインしてるユーザーのidが取れる
-        $id = Auth::id();//Auth::id();はidしか省略できない
+        // Auth::user()->idとAuth::id()は同じ意味 Auth::id()は省略型
+        // Auth::はログインしてるユーザーの情報が取れる この場合はログインしてるユーザーのidが取れる
+        $id = Auth::id();//Auth::id();のidの部分はidしか省略できない
         // ddとはデバック関数である 変数に何が入ってるか確認できる
         // dd($id);
         Post::insert([

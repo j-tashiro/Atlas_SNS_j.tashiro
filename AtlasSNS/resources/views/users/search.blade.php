@@ -30,8 +30,13 @@
         {{ $user->username }}
         <p class="btn"><a href="">フォローするorフォローを解除</a></p>
     @endforeach
+
+        @if(フォローしていれば)
+            <p>フォロー解除</p>
+        @else(フォローしてなければ 条件を書く必要なし)
+            <p>フォロー</p>
+        @endif
     </div>
-<!-- usersテーブルのusernameが検索に引っかかったときのワードのみ表示 -->
 
 
 @endsection
