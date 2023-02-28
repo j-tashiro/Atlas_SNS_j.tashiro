@@ -26,9 +26,9 @@ class UsersController extends Controller
             $users = User::where ('username', 'LIKE', '%'.$searchWord.'%')->get();
         }
         else{
-            // $users = User::get();
-            $users = User::where("id" , "!=" , Auth::user()->id)->get();
-            // 自分以外のユーザーを表示させる Auth::id();を使う? 自分をフォローするって意味わからなくない？
+            // 30行目と31行目は同じ意味 30行目を理解した上で31行目の省略型を使おう
+            // $users = User::where("id" , "!=" , Auth::user()->id)->get();
+            $users = User::where("id" , "!=" , Auth::id())->get();
         }
         return view('users.search',['searchWord'=>$searchWord,'users'=>$users]);
     }

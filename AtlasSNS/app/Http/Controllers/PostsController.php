@@ -32,7 +32,7 @@ class PostsController extends Controller
         $post = $request->input('newPost');
         // Auth::はログインしてるユーザーの情報が取れる
         // この場合はログインしてるユーザーのidが取れる
-        $id = Auth::id();
+        $id = Auth::id();//Auth::id();はidしか省略できない
         // ddとはデバック関数である 変数に何が入ってるか確認できる
         // dd($id);
         Post::insert([
