@@ -26,6 +26,10 @@ a img:hover{
   width: 100%;
 }
 /* 検索フォームのレイアウト */
+.all_search{
+  display: flex;
+  
+}
 .search_group{
   display: flex;
 }
@@ -36,6 +40,9 @@ a img:hover{
 .search_img{
   max-width: 100px;
   width: 100%;
+}
+.search_Word{
+
 }
 
 

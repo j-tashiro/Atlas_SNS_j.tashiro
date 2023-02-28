@@ -26,7 +26,8 @@ class UsersController extends Controller
             $users = User::where ('username', 'LIKE', '%'.$searchWord.'%')->get();
         }
         else{
-            $users = User::get();
+            // $users = User::get();
+            $users = User::where("id" , "!=" , Auth::user()->id)->get();
             // 自分以外のユーザーを表示させる Auth::id();を使う? 自分をフォローするって意味わからなくない？
         }
         return view('users.search',['searchWord'=>$searchWord,'users'=>$users]);

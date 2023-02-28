@@ -3,6 +3,8 @@
 
 @section('content')
 
+<div class="all_search">
+
 <!-- 2023.02.14 検索入力フォームの設置 -->
     {!! Form::open(['url' => '/search']) !!}
         <div class="search_group"><!--required 意味 必要-->
@@ -13,13 +15,15 @@
         </div>
     {!! Form::close() !!}
 
-    <div class="">
+    <div class="search_Word">
         @if(!empty($searchWord))
             <p>検索ワード:{{ $searchWord }}</p>
         @else
             <p></p>
         @endif
     </div>
+
+</div>
 
     <div class="all_user">
     @foreach($users as $user)
