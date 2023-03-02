@@ -30,9 +30,7 @@
         {{ $user->username }}
         <p class="btn"><a href="">フォローするorフォローを解除</a></p>
     @endforeach
-
-        
     </div>
-
+<!-- https://qiita.com/namizatork/items/0c81b0a94a1084cda6de 参考サイト Laravel 第6回 -->
 
 @endsection

@@ -27,23 +27,26 @@ header p{
     text-align: center;
 }
 
+
+
 #container{
     color: azure;
 }
 #container h2{
     font-size: 20px;
-}
-.form_login{
     text-align: center;
 }
-.form_mail input{
+.form_login{
+    max-width: 200px;
+    width: 100%;
     margin: 0 auto;
 }
-.form_password input{
-    margin: 0 auto;
+label{
+    display: block;
 }
 .input{
     display: block;
+    margin: 0 auto;
 }
 .form_login a{
     color: azure;

@@ -32,4 +32,7 @@ class UsersController extends Controller
         }
         return view('users.search',['searchWord'=>$searchWord,'users'=>$users]);
     }
+
+
+    
 }
