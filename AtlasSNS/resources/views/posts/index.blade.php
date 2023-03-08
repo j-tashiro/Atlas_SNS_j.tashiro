@@ -39,7 +39,7 @@
 <div class="modal js-modal">
         <div class="modal__bg js-modal-close"></div>
         <div class="modal__content">
-            <!-- 44行目とweb.phpの55行目が連動してる -->
+            <!-- 43行目とweb.phpの59行目が連動してる -->
             <form action="/post/update" method="POST">
             <!-- 46行目のnameのupPostとPostsController.phpの50行目のupPostがリンクしている -->
             <!-- 46行目のmodal_postはscript.jsの26行目のmodal_postから受け取ったもの -->

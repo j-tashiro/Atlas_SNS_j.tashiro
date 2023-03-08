@@ -34,15 +34,18 @@ class User extends Authenticatable
 // 今回のフォロー機能はユーザーがユーザーをフォローする関係だからuserテーブル同士でリレーションする
 // 多対多 リレーション https://qiita.com/ramuneru/items/db43589551dd0c00fef9
 // Laravel belongsToMany https://solomaker.club/how-to-use-laravel-orm-belongs-to-many/
-// 第一引数 User::class
-// 第二引数 follows
-// 第三引数 followed_id following_id
-// 第四引数 following_id followed_id
+// 第一引数 連結させるモデル名 User::class
+// 第二引数 中間テーブルにするテーブル名 follows
+// 第三引数 カラム名 followed_id following_id
+// 第四引数 カラム名 following_id followed_id
+
+// フォロワー達
 public function followers()
 {
     return $this->belongsToMany(User::class, 'follows', 'followed_id', 'following_id');
 }
 
+// フォローする
 public function follows()
 {
     return $this->belongsToMany(User::class, 'follows', 'following_id', 'followed_id');
