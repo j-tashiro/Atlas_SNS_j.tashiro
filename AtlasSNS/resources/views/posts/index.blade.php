@@ -26,11 +26,11 @@
 
 
                     <!-- 投稿の編集ボタン 30行目のjs-modal-openでscript.jsの17行目にデータを送ってる-->
-                    <td><a class="js-modal-open" href="" post="{{ $lists->post }}" post_id="{{ $lists->id }}"><img src="images/edit.png" alt="編集"></a></td>
+                    <td><a class="js-modal-open" href="" post="{{ $lists->post }}" post_id="{{ $lists->id }}"><img src="images/edit.png" alt="編集" width="50" height="50"></a></td>
 
 
 
-                    <td><a class="btn-danger" href="/post/{{$lists->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="images/trash-h.png" alt="削除"></a></td>
+                    <td><a class="btn-danger" href="/post/{{$lists->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="images/trash-h.png" alt="削除" width="60" height="60"></a></td>
                 </div>
             </tr>
 

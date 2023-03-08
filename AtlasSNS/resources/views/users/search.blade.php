@@ -28,7 +28,29 @@
     <div class="all_user">
     @foreach($users as $user)
         {{ $user->username }}
-        <p class="btn"><a href="">フォローするorフォローを解除</a></p>
+        <p class="btn"><a href="">フォローする</a></p>
+        <p><br></p>
+        <p class="btn"><a href="">フォローを解除</a></p>
+
+
+<!-- 2023.03.07 フォローボタン -->
+        @if (auth()->user()->isFollowing($user->id))
+            <form action="{{ route('unfollow', ['id' => $user->id]) }}" method="POST">
+                {{ csrf_field() }}
+                {{ method_field('DELETE') }}
+
+                <button type="submit" class="btn btn-danger">フォロー解除</button>
+            </form>
+        @else
+            <form action="{{ route('follow', ['id' => $user->id]) }}" method="POST">
+                {{ csrf_field() }}
+
+                <button type="submit" class="btn btn-primary">フォローする</button>
+            </form>
+        @endif
+
+
+
     @endforeach
     </div>
 <!-- https://qiita.com/namizatork/items/0c81b0a94a1084cda6de 参考サイト Laravel 第6回 -->
