@@ -32,7 +32,9 @@
         <p><br></p>
         <p class="btn"><a href="">フォローを解除</a></p>
 
+<form action="" method="">
 
+</form>
 <!-- 2023.03.07 フォローボタン -->
         @if (auth()->user()->isFollowing($user->id))
             <form action="{{ route('unfollow', ['id' => $user->id]) }}" method="POST">
