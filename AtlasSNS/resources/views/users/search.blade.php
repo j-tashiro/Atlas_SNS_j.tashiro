@@ -28,9 +28,6 @@
     <div class="all_user">
     @foreach($users as $user)
         {{ $user->username }}
-        
-        <p><br></p>
-        
 
 
 <!-- 2023.03.08 フォローボタン -->
