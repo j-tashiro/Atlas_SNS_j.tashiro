@@ -59,27 +59,27 @@ public function follows()
 
 // 2023.03.08 フォローボタン
 // フォローする Intは整数 attachは付け足す
-public function follow(Int $user_id)
+public function follow(Int $id)
 {
-    return $this->follows()->attach($user_id);
+    return $this->follows()->attach($id);
 }
 
 // フォロー解除する detachは切り離す
-public function unfollow(Int $user_id)
+public function unfollow(Int $id)
 {
-    return $this->follows()->detach($user_id);
+    return $this->follows()->detach($id);
 }
 
 // フォローしているか
-public function isFollowing(Int $user_id)
+public function isFollowing(Int $id)
 {
-    return (boolean) $this->follows()->where('followed_id', $user_id)->first(['id']);
+    return (boolean) $this->follows()->where('followed_id', $id)->first(['follows.id']);
 }
 
 // フォローされているか
-public function isFollowed(Int $user_id)
+public function isFollowed(Int $id)
 {
-    return (boolean) $this->followers()->where('following_id', $user_id)->first(['id']);
+    return (boolean) $this->followers()->where('following_id', $id)->first(['follows.id']);
 }
 
 // ['id']の部分がエラーの原因

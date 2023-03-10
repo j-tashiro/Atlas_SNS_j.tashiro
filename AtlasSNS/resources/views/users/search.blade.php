@@ -28,25 +28,16 @@
     <div class="all_user">
     @foreach($users as $user)
         {{ $user->username }}
-        <p class="btn"><a href="">フォローする</a></p>
+        
         <p><br></p>
-        <p class="btn"><a href="">フォローを解除</a></p>
+        
 
 
 <!-- 2023.03.08 フォローボタン -->
         @if (auth()->user()->isFollowing($user->id))
-            <form action="{{ route('unfollow', ['id' => $user->id]) }}" method="POST">
-                {{ csrf_field() }}
-                {{ method_field('DELETE') }}
-
-                <button type="submit" class="btn btn-danger">フォロー解除</button>
-            </form>
+        <p class="btn"><a href="users/{{ $user->id }}/unfollow">フォローを解除</a></p>
         @else
-            <form action="{{ route('follow', ['id' => $user->id]) }}" method="POST">
-                {{ csrf_field() }}
-
-                <button type="submit" class="btn btn-primary">フォローする</button>
-            </form>
+        <p class="btn"><a href="users/{{ $user->id }}/follow">フォローする</a></p>
         @endif
 
 

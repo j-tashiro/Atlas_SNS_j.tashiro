@@ -71,7 +71,8 @@ Route::group(['middleware' => 'auth'], function() {
 Route::resource('users', 'UsersController', ['only' => ['index', 'show', 'edit', 'update']]);
 
 // フォロー/フォロー解除を追加
-Route::post('users/{user}/follow', 'UsersController@follow')->name('follow');
-Route::delete('users/{user}/unfollow', 'UsersController@unfollow')->name('unfollow');
+Route::post('users/{id}/follow', 'UsersController@follow')->name('follow');
+Route::get('users/{id}/follow', 'UsersController@follow')->name('follow');
+Route::delete('users/{id}/unfollow', 'UsersController@unfollow')->name('unfollow');
 
 });

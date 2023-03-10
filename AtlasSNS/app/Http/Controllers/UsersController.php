@@ -36,27 +36,27 @@ class UsersController extends Controller
 
 
     // フォロー 2023.03.08 フォローボタン
-    public function follow(User $user)
+    public function follow($id)
     {
         $follower = auth()->user();
         // フォローしているか
-        $is_following = $follower->isFollowing($user->id);
+        $is_following = $follower->isFollowing($id);
         if(!$is_following) {
             // フォローしていなければフォローする
-            $follower->follow($user->id);
+            $follower->follow($id);
             return back();
         }
     }
 
     // フォロー解除
-    public function unfollow(User $user)
+    public function unfollow($id)
     {
         $follower = auth()->user();
         // フォローしているか
-        $is_following = $follower->isFollowing($user->id);
+        $is_following = $follower->isFollowing($id);
         if($is_following) {
             // フォローしていればフォローを解除する
-            $follower->unfollow($user->id);
+            $follower->unfollow($id);
             return back();
         }
     }
