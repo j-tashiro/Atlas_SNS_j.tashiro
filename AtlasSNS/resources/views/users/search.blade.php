@@ -33,7 +33,7 @@
         <p class="btn"><a href="">フォローを解除</a></p>
 
 
-<!-- 2023.03.07 フォローボタン -->
+<!-- 2023.03.08 フォローボタン -->
         @if (auth()->user()->isFollowing($user->id))
             <form action="{{ route('unfollow', ['id' => $user->id]) }}" method="POST">
                 {{ csrf_field() }}

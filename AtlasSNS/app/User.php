@@ -39,13 +39,17 @@ class User extends Authenticatable
 // 第三引数 カラム名 followed_id following_id
 // 第四引数 カラム名 following_id followed_id
 
-// フォロワー達
+// フォロワー達=フォローしてくれてる人達
+// 第3引数はフォローしてくれてる人のIDが欲しい
+// 第4引数は自分のID
 public function followers()
 {
     return $this->belongsToMany(User::class, 'follows', 'followed_id', 'following_id');
 }
 
 // フォローする
+// 第3引数は自分のID
+// 第4引数はフォローしたい人のID
 public function follows()
 {
     return $this->belongsToMany(User::class, 'follows', 'following_id', 'followed_id');
@@ -53,14 +57,14 @@ public function follows()
 
 
 
-// 2023.03.07 フォローボタン
-// フォローする
+// 2023.03.08 フォローボタン
+// フォローする Intは整数 attachは付け足す
 public function follow(Int $user_id)
 {
     return $this->follows()->attach($user_id);
 }
 
-// フォロー解除する
+// フォロー解除する detachは切り離す
 public function unfollow(Int $user_id)
 {
     return $this->follows()->detach($user_id);
@@ -79,6 +83,7 @@ public function isFollowed(Int $user_id)
 }
 
 // ['id']の部分がエラーの原因
+
 
 }
 

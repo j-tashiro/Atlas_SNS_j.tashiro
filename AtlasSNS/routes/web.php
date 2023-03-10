@@ -63,7 +63,7 @@ Route::get('/post/{id}/delete','PostsController@delete');
 
 
 
-// 2023.03.07 フォローボタン
+// 2023.03.08 フォローボタン
 // ログイン状態
 Route::group(['middleware' => 'auth'], function() {
 

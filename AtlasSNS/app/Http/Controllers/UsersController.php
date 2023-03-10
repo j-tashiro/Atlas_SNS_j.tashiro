@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 // 2023.02.22 追加
 use Illuminate\Support\Facades\Auth;
 
-// 12行目のUserとUser.phpの10行目のclass Userを
-// 同じ名前にすることでテーブルがリンクされ21行目のUser::が情報を受け取れるようになる
+// 12行目のUserとUser.phpの10行目のclass Userを同じ名前にすることcontrollerとmodelが連結される modelはテーブルと連結してる
+// 26行目と31行目のUser::が情報を受け取れるようになる
 use App\User;
 
 
@@ -35,7 +35,7 @@ class UsersController extends Controller
 
 
 
-    // フォロー 2023.03.07 フォローボタン
+    // フォロー 2023.03.08 フォローボタン
     public function follow(User $user)
     {
         $follower = auth()->user();
