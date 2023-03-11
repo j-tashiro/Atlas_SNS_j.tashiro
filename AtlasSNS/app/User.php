@@ -30,7 +30,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-// 2023.03.08 リレーションテーブル同士を連結させる
+// 2023.03.10 リレーションテーブル同士を連結させる
 // 今回のフォロー機能はユーザーがユーザーをフォローする関係だからuserテーブル同士でリレーションする
 // 多対多 リレーション https://qiita.com/ramuneru/items/db43589551dd0c00fef9
 // Laravel belongsToMany https://solomaker.club/how-to-use-laravel-orm-belongs-to-many/
@@ -57,7 +57,7 @@ public function follows()
 
 
 
-// 2023.03.08 フォローボタン
+// 2023.03.10 フォローボタン
 // フォローする Intは整数 attachは付け足す
 public function follow(Int $id)
 {
@@ -82,7 +82,6 @@ public function isFollowed(Int $id)
     return (boolean) $this->followers()->where('following_id', $id)->first(['follows.id']);
 }
 
-// ['id']の部分がエラーの原因
 
 
 }

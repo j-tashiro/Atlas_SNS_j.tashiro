@@ -30,7 +30,7 @@
         {{ $user->username }}
 
 
-<!-- 2023.03.08 フォローボタン -->
+<!-- 2023.03.10 フォローボタン -->
         @if (auth()->user()->isFollowing($user->id))
         <p class="btn"><a href="users/{{ $user->id }}/unfollow">フォローを解除</a></p>
         @else

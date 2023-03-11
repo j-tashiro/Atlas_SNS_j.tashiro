@@ -35,7 +35,7 @@ class UsersController extends Controller
 
 
 
-    // フォロー 2023.03.08 フォローボタン
+    // フォロー 2023.03.10 フォローボタン
     public function follow($id)
     {
         $follower = auth()->user();

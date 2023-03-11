@@ -63,7 +63,7 @@ Route::get('/post/{id}/delete','PostsController@delete');
 
 
 
-// 2023.03.08 フォローボタン
+// 2023.03.10 フォローボタン
 // ログイン状態
 Route::group(['middleware' => 'auth'], function() {
 
@@ -74,5 +74,6 @@ Route::resource('users', 'UsersController', ['only' => ['index', 'show', 'edit',
 Route::post('users/{id}/follow', 'UsersController@follow')->name('follow');
 Route::get('users/{id}/follow', 'UsersController@follow')->name('follow');
 Route::delete('users/{id}/unfollow', 'UsersController@unfollow')->name('unfollow');
+Route::get('users/{id}/unfollow', 'UsersController@unfollow')->name('unfollow');
 
 });
