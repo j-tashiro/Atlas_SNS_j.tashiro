@@ -3,21 +3,21 @@
 html{
     height: 100%;
 }
-
 body{
     background: linear-gradient(#136FFF,#00bfff,#FFFF00);
 }
 
-header{
-}
+
 header img{
     width: 150px;
     display: block; /*超大切*/
     margin: 200px auto 0;
 }
 header p{
+    color: white;
+    color: #FFFFFF;
+    color: #FFF;
     font-size: 40px;
-    color: azure;
     text-align: center;
     margin-bottom: 60px;
 }
@@ -25,7 +25,7 @@ header p{
 
 
 #container{
-    color: azure;
+    color: white;
 }
 #container h2{
     font-size: 20px;
@@ -55,12 +55,40 @@ input{
     height: 30px;
     border-radius: 10px;
 }
+.login_button{
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    background-color: red;
+    border: none;
+}
 .form_login a{
     display: block;
-    color: azure;
+    color: white;
     text-align: center;
 }
 .form_login a:hover{
     opacity: 0.6;
 }
 
+#clear{
+    text-align: center;
+    font-size: 16px;
+}
+.form_clear{
+    font-weight: bold;
+    font-size: 20px;
+}
+.form_btn a{
+    display: block;
+    width: 140px;
+    line-height: 40px;
+    margin: 0 auto;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+}
+.form_btn a:hover{
+    opacity: 0.6;
+}

@@ -20,8 +20,8 @@ class UsersController extends Controller
     // 2023.02.14 検索入力フォームの設置
     public function search(Request $request){
         $searchWord = $request->input('searchWord');
-         // dd($searchWord);
-        //  Laravel あいまい検索 で調べると分かりやすい
+        // dd($searchWord);
+        // Laravel あいまい検索 で調べると分かりやすい
         if(!empty($searchWord)){
             $users = User::where ('username', 'LIKE', '%'.$searchWord.'%')->get();
         }

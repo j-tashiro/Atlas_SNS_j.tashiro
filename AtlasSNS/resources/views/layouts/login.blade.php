@@ -25,7 +25,8 @@
         <div class="header_content" >
             <div class="">
                 <h1><a href="/top"><img src="images/atlas.png"></a></h1>
-                    <p>〇〇さん</p>
+                    <p>{{ Auth::user()->username }}さん</p>
+                    <!-- http://taustation.com/laravel-login-user-acquisition/ -->
             </div>
         </div>
     </header>
@@ -39,7 +40,7 @@
         <!--  2022年10月29日 アコーディオンメニュー -->
                 <!-- https://b-risk.jp/blog/2021/11/accordion/ -->
         <div class="">
-                <button type="button" class="menu-btn ">
+                <button type="button" class="menu_btn ">
                     <span class="inn"></span>
                 </button>
 
@@ -55,6 +56,9 @@
 
 
             <div id="confirm">
+
+            <a href="/logout">ログアウト</a>
+
                 <p>〇〇さんの</p>
                 <div>
                 <p>フォロー数</p>

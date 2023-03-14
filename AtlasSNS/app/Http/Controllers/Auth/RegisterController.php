@@ -76,20 +76,27 @@ class RegisterController extends Controller
     //     return view("auth.register");
     // }
 
-    public function register(Request $request){
+    // 2023.03.14 新規登録
+    public function register(Request $request)
+    {
         if($request->isMethod('post')){
-            $data = $request->input();//2022.10.19 入力したデータを$dataにしている
-//2022.10.19 バリデータ(validator)に飛ぶ
-$this->validator($data);
-return redirect('added');
-//2022.10.19 もしエラーが出た時
-            $this->create($data);
-            return redirect('added');
+        // $data = $request->input();
+        //2022.10.19 入力したデータを$dataにしている
+        //2022.10.19 バリデータ(validator)に飛ぶ
+        // $this->validator($data);
+        // return redirect('added')->with('register_date', 'ここに新規登録した人の名前が入る');
+        //2022.10.19 もしエラーが出た時
+        // $this->create($data);
+        // return redirect('added')->with('register_date', 'ここに新規登録した人の名前が入る');
+
+        $user = $request->get('username');
+        return redirect('added')->with('register_date', $user);
         }
         return view('auth.register');
     }
 
-    public function added(){
+    public function added()
+    {
         return view('auth.added');
     }
 }

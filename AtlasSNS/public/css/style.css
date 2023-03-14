@@ -1,9 +1,6 @@
 @charset "utf-8";
 /* 共有CSS */
-html{
-}
-body{
-}
+
 a:hover{
   opacity: 0.6;
 }
@@ -28,7 +25,6 @@ a img:hover{
 /* 検索フォームのレイアウト */
 .all_search{
   display: flex;
-  
 }
 .search_group{
   display: flex;
@@ -41,9 +37,7 @@ a img:hover{
   max-width: 100px;
   width: 100%;
 }
-.search_Word{
 
-}
 
 
 
@@ -80,66 +74,72 @@ header{
   border-radius: 10px;
 }
 .btn a{
-  color: #fff;
+  color: white;
 }
+
+
 
 /* 2022年10月29日 */
-
-.menu-btn{
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    top: 1px;
-    right: 1px;
-    background-color: #fff;
+.menu_btn{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 10px;
+  right: 50px;
+  background-color: #186AC9;
+  border: none;
 }
 .inn{
-      position: relative;
-      width: 100%;
-      height: 100%;
-      display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
 
-      position: absolute;
-      content: "";
-      top: 40%;
-      left: 50%;
-      width: 15px;
-      height: 15px;
-      transform: translate(-50%, -40%) rotate(135deg);
-      border-top: 1px solid #000;
-      border-right: 1px solid #000;
-      transition: 0.3s ease;
+  position: absolute;
+  content: "";
+  top: 40%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  transition: 0.5s ease;
+  transform: translate(-50%, -40%) rotate(135deg);
 }
 
 .inn.is-open{
-          top: 60%;
-          transform: translate(-50%, -60%) rotate(-45deg);
+  top: 60%;
+  transform: translate(-50%, -60%) rotate(-45deg);
 }
 
 
 .menu{
-    position: absolute;
-    top: 60px;
-    width: 100%;
-    right: 0px;
-    background-color: #fff;
-    opacity: 0;
-    transition: .3s ease-in-out;
-    pointer-events: none;
-    transform: translateY(-30px);
+  position: absolute;
+  top: 60px;
+  width: 20%;
+  right: 0px;
+  background-color: white;
+  opacity: 0;
+  transition: .3s ease-in-out;
+  pointer-events: none;
+  transform: translateY(-30px);
 }
 
 .menu{
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 .menu li {
-    height: 60px;
-    border-top: 1px solid #000;
-    display: none;
-    text-align: center;
-    border-bottom: 1px solid #000;
+  height: 60px;
+  border-top: 1px solid #000;
+  display: none;
+  text-align: center;
+  border-bottom: 1px solid #000;
 }
+
+
+
+
 
 /* 2023.01.16 ログインユーザーのつぶやきを編集 */
 .content{
@@ -163,7 +163,7 @@ header{
   width: 100%;
 }
 .modal__content{
-  background: #fff;
+  background: white;
   left: 50%;
   padding: 40px;
   position: absolute;
