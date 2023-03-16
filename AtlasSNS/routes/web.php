@@ -36,6 +36,7 @@ Route::get('/added', 'Auth\RegisterController@added');
 Route::post('/added', 'Auth\RegisterController@added');
 
 //ログイン中のページ
+Route::group(['middleware' => 'auth'], function() {
 //2022.12.16 ログインユーザーのフォローのつぶやきを表示
 Route::get('/top','PostsController@read');
 
@@ -65,15 +66,14 @@ Route::get('/post/{id}/delete','PostsController@delete');
 
 // 2023.03.10 フォローボタン
 // ログイン状態
-Route::group(['middleware' => 'auth'], function() {
 
 // ユーザ関連
 Route::resource('users', 'UsersController', ['only' => ['index', 'show', 'edit', 'update']]);
 
 // フォロー/フォロー解除を追加
-Route::post('users/{id}/follow', 'UsersController@follow')->name('follow');
-Route::get('users/{id}/follow', 'UsersController@follow')->name('follow');
-Route::delete('users/{id}/unfollow', 'UsersController@unfollow')->name('unfollow');
-Route::get('users/{id}/unfollow', 'UsersController@unfollow')->name('unfollow');
+Route::post('/users/{id}/follow', 'UsersController@follow')->name('follow');
+Route::get('/users/{id}/follow', 'UsersController@follow')->name('follow');
+Route::delete('/users/{id}/unfollow', 'UsersController@unfollow')->name('unfollow');
+Route::get('/users/{id}/unfollow', 'UsersController@unfollow')->name('unfollow');
 
 });
