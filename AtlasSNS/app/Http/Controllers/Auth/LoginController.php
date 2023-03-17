@@ -39,6 +39,7 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    //最初のログイン
     public function login(Request $request){
         if($request->isMethod('post')){
 
@@ -52,10 +53,9 @@ class LoginController extends Controller
         return view("auth.login");
     }
 
-    // 2022.11.02 ログアウト途中 cssを整えてない
-    public function logout(){
-    Auth::logout();
+        protected function logout(\Illuminate\Http\Request $request) {
+        return redirect('login');
 
-    return view("auth.login");
     }
+
 }

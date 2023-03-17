@@ -26,7 +26,8 @@
 
 
 //ログアウト中のページ
-Route::get('/login', 'Auth\LoginController@login');
+// 2023.03.17 AuthでKernel.phpの55行目に移動
+Route::get('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
 
 Route::get('/register', 'Auth\RegisterController@register');
@@ -35,7 +36,12 @@ Route::post('/register', 'Auth\RegisterController@register');
 Route::get('/added', 'Auth\RegisterController@added');
 Route::post('/added', 'Auth\RegisterController@added');
 
+// 2022.11.02 ログアウト
+Route::get('/logout','Auth\LoginController@logout');
+Route::post('/logout','Auth\LoginController@logout');
+
 //ログイン中のページ
+
 Route::group(['middleware' => 'auth'], function() {
 //2022.12.16 ログインユーザーのフォローのつぶやきを表示
 Route::get('/top','PostsController@read');
@@ -49,8 +55,7 @@ Route::post('/search','UsersController@search');
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
 
-// 2022.11.02 ログアウト
-Route::get('/logout','Auth\LoginController@logout');
+
 
 //2022.11.12 投稿フォーム
 Route::get('/post/create','PostsController@create');
