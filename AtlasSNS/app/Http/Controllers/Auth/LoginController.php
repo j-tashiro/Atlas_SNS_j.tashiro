@@ -53,9 +53,11 @@ class LoginController extends Controller
         return view("auth.login");
     }
 
-        protected function logout(\Illuminate\Http\Request $request) {
-        return redirect('login');
+    // ログアウト後はログインページヘ
+    public function logout(){
+        Auth::logout();
+        return redirect("/login");
+        }
 
-    }
 
 }
