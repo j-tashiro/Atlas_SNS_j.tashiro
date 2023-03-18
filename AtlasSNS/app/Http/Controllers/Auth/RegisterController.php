@@ -46,8 +46,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
+    protected function validator(array $data){
         return Validator::make($data, [
             'username' => 'required|min:2|max:12|string',
             'mail' => 'required|min:5|max:40|unique:users|email|string',
@@ -62,8 +61,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
-    {
+    protected function create(array $data){
         return User::create([
             'username' => $data['username'],
             'mail' => $data['mail'],
@@ -77,18 +75,13 @@ class RegisterController extends Controller
     // }
 
     // 2023.03.14 新規登録
-    public function register(Request $request)
-    {
+    public function register(Request $request){
         if($request->isMethod('post')){
-        // $data = $request->input();
-        //2022.10.19 入力したデータを$dataにしている
-        //2022.10.19 バリデータ(validator)に飛ぶ
-        // $this->validator($data);
-        // return redirect('added')->with('register_date', 'ここに新規登録した人の名前が入る');
-        //2022.10.19 もしエラーが出た時
-        // $this->create($data);
-        // return redirect('added')->with('register_date', 'ここに新規登録した人の名前が入る');
-
+        //2023.03.19 入力したデータを$dataにしている
+        $data = $request->input();
+        $this->create($data);
+        //2023.03.19 validatorメソッドに飛ぶ
+        $this->validator($data);
         $user = $request->get('username');
         return redirect('added')->with('register_date', $user);
         }
