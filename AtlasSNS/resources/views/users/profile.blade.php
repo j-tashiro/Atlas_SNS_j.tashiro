@@ -4,17 +4,18 @@
 
 <!--  2023.03.21 プロフィール編集 -->
 {!! Form::open(['url' => '/profile']) !!}
+{!! Form::hidden('id',$user->id) !!}
 
 <div class="form_profile">
 
         <div class="profile_layout">
                 {{ Form::label('','user name') }}
-                {{ Form::text('username','ログインしてるユーザー名を表示',['class' => 'input',]) }}
+                {{ Form::text('username',$user->username,['class' => 'input',]) }}
         </div>
 
         <div class="profile_layout">
                 {{ Form::label('','mail address') }}
-                {{ Form::text('mail','ログインしてるユーザーのメールアドレスを表示',['class' => 'input']) }}
+                {{ Form::text('mail',$user->mail,['class' => 'input']) }}
         </div>
 
         <div class="profile_layout">
@@ -29,7 +30,7 @@
 
         <div class="profile_layout">
                 {{ Form::label('','bio') }}
-                {{ Form::text('bio','自己紹介文',['class' => 'input']) }}
+                {{ Form::text('bio',$user->bio,['class' => 'input']) }}
         </div>
 
         <div class="profile_layout">

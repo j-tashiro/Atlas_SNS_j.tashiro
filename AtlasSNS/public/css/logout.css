@@ -11,7 +11,7 @@ body{
 header img{
     width: 150px;
     display: block; /*超大切*/
-    margin: 200px auto 0;
+    margin: 80px auto 0;
 }
 header p{
     color: white;
@@ -67,6 +67,7 @@ input{
     display: block;
     color: white;
     text-align: center;
+    margin-top: 20px;
 }
 .form_login a:hover{
     opacity: 0.6;

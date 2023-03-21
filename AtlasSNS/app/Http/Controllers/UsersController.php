@@ -16,7 +16,8 @@ class UsersController extends Controller
 {
     // 2023.03.21 プロフィール編集
     public function profile(){
-        return view('users.profile',);
+        $user = Auth::user();
+        return view('users.profile',['user' => $user]);
     }
 
 
