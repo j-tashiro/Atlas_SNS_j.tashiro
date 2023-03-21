@@ -46,19 +46,6 @@ Route::group(['middleware' => 'auth'], function() {
 //2022.12.16 ログインユーザーのフォローのつぶやきを表示
 Route::get('/top','PostsController@read');
 
-// 2023.03.21 プロフィール編集
-Route::get('/profile','UsersController@profile');
-Route::post('/profile','UsersController@profile');
-
-//2023.02.07 検索入力フォームの設置
-Route::get('/search','UsersController@search');
-Route::post('/search','UsersController@search');
-
-Route::get('/follow-list','PostsController@index');
-Route::get('/follower-list','PostsController@index');
-
-
-
 //2022.11.12 投稿フォーム
 Route::get('/post/create','PostsController@create');
 Route::post('/post/create','PostsController@create');
@@ -68,6 +55,23 @@ Route::post('/post/update', 'PostsController@update');
 
 //2022.12.23 削除用メソッド
 Route::get('/post/{id}/delete','PostsController@delete');
+
+//2023.02.07 検索入力フォームの設置
+Route::get('/search','UsersController@search');
+Route::post('/search','UsersController@search');
+
+Route::get('/follow-list','PostsController@index');
+Route::get('/follower-list','PostsController@index');
+
+// 2023.03.21 プロフィール表示
+Route::get('/profile','UsersController@profile');
+
+// 2023.03.22 プロフィール編集
+Route::post('/profile/update','UsersController@update');
+
+
+
+
 
 
 

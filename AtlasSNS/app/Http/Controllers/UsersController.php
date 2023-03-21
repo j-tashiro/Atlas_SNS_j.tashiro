@@ -20,6 +20,18 @@ class UsersController extends Controller
         return view('users.profile',['user' => $user]);
     }
 
+    // 2023.03.22 プロフィール編集
+    public function update(Request $request)
+    {
+        $id = $request->input('id');
+        $username = $request->input('username');
+        $mail = $request->input('mail');
+        $password = $request->input('password');
+        $bio = $request->input('bio');
+        Post::where('id','=', $id)->update(['username' => $username,'mail' => $mail,'password' => $password,'bio' => $bio,]);
+        return redirect('top');
+    }
+
 
 
     // 2023.02.14 検索入力フォームの設置
