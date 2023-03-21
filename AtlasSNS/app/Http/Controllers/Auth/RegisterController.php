@@ -79,6 +79,7 @@ class RegisterController extends Controller
         if($request->isMethod('post')){
         //2023.03.19 入力したデータを$dataにしている
         $data = $request->input();
+        //2023.03.19 createメソッドに飛ぶ
         $this->create($data);
         //2023.03.19 validatorメソッドに飛ぶ
         $this->validator($data);

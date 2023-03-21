@@ -23,12 +23,13 @@ class UsersController extends Controller
         // dd($searchWord);
         // Laravel あいまい検索 で調べると分かりやすい
         if(!empty($searchWord)){
-            $users = User::where ('username', 'LIKE', '%'.$searchWord.'%')->get();
+            // $users = User::where ('username', 'LIKE', '%'.$searchWord.'%')->get();
+            $users = User::where ('username', 'LIKE', '%'.$searchWord.'%',)->get();
         }
         else{
-            // 30行目と31行目は同じ意味 30行目を理解した上で31行目の省略型を使おう
-            // $users = User::where("id" , "!=" , Auth::user()->id)->get();
-            $users = User::where("id" , "!=" , Auth::id())->get();
+            // 31行目と32行目は同じ意味 30行目を理解した上で31行目の省略型を使おう
+            // $users = User::where('id' , '!=' , Auth::user()->id)->get();
+            $users = User::where('id' , '!=' , Auth::id(),)->get();
         }
         return view('users.search',['searchWord'=>$searchWord,'users'=>$users]);
     }

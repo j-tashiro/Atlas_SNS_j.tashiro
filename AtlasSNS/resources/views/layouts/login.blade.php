@@ -57,6 +57,7 @@
 
             <div id="confirm">
 
+            <a href="/profile">プロフィール編集</a>
             <a href="/logout">ログアウト</a>
 
                 <p>〇〇さんの</p>
