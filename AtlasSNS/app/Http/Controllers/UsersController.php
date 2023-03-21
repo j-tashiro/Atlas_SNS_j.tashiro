@@ -14,9 +14,13 @@ use App\User;
 
 class UsersController extends Controller
 {
+    // 2023.03.21 プロフィール編集
     public function profile(){
-        return view('users.profile');
+        return view('users.profile',);
     }
+
+
+
     // 2023.02.14 検索入力フォームの設置
     public function search(Request $request){
         $searchWord = $request->input('searchWord');

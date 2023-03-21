@@ -46,7 +46,9 @@ Route::group(['middleware' => 'auth'], function() {
 //2022.12.16 ログインユーザーのフォローのつぶやきを表示
 Route::get('/top','PostsController@read');
 
+// 2023.03.21 プロフィール編集
 Route::get('/profile','UsersController@profile');
+Route::post('/profile','UsersController@profile');
 
 //2023.02.07 検索入力フォームの設置
 Route::get('/search','UsersController@search');
