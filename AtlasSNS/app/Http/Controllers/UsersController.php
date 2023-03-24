@@ -27,17 +27,36 @@ class UsersController extends Controller
         // $user->username = $request->username;
         $user->username = $request->input('username');
 
-        $user->mail = $request->mail;
-        // $user->mail = $request->input('mail');
+        // $user->mail = $request->mail;
+        $user->mail = $request->input('mail');
 
-        $user->password = bcrypt($request->input('password'));
+        // $user->password = bcrypt($request->password);
+        // $user->password = bcrypt($request->input('password'));
 
-        $user->bio = $request->bio;
+        // $user->bio = $request->bio;
+        $user->bio = $request->input('bio');
+
+        // $user->image = $request->image;
+        // $user->image = $request->input('image');
+        // dd($user);
+
         $user->save();
         return redirect('top');
     }
+    // https://poppotennis.com/posts/laravel-update-users
+    // https://qiita.com/meow_o_o/items/e99450518777fd854e34
 
-
+    // 途中
+    protected function validator(array $data){
+        return Validator::make($data, [
+            'username' => 'required|min:2|max:12|string',
+            'mail' => 'required|min:5|max:40|unique:users|email|string',
+            'password' => 'required|min:8|max:20|string',
+            'password-confirm' => 'required|min:8|max:20|confirmed:password|string',
+            'bio' => 'max:150|string',
+            'image' => '',
+        ]);
+    }
 
     // 2023.02.14 検索入力フォームの設置
     public function search(Request $request){
@@ -49,7 +68,7 @@ class UsersController extends Controller
             $users = User::where ('username', 'LIKE', '%'.$searchWord.'%',)->get();
         }
         else{
-            // 31行目と32行目は同じ意味 30行目を理解した上で31行目の省略型を使おう
+            // 60行目と61行目は同じ意味 60行目を理解した上で61行目の省略型を使おう
             // $users = User::where('id' , '!=' , Auth::user()->id)->get();
             $users = User::where('id' , '!=' , Auth::id(),)->get();
         }

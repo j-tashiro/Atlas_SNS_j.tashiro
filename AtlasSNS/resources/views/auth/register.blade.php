@@ -4,6 +4,9 @@
 <!-- 2022.10.19 エラー文を表示させる -->
 {!! Form::open(['url' => '/register']) !!}
 
+@foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+@endforeach
 <div class="form_login">
 
 <h2>新規ユーザー登録</h2>

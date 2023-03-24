@@ -5,7 +5,9 @@
 <!--  2023.03.21 プロフィール編集 -->
 {!! Form::open(['url' => '/profile/update']) !!}
 {!! Form::hidden('id',$user->id) !!}
-
+@foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+@endforeach
 <div class="form_profile">
 
         <div class="profile_layout">
@@ -35,7 +37,7 @@
 
         <div class="profile_layout">
                 {{ Form::label('','icon image') }}
-                {{ Form::file('icon image', ['class' => 'profile_image']) }}
+                {{ Form::file('image', ['class' => 'profile_image']) }}
                 <!-- {{ Form::image('icon image',null,['class' => 'input']) }} -->
         </div>
 

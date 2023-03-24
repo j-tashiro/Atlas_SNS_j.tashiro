@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+// use App\Http\Requests\RegisterFormRequest;/*2023.03.24 追加 */
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+
 
 class RegisterController extends Controller
 {
@@ -53,6 +55,7 @@ class RegisterController extends Controller
             'password' => 'required|min:8|max:20|string',
             'password-confirm' => 'required|min:8|max:20|confirmed:password|string',
         ]);
+        
     }
 //英数字のバリテーションができてない
     /**
@@ -64,7 +67,9 @@ class RegisterController extends Controller
     protected function create(array $data){
         return User::create([
             'username' => $data['username'],
+            // dd($data['username']);
             'mail' => $data['mail'],
+            // dd($data['mail']);
             'password' => bcrypt($data['password']),
         ]);
     }
@@ -79,11 +84,19 @@ class RegisterController extends Controller
         if($request->isMethod('post')){
         //2023.03.19 入力したデータを$dataにしている
         $data = $request->input();
-        //2023.03.19 createメソッドに飛ぶ
-        $this->create($data);
+        if($validator->fails()){
+            return redirect()->back()
+            ->ithInput()
+            ->withErrors($validator);
+        }
+
         //2023.03.19 validatorメソッドに飛ぶ
         $this->validator($data);
+
+        //2023.03.19 createメソッドに飛ぶ
+        $this->create($data);
         $user = $request->get('username');
+
         return redirect('added')->with('register_date', $user);
         }
         return view('auth.register');
