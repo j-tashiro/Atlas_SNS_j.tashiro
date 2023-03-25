@@ -55,8 +55,8 @@ class RegisterController extends Controller
             'password' => 'required|min:8|max:20|string',
             'password-confirm' => 'required|min:8|max:20|confirmed:password|string',
         ]);
-        
     }
+
 //英数字のバリテーションができてない
     /**
      * Create a new user instance after a valid registration.
@@ -71,33 +71,33 @@ class RegisterController extends Controller
             'mail' => $data['mail'],
             // dd($data['mail']);
             'password' => bcrypt($data['password']),
+
         ]);
     }
 
-
-    // public function registerForm(){
-    //     return view("auth.register");
-    // }
-
-    // 2023.03.14 新規登録
+    // 2023.03.25 新規登録
     public function register(Request $request){
+        // web.phpのpost 投稿のpostという意味ではない
         if($request->isMethod('post')){
-        //2023.03.19 入力したデータを$dataにしている
+        //2023.03.25 入力したデータを$dataにしている
         $data = $request->input();
+
+        $validator = $this->validator($data);
+
+        // バリデーションに引っかかった場合
         if($validator->fails()){
             return redirect()->back()
-            ->ithInput()
+            ->withInput()
             ->withErrors($validator);
         }
-
-        //2023.03.19 validatorメソッドに飛ぶ
-        $this->validator($data);
-
-        //2023.03.19 createメソッドに飛ぶ
-        $this->create($data);
-        $user = $request->get('username');
-
-        return redirect('added')->with('register_date', $user);
+        // バリデーションに問題がない場合
+        else{
+            //2023.03.25 createメソッドに飛ぶ
+            $this->create($data);
+            // 1=2-1
+            $user = $request->get('username');
+            return redirect('added')->with('register_date', $user);
+            }
         }
         return view('auth.register');
     }
