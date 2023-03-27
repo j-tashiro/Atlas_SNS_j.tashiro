@@ -52,6 +52,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'username' => 'required|min:2|max:12|string',
             'mail' => 'required|min:5|max:40|unique:users|email|string',
+            // 'mail' => 'required|min:5|max:40|unique:users,mail|email|string',
             // 2023.03.27 バリデーション 確認 https://readouble.com/laravel/6.x/ja/validation.html#rule-confirmed
             'password' => 'required|confirmed|min:8|max:20|string',
             // 2023.03.27 バリデーション 同一 https://readouble.com/laravel/6.x/ja/validation.html#rule-same

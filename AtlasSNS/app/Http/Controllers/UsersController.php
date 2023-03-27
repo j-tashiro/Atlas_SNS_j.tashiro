@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 // 12行目のUserとUser.phpの10行目のclass Userを同じ名前にすることcontrollerとmodelが連結される modelはテーブルと連結してる
 // 26行目と31行目のUser::が情報を受け取れるようになる
 use App\User;
+use Illuminate\Support\Facades\Validator;
 
 
 class UsersController extends Controller
@@ -20,42 +21,68 @@ class UsersController extends Controller
         return view('users.profile',['user' => $user]);
     }
 
-    // 2023.03.22 プロフィール編集
-    public function update(Request $request)
+    // 2023.03.27 プロフィール編集 バリデーション
+    protected function validator(array $data){
+        return Validator::make($data, [
+            'username' => 'required|min:2|max:12|string',
+            // 'mail' => 'required|min:5|max:40|unique:users|email|string',
+            'mail' => 'required|min:5|max:40|unique:users,mail'.$data['mail'].',mail|email|string',
+            'password' => 'required|confirmed|min:8|max:20|string',
+            'bio' => 'max:150|string',
+            'image' => '',
+        ]);
+    }
+
+    // 2023.03.27 プロフィール編集
+    public function profile_update(Request $request)
     {
         $user = Auth::user();
-        // $user->username = $request->username;
-        $user->username = $request->input('username');
+        $user->username = $request->username;
+        // $user->username = $data->input('username');
 
-        // $user->mail = $request->mail;
-        $user->mail = $request->input('mail');
+        $user->mail = $request->mail;
+        // $user->mail = $request->input('mail');
 
         // $user->password = bcrypt($request->password);
         // $user->password = bcrypt($request->input('password'));
 
-        // $user->bio = $request->bio;
-        $user->bio = $request->input('bio');
+        $user->bio = $request->bio;
+        // $user->bio = $request->input('bio');
 
         // $user->image = $request->image;
         // $user->image = $request->input('image');
         // dd($user);
 
         $user->save();
-        return redirect('top');
+        // return redirect('top');
     }
     // https://poppotennis.com/posts/laravel-update-users
     // https://qiita.com/meow_o_o/items/e99450518777fd854e34
 
-    // 途中
-    protected function validator(array $data){
-        return Validator::make($data, [
-            'username' => 'required|min:2|max:12|string',
-            'mail' => 'required|min:5|max:40|unique:users|email|string',
-            'password' => 'required|min:8|max:20|string',
-            'bio' => 'max:150|string',
-            'image' => '',
-        ]);
+// 2023.03.27
+public function update(Request $request){
+    if($request->isMethod('post')){
+    $data = $request->input();
+
+    $validator = $this->validator($data);
+
+    // バリデーションに引っかかった場合
+    if($validator->fails()){
+        return redirect()->back()
+        ->withInput()
+        ->withErrors($validator);
     }
+    // バリデーションに問題がない場合
+    else{
+        $this->profile_update($data);
+        return redirect('top');
+        }
+    }
+    return view('auth.register');
+}
+
+
+
 
     // 2023.02.14 検索入力フォームの設置
     public function search(Request $request){

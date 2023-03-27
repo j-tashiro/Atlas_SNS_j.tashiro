@@ -5,9 +5,11 @@
 <!--  2023.03.21 プロフィール編集 -->
 {!! Form::open(['url' => '/profile/update']) !!}
 {!! Form::hidden('id',$user->id) !!}
+
 @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
 @endforeach
+
 <div class="form_profile">
 
         <div class="profile_layout">
@@ -27,7 +29,7 @@
 
         <div class="profile_layout">
                 {{ Form::label('','password confirm') }}
-                {{ Form::password('password-confirm',['class' => 'input']) }}
+                {{ Form::password('password_confirmation',['class' => 'input']) }}
         </div>
 
         <div class="profile_layout">

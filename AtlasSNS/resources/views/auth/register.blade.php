@@ -1,13 +1,14 @@
 @extends('layouts.logout')
 
 @section('content')
-<!-- 2022.10.19 エラー文を表示させる -->
+
 {!! Form::open(['url' => '/register']) !!}
+
+<div class="form_login">
 
 @foreach ($errors->all() as $error)
         <li>{{ $error }}</li>
 @endforeach
-<div class="form_login">
 
 <h2>新規ユーザー登録</h2>
 
@@ -22,6 +23,7 @@
 
         {{ Form::label('','password confirm') }}
         <!--  2023.03.27 バリデーション 確認 https://readouble.com/laravel/6.x/ja/validation.html#rule-confirmed -->
+        <!-- ファサードの名前 name属性を確認 -->
         {{ Form::password('password_confirmation',['class' => 'input']) }}
 
         {{ Form::submit('REGISTER',['class' => 'login_button']) }}
