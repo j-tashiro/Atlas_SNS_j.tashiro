@@ -21,7 +21,8 @@
         {{ Form::password('password',['class' => 'input']) }}
 
         {{ Form::label('','password confirm') }}
-        {{ Form::password('password-confirm',['class' => 'input']) }}
+        <!--  2023.03.27 バリデーション 確認 https://readouble.com/laravel/6.x/ja/validation.html#rule-confirmed -->
+        {{ Form::password('password_confirmation',['class' => 'input']) }}
 
         {{ Form::submit('REGISTER',['class' => 'login_button']) }}
 

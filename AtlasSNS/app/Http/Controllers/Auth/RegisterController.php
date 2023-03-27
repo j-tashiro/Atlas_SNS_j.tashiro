@@ -52,8 +52,10 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'username' => 'required|min:2|max:12|string',
             'mail' => 'required|min:5|max:40|unique:users|email|string',
-            'password' => 'required|min:8|max:20|string',
-            'password-confirm' => 'required|min:8|max:20|confirmed:password|string',
+            // 2023.03.27 バリデーション 確認 https://readouble.com/laravel/6.x/ja/validation.html#rule-confirmed
+            'password' => 'required|confirmed|min:8|max:20|string',
+            // 2023.03.27 バリデーション 同一 https://readouble.com/laravel/6.x/ja/validation.html#rule-same
+            // 'password' => 'required|same:password|min:8|max:20|string',
         ]);
     }
 
@@ -71,7 +73,6 @@ class RegisterController extends Controller
             'mail' => $data['mail'],
             // dd($data['mail']);
             'password' => bcrypt($data['password']),
-
         ]);
     }
 
@@ -80,6 +81,7 @@ class RegisterController extends Controller
         // web.phpのpost 投稿のpostという意味ではない
         if($request->isMethod('post')){
         //2023.03.25 入力したデータを$dataにしている
+        // 1=2-1
         $data = $request->input();
 
         $validator = $this->validator($data);
@@ -94,7 +96,6 @@ class RegisterController extends Controller
         else{
             //2023.03.25 createメソッドに飛ぶ
             $this->create($data);
-            // 1=2-1
             $user = $request->get('username');
             return redirect('added')->with('register_date', $user);
             }

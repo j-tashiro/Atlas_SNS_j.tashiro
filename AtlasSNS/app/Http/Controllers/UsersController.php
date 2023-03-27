@@ -52,7 +52,6 @@ class UsersController extends Controller
             'username' => 'required|min:2|max:12|string',
             'mail' => 'required|min:5|max:40|unique:users|email|string',
             'password' => 'required|min:8|max:20|string',
-            'password-confirm' => 'required|min:8|max:20|confirmed:password|string',
             'bio' => 'max:150|string',
             'image' => '',
         ]);
