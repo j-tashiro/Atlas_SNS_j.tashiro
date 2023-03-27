@@ -6,11 +6,13 @@
 {!! Form::open(['url' => '/profile/update']) !!}
 {!! Form::hidden('id',$user->id) !!}
 
-@foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-@endforeach
+
 
 <div class="form_profile">
+
+@foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+@endforeach
 
         <div class="profile_layout">
                 {{ Form::label('','user name') }}

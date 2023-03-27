@@ -26,13 +26,12 @@ class UsersController extends Controller
         return Validator::make($data, [
             'username' => 'required|min:2|max:12|string',
             // 'mail' => 'required|min:5|max:40|unique:users|email|string',
-            'mail' => 'required|min:5|max:40|unique:users,mail'.$data['mail'].',mail|email|string',
-            // |unique:users,mail'.$data['mail'].',mail|
+            'mail' => 'required|min:5|max:40|unique:users,mail,'.$data['mail'].',mail|email|string',
+            // |unique:users,mail,'.$data['mail'].',mail|
             // 第1引数=users チェックをしたいテーブル名
             // 第2引数=mail チェックをしたいカラム名
             // 第3引数=.$data['mail']. .チェックの対象外にしたいデータがあるレコードの主キー.
             // 第4引数=mail チェックの対象外にしたいデータがあるレコードの主キーのカラム名
-            'mail' => 'required|min:5|max:40|unique:users,mail'.$data['mail'].',mail|email|string',
             'password' => 'required|confirmed|min:8|max:20|string',
             'bio' => 'max:150|string',
             'image' => '',
@@ -58,9 +57,8 @@ class UsersController extends Controller
         // $user->image = $request->image;
         // $user->image = $request->input('image');
         // dd($user);
-
         $user->save();
-        // return redirect('top');
+
     }
     // https://poppotennis.com/posts/laravel-update-users
     // https://qiita.com/meow_o_o/items/e99450518777fd854e34
