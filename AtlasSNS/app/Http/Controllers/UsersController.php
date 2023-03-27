@@ -27,6 +27,7 @@ class UsersController extends Controller
             'username' => 'required|min:2|max:12|string',
             // 'mail' => 'required|min:5|max:40|unique:users|email|string',
             'mail' => 'required|min:5|max:40|unique:users,mail,'.$data['mail'].',mail|email|string',
+            // https://qiita.com/kaitaku/items/d38e9e498b094405dede
             // |unique:users,mail,'.$data['mail'].',mail|
             // 第1引数=users チェックをしたいテーブル名
             // 第2引数=mail チェックをしたいカラム名
@@ -39,26 +40,37 @@ class UsersController extends Controller
     }
 
     // 2023.03.27 プロフィール編集
+    // public function profile_update(Request $request)
+    // {
+    //     $user = Auth::user();
+    //     $user->username = $request->username;
+    //     // $user->username = $data->input('username');
+
+    //     $user->mail = $request->mail;
+    //     // $user->mail = $request->input('mail');
+
+    //     // $user->password = bcrypt($request->password);
+    //     // $user->password = bcrypt($request->input('password'));
+
+    //     $user->bio = $request->bio;
+    //     // $user->bio = $request->input('bio');
+
+    //     // $user->image = $request->image;
+    //     // $user->image = $request->input('image');
+    //     // dd($user);
+    //     $user->save();
+
+    // }
+
     public function profile_update(Request $request)
     {
-        $user = Auth::user();
-        $user->username = $request->username;
-        // $user->username = $data->input('username');
-
-        $user->mail = $request->mail;
-        // $user->mail = $request->input('mail');
-
-        // $user->password = bcrypt($request->password);
-        // $user->password = bcrypt($request->input('password'));
-
-        $user->bio = $request->bio;
-        // $user->bio = $request->input('bio');
-
-        // $user->image = $request->image;
-        // $user->image = $request->input('image');
-        // dd($user);
-        $user->save();
-
+        $id = $request->input('id');
+        $username = $request->input('username');
+        $mail = $request->input('mail');
+        $password = $request->input('password');
+        $bio = $request->input('bio');
+        user::where('id','=', $id)->update(['username' => $username,'mail' => $mail,'password' => $password,'bio' => $bio,]);
+        return redirect('top');
     }
     // https://poppotennis.com/posts/laravel-update-users
     // https://qiita.com/meow_o_o/items/e99450518777fd854e34

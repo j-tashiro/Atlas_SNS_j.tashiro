@@ -68,6 +68,7 @@ Route::get('/follower-list','PostsController@index');
 Route::get('/profile','UsersController@profile');
 
 // 2023.03.22 プロフィール編集
+Route::get('/profile/update','UsersController@update');
 Route::post('/profile/update','UsersController@update');
 
 

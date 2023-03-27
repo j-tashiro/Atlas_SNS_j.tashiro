@@ -24,6 +24,7 @@
         {{ Form::label('','password confirm') }}
         <!--  2023.03.27 バリデーション 確認 https://readouble.com/laravel/6.x/ja/validation.html#rule-confirmed -->
         <!-- ファサードの名前 name属性を確認 -->
+        <!-- バリデーションに必須 -->
         {{ Form::password('password_confirmation',['class' => 'input']) }}
 
         {{ Form::submit('REGISTER',['class' => 'login_button']) }}
