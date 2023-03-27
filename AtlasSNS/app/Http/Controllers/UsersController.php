@@ -27,6 +27,12 @@ class UsersController extends Controller
             'username' => 'required|min:2|max:12|string',
             // 'mail' => 'required|min:5|max:40|unique:users|email|string',
             'mail' => 'required|min:5|max:40|unique:users,mail'.$data['mail'].',mail|email|string',
+            // |unique:users,mail'.$data['mail'].',mail|
+            // 第1引数=users チェックをしたいテーブル名
+            // 第2引数=mail チェックをしたいカラム名
+            // 第3引数=.$data['mail']. .チェックの対象外にしたいデータがあるレコードの主キー.
+            // 第4引数=mail チェックの対象外にしたいデータがあるレコードの主キーのカラム名
+            'mail' => 'required|min:5|max:40|unique:users,mail'.$data['mail'].',mail|email|string',
             'password' => 'required|confirmed|min:8|max:20|string',
             'bio' => 'max:150|string',
             'image' => '',
