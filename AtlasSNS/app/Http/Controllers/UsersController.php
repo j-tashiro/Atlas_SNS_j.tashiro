@@ -39,41 +39,6 @@ class UsersController extends Controller
         ]);
     }
 
-    // 2023.03.27 プロフィール編集
-    // public function profile_update(Request $request)
-    // {
-    //     $user = Auth::user();
-    //     $user->username = $request->username;
-    //     // $user->username = $data->input('username');
-
-    //     $user->mail = $request->mail;
-    //     // $user->mail = $request->input('mail');
-
-    //     // $user->password = bcrypt($request->password);
-    //     // $user->password = bcrypt($request->input('password'));
-
-    //     $user->bio = $request->bio;
-    //     // $user->bio = $request->input('bio');
-
-    //     // $user->image = $request->image;
-    //     // $user->image = $request->input('image');
-    //     // dd($user);
-    //     $user->save();
-
-    // }
-
-    public function profile_update(Request $request)
-    {
-        $id = $request->input('id');
-        $username = $request->input('username');
-        $mail = $request->input('mail');
-        $password = $request->input('password');
-        $bio = $request->input('bio');
-        user::where('id','=', $id)->update(['username' => $username,'mail' => $mail,'password' => $password,'bio' => $bio,]);
-        return redirect('top');
-    }
-    // https://poppotennis.com/posts/laravel-update-users
-    // https://qiita.com/meow_o_o/items/e99450518777fd854e34
 
 // 2023.03.27
 public function update(Request $request){
@@ -90,7 +55,12 @@ public function update(Request $request){
     }
     // バリデーションに問題がない場合
     else{
-        $this->profile_update($data);
+        $id = $request->input('id');
+        $username = $request->input('username');
+        $mail = $request->input('mail');
+        $password = $request->input('password');
+        $bio = $request->input('bio');
+        user::where('id','=', $id)->update(['username' => $username,'mail' => $mail,'password' => $password,'bio' => $bio,]);
         return redirect('top');
         }
     }
