@@ -60,7 +60,14 @@ public function update(Request $request){
         $mail = $request->input('mail');
         $password = $request->input('password');
         $bio = $request->input('bio');
-        user::where('id','=', $id)->update(['username' => $username,'mail' => $mail,'password' => $password,'bio' => $bio,]);
+        // $image = $request->input('image');
+        user::where('id','=', $id)->update([
+            'username' => $username,
+            'mail' => $mail,
+            'password' => $password,
+            'bio' => $bio,
+            // 'image' => $image,
+        ]);
         return redirect('top');
         }
     }
