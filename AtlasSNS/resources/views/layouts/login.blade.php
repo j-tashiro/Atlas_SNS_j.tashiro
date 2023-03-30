@@ -60,15 +60,18 @@
             <a href="/profile">プロフィール編集</a>
             <a href="/logout">ログアウト</a>
 
-                <p>〇〇さんの</p>
+                <p>{{ Auth::user()->username }}さんの</p>
                 <div>
                 <p>フォロー数</p>
-                <p>〇〇名</p>
+                <!-- 2023.03.30 内容を理解してないのにできてしまった -->
+                <!-- #1478の二枚目の画像を参考にした -->
+                <p>{{ Auth::user()->follows()->count() }}名</p>
                 </div>
                 <p class="btn"><a href="/follow-list">フォローリスト</a></p>
                 <div>
                 <p>フォロワー数</p>
-                <p>〇〇名</p>
+                <!-- 2023.03.30 内容を理解してないのにできてしまった -->
+                <p>{{ Auth::user()->followers()->count() }}名</p>
                 </div>
                 <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
             </div>

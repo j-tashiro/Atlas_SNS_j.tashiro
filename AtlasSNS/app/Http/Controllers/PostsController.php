@@ -60,4 +60,19 @@ class PostsController extends Controller
         Post::where('id', $id)->delete();
         return redirect('top');
     }
+
+    // 2023.03.30 フォローリスト
+    public function follow_list()
+    {
+        $list = Post::get();
+        return view('follows.followList',['post'=>$list]);
+    }
+
+    // 2023.03.30 フォローリスト
+    public function follower_list()
+    {
+        $list = Post::get();
+        return view('follows.followerList',['post'=>$list]);
+    }
+
 }

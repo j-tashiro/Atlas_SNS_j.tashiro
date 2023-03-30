@@ -61,8 +61,9 @@ Route::get('/post/{id}/delete','PostsController@delete');
 Route::get('/search','UsersController@search');
 Route::post('/search','UsersController@search');
 
-Route::get('/follow-list','PostsController@index');
-Route::get('/follower-list','PostsController@index');
+// 2023.03.30 フォローリスト
+Route::get('/follow-list','PostsController@follow_list');
+Route::get('/follower-list','PostsController@follower_list');
 
 // 2023.03.21 プロフィール表示
 Route::get('/profile','UsersController@profile');
