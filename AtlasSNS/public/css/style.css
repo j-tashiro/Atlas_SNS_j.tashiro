@@ -7,6 +7,7 @@ a:hover{
 a img:hover{
   opacity: 0.6;
 }
+
 /* ログインページ */
 
 
@@ -205,9 +206,7 @@ label{
 .profile_button:hover{
   opacity: 0.6;
 }
-.red{
-  background-color: red;
-}
+
 
 .all_user{
   max-width: 500px;
@@ -216,4 +215,10 @@ label{
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.red{
+  background-color: red;
+}
+.light_blue{
+  background-color: #8EB8FF;
 }

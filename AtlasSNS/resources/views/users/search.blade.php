@@ -33,7 +33,7 @@
         @if (auth()->user()->isFollowing($user->id))
         <p class="btn red"><a href="/users/{{ $user->id }}/unfollow">フォローを解除</a></p>
         @else
-        <p class="btn"><a href="/users/{{ $user->id }}/follow">フォローする</a></p>
+        <p class="btn light_blue"><a href="/users/{{ $user->id }}/follow">フォローする</a></p>
         @endif
         </div>
     @endforeach
