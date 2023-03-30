@@ -205,3 +205,15 @@ label{
 .profile_button:hover{
   opacity: 0.6;
 }
+.red{
+  background-color: red;
+}
+
+.all_user{
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

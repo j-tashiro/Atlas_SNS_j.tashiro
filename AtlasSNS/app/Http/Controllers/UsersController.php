@@ -64,7 +64,7 @@ public function update(Request $request){
         user::where('id','=', $id)->update([
             'username' => $username,
             'mail' => $mail,
-            'password' => $password,
+            'password' => bcrypt($password),
             'bio' => $bio,
             // 'image' => $image,
         ]);

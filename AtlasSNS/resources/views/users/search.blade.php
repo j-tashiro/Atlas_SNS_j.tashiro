@@ -25,22 +25,19 @@
 
 </div>
 
-    <div class="all_user">
+
     @foreach($users as $user)
+    <div class="all_user">
         {{ $user->username }}
-
-
 <!-- 2023.03.10 フォローボタン -->
         @if (auth()->user()->isFollowing($user->id))
-        <p class="btn"><a href="/users/{{ $user->id }}/unfollow">フォローを解除</a></p>
+        <p class="btn red"><a href="/users/{{ $user->id }}/unfollow">フォローを解除</a></p>
         @else
         <p class="btn"><a href="/users/{{ $user->id }}/follow">フォローする</a></p>
         @endif
-
-
-
+        </div>
     @endforeach
-    </div>
+
 <!-- https://qiita.com/namizatork/items/0c81b0a94a1084cda6de 参考サイト Laravel 第6回 -->
 
 @endsection
