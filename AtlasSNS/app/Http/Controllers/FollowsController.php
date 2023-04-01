@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\User;
 use App\Post;
-// 2023.04.01 Authを起動させるために必要な記述
+// 2023.04.01 Auth::userを起動させるために必要な記述
 use Illuminate\Support\Facades\Auth;
 
 class FollowsController extends Controller
@@ -26,10 +26,10 @@ class FollowsController extends Controller
         $following_id = Auth::user()->follows()->pluck('followed_id');
 
         // 2023.04.01 フォローしているユーザーのidを元に投稿内容を取得
-
         $posts = Post::with('user')->whereIn('user_id', $following_id)->get();
-        $list = User::whereIn('id', $following_id)->get();
-        return view('follows.followList',['user'=>$list,'posts'=>$posts]);
+
+        $users = User::whereIn('id', $following_id)->get();
+        return view('follows.followList',['users'=>$users,'posts'=>$posts]);
     }
 
     // 2023.03.31 フォロワーリスト
