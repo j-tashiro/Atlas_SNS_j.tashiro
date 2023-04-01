@@ -59,6 +59,7 @@ header{
 }
 #container{
   flex: 0 0 80%;
+  border-bottom: 7px solid #C0C0C0;
 }
 #side-bar{
   flex: 0 0 19%;
@@ -221,4 +222,11 @@ label{
 }
 .light_blue{
   background-color: #8EB8FF;
+}
+
+/* フォローリスト */
+.user_images{
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
 }

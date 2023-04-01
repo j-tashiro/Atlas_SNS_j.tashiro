@@ -13,7 +13,7 @@
 @foreach ($errors->all() as $error)
         <li>{{ $error }}</li>
 @endforeach
-{{ $user->image }}
+{{ $user->images }}
 
         <div class="profile_layout">
                 {{ Form::label('','user name') }}
