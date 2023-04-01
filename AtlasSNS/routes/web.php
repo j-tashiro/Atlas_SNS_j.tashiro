@@ -62,8 +62,8 @@ Route::get('/search','UsersController@search');
 Route::post('/search','UsersController@search');
 
 // 2023.03.30 フォローリスト
-Route::get('/follow-list','FollowsController@follow_list');
-Route::get('/follower-list','FollowsController@follower_list');
+Route::get('/follow-list','FollowsController@followList');
+Route::get('/follower-list','FollowsController@followerList');
 
 // 2023.03.21 プロフィール表示
 Route::get('/profile','UsersController@profile');

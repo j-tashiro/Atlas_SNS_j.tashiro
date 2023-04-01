@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-// 2023.02.22 追加
+// 2023.04.01 Auth::userを起動させるために必要な記述
 use Illuminate\Support\Facades\Auth;
 
 // 12行目のUserとUser.phpの10行目のclass Userを同じ名前にすることcontrollerとmodelが連結される modelはテーブルと連結してる

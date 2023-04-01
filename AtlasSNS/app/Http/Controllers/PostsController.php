@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 // 同じにすることでリンクされテーブルの情報を受け取れるようになる
 use App\Post;
 
-//下記の内容を追記する
+// 2023.04.01 Auth::userを起動させるために必要な記述
 use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
