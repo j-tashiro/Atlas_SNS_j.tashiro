@@ -61,21 +61,43 @@
             <a href="/logout">ログアウト</a>
 
                 <p>{{ Auth::user()->username }}さんの</p>
-                <div>
+                <br>
+                <div class="follows_count">
                 <p>フォロー数</p>
                 <!-- 2023.03.30 内容を理解してないのにできてしまった -->
                 <!-- #1478の二枚目の画像を参考にした -->
                 <p>{{ Auth::user()->follows()->count() }}名</p>
+                <p></p>
                 </div>
+
+                <br>
+
                 <p class="btn"><a href="/follow-list">フォローリスト</a></p>
-                <div>
+
+                <br>
+
+                <div class="followers_count">
                 <p>フォロワー数</p>
                 <!-- 2023.03.30 内容を理解してないのにできてしまった -->
                 <p>{{ Auth::user()->followers()->count() }}名</p>
+                <p></p>
                 </div>
+
+                <br>
+
                 <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
+
+                <br>
+                <br>
+                <br>
+
+                <div class="search_btn">
+                    <br>
+                    <p class="btn"><a href="/search">ユーザー検索</a></p>
+                </div>
+
             </div>
-            <p class="btn"><a href="/search">ユーザー検索</a></p>
+
         </div>
     </div>
 

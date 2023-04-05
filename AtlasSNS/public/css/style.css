@@ -7,7 +7,10 @@ a:hover{
 a img:hover{
   opacity: 0.6;
 }
-
+h1 img{
+  padding: 20px;
+  width: 120px;
+}
 /* ログインページ */
 
 
@@ -65,7 +68,18 @@ header{
   flex: 0 0 19%;
   border-left: 1px solid #727272;
 }
-
+#confirm{
+  /* margin: 20px; */
+}
+.follows_count{
+  display: flex;
+}
+.followers_count{
+  display: flex;
+}
+.search_btn{
+  border-top: 1px solid #727272;
+}
 
 /* 2022年11月6日 */
 .btn{

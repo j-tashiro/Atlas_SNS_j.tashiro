@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 // 同じにすることでリンクされテーブルの情報を受け取れるようになる
 class Post extends Model
 {
-    //2023.04.02 投稿(postテーブル)とユーザー(userテーブル)をリレーション
-    public function userPost()
+    //2023.04.05 追加
+    public function user()
 {
-    return $this->belongsToMany(User::class, 'follows', 'followed_id', 'following_id');
+    return $this->belongsTo('App\User');
 }
+
 
 }

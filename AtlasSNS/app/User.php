@@ -29,14 +29,22 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-// 2023.03.10 リレーションテーブル同士を連結させる
+
+    // 2023.04.05 追加
+    public function posts()
+{
+    return $this->hasMany('App\Post');
+}
+
+
+// 2023.03.10 リレーション テーブル同士を連結させる
 // 今回のフォロー機能はユーザーがユーザーをフォローする関係だからuserテーブル同士でリレーションする
 // 多対多 リレーション https://qiita.com/ramuneru/items/db43589551dd0c00fef9
 // Laravel belongsToMany https://solomaker.club/how-to-use-laravel-orm-belongs-to-many/
-// 第一引数 連結させるモデル名 User::class
-// 第二引数 中間テーブルにするテーブル名 follows
-// 第三引数 カラム名 followed_id following_id
-// 第四引数 カラム名 following_id followed_id
+// 第1引数 連結させるモデル名 User::class
+// 第2引数 中間テーブルにするテーブル名 follows
+// 第3引数 カラム名 followed_id following_id
+// 第4引数 カラム名 following_id followed_id
 
 // フォロワー達=フォローしてくれてる人達
 // 第3引数はフォローしてくれてる人のIDが欲しい
