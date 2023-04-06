@@ -4,7 +4,6 @@
 @section('content')
 <h2></h2>
 
-<!--投稿フォームの設置-->
     {!! Form::open(['url' => '/post/create']) !!}
         <div class="post_group">
             <p>ユーザーアイコン</p>
@@ -18,6 +17,7 @@
 <!-- 21行目の$listsと24行目と25行目の$listsが連動してる -->
 <!-- 24行目のpostはテーブルの中のpostカラム-->
 <!-- 25行目のcreated_atはテーブルの中のcreated_atカラム -->
+<!-- foreachの後は($複数形 as $単数形) が一番綺麗  -->
 @foreach ($post as $lists)
             <tr>
                 <div class="content">
@@ -25,7 +25,7 @@
                     <td>{{ $lists->created_at }}</td>
 
 
-                    <!-- 投稿の編集ボタン 30行目のjs-modal-openでscript.jsの17行目にデータを送ってる-->
+                    <!-- 投稿の編集ボタン js-modal-openでscript.jsの$('.js-modal-open')にデータを送ってる-->
                     <td><a class="js-modal-open" href="" post="{{ $lists->post }}" post_id="{{ $lists->id }}"><img src="images/edit.png" alt="編集" width="50" height="50"></a></td>
 
 

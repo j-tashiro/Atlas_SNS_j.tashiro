@@ -22,8 +22,9 @@ class FollowsController extends Controller
         // 2023.04.05 フォローしているユーザーのidを元に投稿内容を取得
         // https://qiita.com/miriwo/items/553dccbae72a25b5467b
         // Post::with('user')のuserはPost.phpのuserメソッドと連動している
+        // ->whereIn('user_id', $following_id)は
+        // 全てのid(user_id)とフォローしてるid($following_id)のなかで被ってるidだけgetしてる
         $posts = Post::with('user')->whereIn('user_id', $following_id)->get();
-
         $users = User::whereIn('users.id', $following_id)->get();
         return view('follows.followList',['users'=>$users,'posts'=>$posts]);
     }

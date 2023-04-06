@@ -31,6 +31,7 @@ class User extends Authenticatable
 
 
     // 2023.04.05 追加
+    // ->hasMany 一(usersテーブル)対多(postsテーブル)
     public function posts()
 {
     return $this->hasMany('App\Post');

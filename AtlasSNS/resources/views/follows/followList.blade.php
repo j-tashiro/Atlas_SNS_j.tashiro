@@ -14,15 +14,25 @@
     <img src="{{ \Storage::url($user->image) }}">
 @endforeach
 </div>
+
+
+
+
+
 <!-- foreachの後は($複数形 as $単数形) が一番綺麗  -->
 @foreach ($posts as $post)
-<img src="{{ \Storage::url($post->image) }}">
-{{ $post->username }}
-{{ $post->post }}
-{{ $post->created_at }}
+
+    <!-- $post->user->imageと$post->user->usernameのuserはpost.phpのuserメソッドを指してる -->
+    <img src="{{ \Storage::url($post->user->image) }}">
+    {{ $post->user->username }}
+
+    <!-- postsテーブルから引っ張ってきて出力してる -->
+    {{ $post->post }}
+    {{ $post->created_at }}
 
 
 @endforeach
+
 
 
 @endsection

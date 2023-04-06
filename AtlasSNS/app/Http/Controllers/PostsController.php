@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-// 9行目のPostとPost.phpの9行目のclass Postを
+// use App\Post;のPostとPost.phpの9行目のclass Postを
 // 同じにすることでリンクされテーブルの情報を受け取れるようになる
 use App\Post;
 
