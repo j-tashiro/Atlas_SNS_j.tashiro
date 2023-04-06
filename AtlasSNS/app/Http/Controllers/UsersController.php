@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 // 2023.04.01 Auth::userを起動させるために必要な記述
 use Illuminate\Support\Facades\Auth;
 
-// 12行目のUserとUser.phpの10行目のclass Userを同じ名前にすることcontrollerとmodelが連結される modelはテーブルと連結してる
-// 26行目と31行目のUser::が情報を受け取れるようになる
+// use App\User;のUserとUser.phpの10行目のclass Userを同じ名前にすることcontrollerとmodelが連結される modelはテーブルと連結してる
+// User::が情報を受け取れるようになる
 use App\User;
 use Illuminate\Support\Facades\Validator;
 
@@ -60,13 +60,13 @@ public function update(Request $request){
         $mail = $request->input('mail');
         $password = $request->input('password');
         $bio = $request->input('bio');
-        // $image = $request->input('image');
+        $image = $request->input('image');
         user::where('id','=', $id)->update([
             'username' => $username,
             'mail' => $mail,
             'password' => bcrypt($password),
             'bio' => $bio,
-            // 'image' => $image,
+            'image' => $image,
         ]);
         return redirect('top');
         }

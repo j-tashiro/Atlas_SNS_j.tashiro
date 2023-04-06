@@ -10,8 +10,6 @@
 @endforeach
 </div>
 
-
-
 <div class="">
 @foreach ($posts as $post)
     <img src="{{ \Storage::url($post->user->image) }}">
@@ -21,7 +19,5 @@
     {{ $post->created_at }}
 @endforeach
 </div>
-
-
 
 @endsection

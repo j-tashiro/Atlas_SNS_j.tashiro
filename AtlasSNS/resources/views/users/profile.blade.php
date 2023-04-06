@@ -13,7 +13,8 @@
 @foreach ($errors->all() as $error)
         <li>{{ $error }}</li>
 @endforeach
-{{ $user->image }}
+
+<img src="{{ \Storage::url($user->image) }}">
 
         <div class="profile_layout">
                 {{ Form::label('','user name') }}

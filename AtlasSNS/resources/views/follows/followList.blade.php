@@ -15,18 +15,12 @@
 @endforeach
 </div>
 
-
-
-
-
-<!-- foreachの後は($複数形 as $単数形) が一番綺麗  -->
 <div class="">
 @foreach ($posts as $post)
     <!-- https://www.wakuwakubank.com/posts/377-laravel-relation-1/ -->
     <!-- $post->user->imageと$post->user->usernameのuserはpost.phpのuserメソッドを指してる -->
     <img src="{{ \Storage::url($post->user->image) }}">
     {{ $post->user->username }}
-
     {{ $post->post }}
     {{ $post->created_at }}
 @endforeach
