@@ -25,14 +25,35 @@ class FollowsController extends Controller
         // ->whereIn('user_id', $following_id)は
         // 全てのid(user_id)とフォローしてるid($following_id)のなかで被ってるidだけgetしてる
         $posts = Post::with('user')->whereIn('user_id', $following_id)->get();
-        $users = User::whereIn('users.id', $following_id)->get();
+        $users = User::whereIn('id', $following_id)->get();
         return view('follows.followList',['users'=>$users,'posts'=>$posts]);
     }
 
-    // 2023.03.31 フォロワーリスト
+    public function followList_id($id)
+    {
+        $user_id = User::find($id);//idを取り出す
+
+        $user = Post::table('users')
+        ->leftJoin('posts', 'users.id', '=', 'posts.user_id')//テーブル結合
+        ->get();
+
+        return view('follows.user',['user'=>$user]);
+    }
+
+
+    // 2023.04.06 フォロワーリスト
     public function followerList()
     {
-        $list = User::get();
-        return view('follows.followerList',['post'=>$list]);
+        $followed_id = Auth::user()->followers()->pluck('following_id');
+        $posts = Post::with('user')->whereIn('user_id', $followed_id)->get();
+        $users = User::whereIn('id', $followed_id)->get();
+        return view('follows.followerList',['users'=>$users,'posts'=>$posts]);
     }
+
+    public function followerList_id(Request $request)
+    {
+
+        return view('follows.user',[]);
+    }
+
 }
