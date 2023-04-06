@@ -6,7 +6,7 @@
 
 <div class="">
 @foreach ($users as $user)
-    <a href="/follower-list/{{$user->id}}"><img src="{{ \Storage::url($user->image) }}"></a>
+    <a href="/user/{{$user->id}}"><img src="{{ \Storage::url($user->image) }}"></a>
 @endforeach
 </div>
 

@@ -29,18 +29,6 @@ class FollowsController extends Controller
         return view('follows.followList',['users'=>$users,'posts'=>$posts]);
     }
 
-    public function followList_id($id)
-    {
-        $user_id = User::find($id);//idを取り出す
-
-        $user = Post::table('users')
-        ->leftJoin('posts', 'users.id', '=', 'posts.user_id')//テーブル結合
-        ->get();
-
-        return view('follows.user',['user'=>$user]);
-    }
-
-
     // 2023.04.06 フォロワーリスト
     public function followerList()
     {
@@ -50,10 +38,13 @@ class FollowsController extends Controller
         return view('follows.followerList',['users'=>$users,'posts'=>$posts]);
     }
 
-    public function followerList_id(Request $request)
+    // 2023.04.06 他ユーザープロフィール
+    public function user($id)
     {
-
-        return view('follows.user',[]);
+        // ->get();は繰り返す時(foreach)に使う
+        // ->first();は単体で表示する時に使う
+        // $user = User::where('id', $id)->get();
+        $user = User::where('id', $id)->first();
+        return view('follows.user',['user'=>$user,]);
     }
-
 }
