@@ -83,8 +83,9 @@ public function update(Request $request){
         // dd($searchWord);
         // Laravel あいまい検索 で調べると分かりやすい
         if(!empty($searchWord)){
-            // $users = User::where ('username', 'LIKE', '%'.$searchWord.'%')->get();
-            $users = User::where ('username', 'LIKE', '%'.$searchWord.'%',)->get();
+            // User::where ('username', 'LIKE', '%'.$searchWord.'%',)で検索し、
+            // ->where('id' , '!=' , Auth::id(),)でログインユーザーを検索から外している
+            $users = User::where ('username', 'LIKE', '%'.$searchWord.'%',)->where('id' , '!=' , Auth::id(),)->get();
         }
         else{
             // 60行目と61行目は同じ意味 60行目を理解した上で61行目の省略型を使おう

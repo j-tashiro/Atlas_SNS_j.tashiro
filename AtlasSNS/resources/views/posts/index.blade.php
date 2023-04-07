@@ -19,6 +19,8 @@
 <!-- 25行目のcreated_atはテーブルの中のcreated_atカラム -->
 <!-- foreachの後は($複数形 as $単数形) が一番綺麗  -->
 @foreach ($post as $lists)
+<!-- 2023.04.07 ログインユーザーとフォローしているユーザーのつぶやきのみを表示 -->
+@if (auth()->user()->isFollowing($lists->user_id)or(Auth::id()==$lists->user_id))
             <tr>
                 <div class="content">
                     <td>{{ $lists->post }}</td>
@@ -53,6 +55,10 @@
             <a class="js-modal-close" href="">閉じる</a>
         </div>
     </div>
+
+    @endif
+
+
 @endforeach
 
 

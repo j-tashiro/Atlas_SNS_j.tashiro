@@ -62,7 +62,7 @@ header{
 }
 #container{
   flex: 0 0 80%;
-  border-bottom: 7px solid #C0C0C0;
+  /* border-bottom: 7px solid #C0C0C0; */
 }
 #side-bar{
   flex: 0 0 19%;
