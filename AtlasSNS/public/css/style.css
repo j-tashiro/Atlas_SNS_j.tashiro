@@ -147,15 +147,15 @@ header{
 
 /* 2023.04.08 index.blade.php */
 /* 投稿フォームの設置 レイアウト */
-/* search.blade.phpのフォームの枠も消してる */
 .main_content{
   border-bottom: 7px solid #C0C0C0;
 }
-input {
-  border: none;
-}
 .post_group{
   display: flex;
+}
+/* search.blade.phpのフォームの枠も消してる */
+input {
+  border: none;
 }
 .form_post{
   max-width: 900px;
@@ -195,6 +195,8 @@ input {
   transform: translate(-50%,-50%);
   width: 60%;
 }
+
+
 
 /* 2023.03.21 プロフィール編集 */
 .form_profile{
