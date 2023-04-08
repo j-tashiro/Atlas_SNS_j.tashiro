@@ -3,9 +3,7 @@
 
 @section('content')
 
-<div class="all_search">
-
-<!-- 2023.02.14 検索入力フォームの設置 -->
+<div class="main_content">
     {!! Form::open(['url' => '/search']) !!}
         <div class="search_group"><!--required 意味 必要-->
             {!! Form::input('text', 'searchWord', null, ['required', 'class' => 'form_search', 'placeholder' => 'ユーザー名']) !!}
@@ -14,7 +12,6 @@
             <!-- <input type="image" src="images/post.png" class="search_img" name="img" > -->
         </div>
     {!! Form::close() !!}
-
     <div class="search_Word">
         @if(!empty($searchWord))
             <p>検索ワード:{{ $searchWord }}</p>
@@ -26,15 +23,17 @@
 </div>
 
 
+
+
     @foreach($users as $user)
-    <div class="all_user">
-        {{ $user->username }}
-<!-- 2023.03.10 フォローボタン -->
-        @if (auth()->user()->isFollowing($user->id))
-        <p class="btn red"><a href="/users/{{ $user->id }}/unfollow">フォローを解除</a></p>
-        @else
-        <p class="btn light_blue"><a href="/users/{{ $user->id }}/follow">フォローする</a></p>
-        @endif
+        <div class="all_user">
+        <img src="{{ \Storage::url($user->image) }}">
+            {{ $user->username }}
+                @if (auth()->user()->isFollowing($user->id))
+                <p class="btn red"><a href="/users/{{ $user->id }}/unfollow">フォローを解除</a></p>
+                @else
+                <p class="btn light_blue"><a href="/users/{{ $user->id }}/follow">フォローする</a></p>
+                @endif
         </div>
     @endforeach
 
