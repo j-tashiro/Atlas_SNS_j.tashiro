@@ -13,8 +13,7 @@ use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
-    //2022.12.16 postsテーブルのつぶやきをすべて表示させる
-    //9行目のPostと21行目のPostが連動している
+    //use App\Post;のPostとPost::のPostが連動している
     public function read()
     {
         $list = Post::get();
@@ -22,7 +21,6 @@ class PostsController extends Controller
     }
 
     // ログインしてるユーザー(id)と新しい投稿(post)を紐づける必要がある
-
     public function create(Request $request)
     {
         // Auth::user()->idとAuth::id()は同じ意味 Auth::id()は省略型
@@ -33,7 +31,6 @@ class PostsController extends Controller
         return redirect('top');
     }
 
-    //2023.01.16 ログインユーザーのつぶやきを編集
     public function update(Request $request)
     {
         $id = $request->input('id');
