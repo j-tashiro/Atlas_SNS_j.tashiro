@@ -45,7 +45,7 @@
             <form action="/post/update" method="POST">
             <!-- 46行目のnameのupPostとPostsController.phpの50行目のupPostがリンクしている -->
             <!-- 46行目のmodal_postはscript.jsの26行目のmodal_postから受け取ったもの -->
-                <textarea name="upPost" rows="10" cols="100" class="modal_post"></textarea>
+                <textarea name="updatePost" rows="10" cols="100" class="modal_post"></textarea>
             <!-- 49行目のnameのidとPostsController.phpの49行目とリンクしている -->
             <!-- 49行目のmodal_idはscript.jsの28行目のmodal_idから受け取ったもの -->
                 <input type="hidden" name="id" class="modal_id">
