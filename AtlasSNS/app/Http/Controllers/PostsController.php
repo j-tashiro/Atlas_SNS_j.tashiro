@@ -26,17 +26,17 @@ class PostsController extends Controller
         // Auth::user()->idとAuth::id()は同じ意味 Auth::id()は省略型
         // Auth::はログインしてるユーザーの情報が取れる この場合はログインしてるユーザーのidが取れる
         $id = Auth::id();//Auth::id();のidの部分はidしか省略できない
-        $post = $request->input('newPost');
-        Post::insert(['post' => $post,'user_id' => $id,]);
+        $new_Post = $request->input('newPost');
+        Post::insert(['user_id' => $id,'post' => $new_Post]);
         return redirect('top');
     }
 
     public function update(Request $request)
     {
         $id = $request->input('id');
-        $post = $request->input('upPost');
+        $update_Post = $request->input('updatePost');
         // Post::where('id','=', $id)の=は省略できる
-        Post::where('id','=', $id)->update(['post' => $post]);
+        Post::where('id','=', $id)->update(['post' => $update_Post]);
         return redirect('top');
     }
 
