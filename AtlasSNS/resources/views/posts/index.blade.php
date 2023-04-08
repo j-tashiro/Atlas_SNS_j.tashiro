@@ -4,6 +4,7 @@
 @section('content')
 <h2></h2>
 
+<div class="main_content">
     {!! Form::open(['url' => '/post/create']) !!}
         <div class="post_group">
             <p>ユーザーアイコン</p>
@@ -11,6 +12,7 @@
             {!! Form::image('images/post.png', 'img', ['class' => 'post_img']) !!}
         </div>
     {!! Form::close() !!}
+</div>
 
 <!-- foreachの後は($複数形 as $単数形) が一番綺麗  -->
 <!-- ($posts as $post)の$postと'posts'=>$post,のpostsが連動している 単語は何でも大丈夫 -->
@@ -18,7 +20,7 @@
 <!-- 2023.04.07 ログインユーザーとフォローしているユーザーのつぶやきのみを表示 -->
     @if (auth()->user()->isFollowing($post->user_id)or(Auth::id()==$post->user_id))
             <tr>
-                <div class="content">
+                <div class="post_content">
                     <th><img src="{{ \Storage::url($post->user->image) }}"></th>
                     <th>{{ $post->user->username }}</th>
                     <td>{{ $post->post }}</td>

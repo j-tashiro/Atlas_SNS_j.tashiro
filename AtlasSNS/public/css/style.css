@@ -51,7 +51,6 @@ header{
 }
 #container{
   flex: 0 0 80%;
-  /* border-bottom: 7px solid #C0C0C0; */
 }
 #side-bar{
   flex: 0 0 19%;
@@ -148,6 +147,13 @@ header{
 
 /* 2023.04.08 index.blade.php */
 /* 投稿フォームの設置 レイアウト */
+/* search.blade.phpのフォームの枠も消してる */
+.main_content{
+  border-bottom: 7px solid #C0C0C0;
+}
+input {
+  border: none;
+}
 .post_group{
   display: flex;
 }
@@ -159,12 +165,12 @@ header{
   max-width: 100px;
   width: 100%;
 }
-.content{
+.post_content{
   display: flex;
   margin: 0 auto;
   padding: 40px;
 }
-.content img{
+.post_content img{
   width: 50px;
 }
 .modal{
