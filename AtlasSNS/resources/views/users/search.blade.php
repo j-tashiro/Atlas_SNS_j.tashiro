@@ -13,13 +13,13 @@
                 <!-- <input type="image" src="images/post.png" class="search_img" name="img" > -->
             </div>
         {!! Form::close() !!}
-        <div class="search_Word">
-            @if(!empty($searchWord))
-                <p>検索ワード:{{ $searchWord }}</p>
-            @else
-                <p></p>
-            @endif
-        </div>
+            <div class="search_Word">
+                @if(!empty($searchWord))
+                    <p>検索ワード:{{ $searchWord }}</p>
+                @else
+                    <p></p>
+                @endif
+            </div>
     </div>
 </div>
 

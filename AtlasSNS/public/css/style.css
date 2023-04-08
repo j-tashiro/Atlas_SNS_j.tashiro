@@ -50,9 +50,13 @@ h1 img{
   margin: 0 auto;
   padding: 40px;
 }
-.post_content img{
-  width: 50px;
+.post_content.img{
+  background-image: url(images/trash-h.png);
 }
+.post_content.img a img:hover{
+  background-image: url(images/trash.png);
+}
+
 .modal{
   display: none;
   height: 100vh;
@@ -80,6 +84,7 @@ h1 img{
 
 /* 2023.04.08 search.blade.php */
 .search_content{
+  max-width: 700px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -91,13 +96,15 @@ h1 img{
   align-items: center;
 }
 .form_search{
-  max-width: 700px;
-  width: 100%;
+  width: 300px;
   height: 40px;
 }
 .search_img{
   max-width: 100px;
   width: 100%;
+}
+.search_Word{
+  
 }
 .image_username{
   display: flex;
