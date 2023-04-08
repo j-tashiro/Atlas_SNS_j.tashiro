@@ -15,6 +15,57 @@ h1 img{
 
 
 
+/* 2023.04.08 index.blade.php */
+.main_content{
+  border-bottom: 7px solid #C0C0C0;
+}
+.post_group{
+  display: flex;
+}
+.form_post{
+  border: none;
+}
+.form_post{
+  max-width: 900px;
+  width: 100%;
+}
+.post_img{
+  max-width: 100px;
+  width: 100%;
+}
+.post_content{
+  display: flex;
+  margin: 0 auto;
+  padding: 40px;
+}
+.post_content img{
+  width: 50px;
+}
+.modal{
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.modal__bg{
+  background: rgba(0,0,0,0.8);
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+}
+.modal__content{
+  background: white;
+  left: 50%;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 60%;
+}
+
+
+
 /* 検索フォームのレイアウト */
 .all_search{
   display: flex;
@@ -145,56 +196,6 @@ header{
 
 
 
-/* 2023.04.08 index.blade.php */
-/* 投稿フォームの設置 レイアウト */
-.main_content{
-  border-bottom: 7px solid #C0C0C0;
-}
-.post_group{
-  display: flex;
-}
-/* search.blade.phpのフォームの枠も消してる */
-input {
-  border: none;
-}
-.form_post{
-  max-width: 900px;
-  width: 100%;
-}
-.post_img{
-  max-width: 100px;
-  width: 100%;
-}
-.post_content{
-  display: flex;
-  margin: 0 auto;
-  padding: 40px;
-}
-.post_content img{
-  width: 50px;
-}
-.modal{
-  display: none;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-.modal__bg{
-  background: rgba(0,0,0,0.8);
-  height: 100vh;
-  position: absolute;
-  width: 100%;
-}
-.modal__content{
-  background: white;
-  left: 50%;
-  padding: 40px;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%,-50%);
-  width: 60%;
-}
 
 
 
