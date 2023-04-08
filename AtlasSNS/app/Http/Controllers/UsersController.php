@@ -74,28 +74,22 @@ public function update(Request $request){
     return view('auth.register');
 }
 
-
-
-
     // 2023.02.14 検索入力フォームの設置
     public function search(Request $request){
-        $searchWord = $request->input('searchWord');
-        // dd($searchWord);
+        $search_word = $request->input('searchWord');
         // Laravel あいまい検索 で調べると分かりやすい
-        if(!empty($searchWord)){
-            // User::where ('username', 'LIKE', '%'.$searchWord.'%',)で検索し、
+        if(!empty($search_word)){
+            // User::where ('username', 'LIKE', '%'.$search_word.'%',)で検索し、
             // ->where('id' , '!=' , Auth::id(),)でログインユーザーを検索から外している
-            $users = User::where ('username', 'LIKE', '%'.$searchWord.'%',)->where('id' , '!=' , Auth::id(),)->get();
+            $users = User::where ('username', 'LIKE', '%'.$search_word.'%',)->where('id' , '!=' , Auth::id(),)->get();
         }
         else{
             // 60行目と61行目は同じ意味 60行目を理解した上で61行目の省略型を使おう
             // $users = User::where('id' , '!=' , Auth::user()->id)->get();
             $users = User::where('id' , '!=' , Auth::id(),)->get();
         }
-        return view('users.search',['searchWord'=>$searchWord,'users'=>$users]);
+        return view('users.search',['searchWord'=>$search_word,'users'=>$users]);
     }
-
-
 
     // フォロー 2023.03.10 フォローボタン
     public function follow($id)

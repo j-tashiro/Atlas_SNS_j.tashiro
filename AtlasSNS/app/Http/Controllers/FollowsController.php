@@ -43,7 +43,6 @@ class FollowsController extends Controller
     {
         // ->get();は繰り返す時(foreach)に使う
         // ->first();は単体で表示する時に使う
-        // $user = User::where('id', $id)->get();
         $user = User::where('id', $id)->first();
         $post = Post::with('user')->where('user_id', $id)->get();
         return view('follows.user',['user'=>$user,'posts'=>$post,]);

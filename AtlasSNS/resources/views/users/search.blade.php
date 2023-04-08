@@ -3,7 +3,7 @@
 
 @section('content')
 
-<div class="main_content">
+<div class="main_content search_content">
     {!! Form::open(['url' => '/search']) !!}
         <div class="search_group"><!--required 意味 必要-->
             {!! Form::input('text', 'searchWord', null, ['required', 'class' => 'form_search', 'placeholder' => 'ユーザー名']) !!}

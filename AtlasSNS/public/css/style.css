@@ -79,6 +79,10 @@ h1 img{
 
 
 /* 2023.04.08 search.blade.php */
+.search_content{
+  display: flex;
+  align-items: center;
+}
 .search_group{
   display: flex;
 }
@@ -257,8 +261,7 @@ label{
 
 
 /* フォローリスト */
-.user_images{
-  max-width: 500px;
-  width: 100%;
-  margin: 0 auto;
+.follow_content{
+  display: flex;
+  justify-content: center;
 }

@@ -4,9 +4,8 @@
 
 <h2>Follow List</h2>
 
-<!-- 2023.04.01. ユーザーのアイコン一覧の設置-->
 <!-- http://taustation.com/laravel-uploaded-image-display/ -->
-<div class="user_images">
+<div class="main_content follow_content">
 
 <!-- foreachの後は($複数形 as $単数形) が一番綺麗  -->
 <!-- アットマークはコメントアウトしても無駄 超重要 -->

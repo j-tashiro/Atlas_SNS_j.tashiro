@@ -4,7 +4,7 @@
 
 <h2>Follower List</h2>
 
-<div class="">
+<div class="main_content">
 @foreach ($users as $user)
     <a href="/user/{{$user->id}}"><img src="{{ \Storage::url($user->image) }}"></a>
 @endforeach
