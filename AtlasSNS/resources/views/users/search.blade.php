@@ -3,23 +3,24 @@
 
 @section('content')
 
-<div class="main_content search_content">
-    {!! Form::open(['url' => '/search']) !!}
-        <div class="search_group"><!--required 意味 必要-->
-            {!! Form::input('text', 'searchWord', null, ['required', 'class' => 'form_search', 'placeholder' => 'ユーザー名']) !!}
-            <!-- <input type="text" name="searchWord" value="" class="form_search" placeholder="ユーザー名"> -->
-            {!! Form::image('images/post.png', 'img', ['class' => 'search_img']) !!}
-            <!-- <input type="image" src="images/post.png" class="search_img" name="img" > -->
+<div class="main_content">
+    <div class="search_content">
+        {!! Form::open(['url' => '/search']) !!}
+            <div class="search_group"><!--required 意味 必要-->
+                {!! Form::input('text', 'searchWord', null, ['required', 'class' => 'form_search', 'placeholder' => 'ユーザー名']) !!}
+                <!-- <input type="text" name="searchWord" value="" class="form_search" placeholder="ユーザー名"> -->
+                {!! Form::image('images/post.png', 'img', ['class' => 'search_img']) !!}
+                <!-- <input type="image" src="images/post.png" class="search_img" name="img" > -->
+            </div>
+        {!! Form::close() !!}
+        <div class="search_Word">
+            @if(!empty($searchWord))
+                <p>検索ワード:{{ $searchWord }}</p>
+            @else
+                <p></p>
+            @endif
         </div>
-    {!! Form::close() !!}
-    <div class="search_Word">
-        @if(!empty($searchWord))
-            <p>検索ワード:{{ $searchWord }}</p>
-        @else
-            <p></p>
-        @endif
     </div>
-
 </div>
 
     @foreach($users as $user)
