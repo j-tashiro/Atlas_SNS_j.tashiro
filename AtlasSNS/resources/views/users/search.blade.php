@@ -22,13 +22,12 @@
 
 </div>
 
-
-
-
     @foreach($users as $user)
         <div class="all_user">
-        <img src="{{ \Storage::url($user->image) }}">
-            {{ $user->username }}
+            <div class="image_username">
+                <img src="{{ \Storage::url($user->image) }}">
+                <p>{{ $user->username }}</p>
+            </div>
                 @if (auth()->user()->isFollowing($user->id))
                 <p class="btn red"><a href="/users/{{ $user->id }}/unfollow">フォローを解除</a></p>
                 @else

@@ -14,6 +14,18 @@ h1 img{
 .main_content{
   border-bottom: 7px solid #C0C0C0;
 }
+
+/* 2022年11月6日 */
+.btn{
+  width: 150px;
+  line-height: 35px;
+  background-color: #186AC9;
+  text-align: center;
+  border-radius: 10px;
+}
+.btn a{
+  color: white;
+}
 /* ログインページ */
 
 
@@ -78,6 +90,27 @@ h1 img{
   max-width: 100px;
   width: 100%;
 }
+.image_username{
+  display: flex;
+  align-items: center;
+}
+.image_username p{
+  margin-left: 10px;
+}
+.all_user{
+  max-width: 500px;
+  width: 100%;
+  margin: 30px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.red{
+  background-color: red;
+}
+.light_blue{
+  background-color: #8EB8FF;
+}
 
 
 
@@ -117,17 +150,7 @@ header{
   border-top: 1px solid #727272;
 }
 
-/* 2022年11月6日 */
-.btn{
-  width: 150px;
-  line-height: 35px;
-  background-color: #186AC9;
-  text-align: center;
-  border-radius: 10px;
-}
-.btn a{
-  color: white;
-}
+
 
 
 
@@ -231,20 +254,7 @@ label{
 }
 
 
-.all_user{
-  max-width: 500px;
-  width: 100%;
-  margin: 0 auto 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.red{
-  background-color: red;
-}
-.light_blue{
-  background-color: #8EB8FF;
-}
+
 
 /* フォローリスト */
 .user_images{
