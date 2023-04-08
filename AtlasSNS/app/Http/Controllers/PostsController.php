@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
-    //
     //2022.12.16 postsテーブルのつぶやきをすべて表示させる
     //9行目のPostと21行目のPostが連動している
     public function read()
@@ -23,9 +22,6 @@ class PostsController extends Controller
     }
 
     // ログインしてるユーザー(id)と新しい投稿(post)を紐づける必要がある
-    //
-    // 30行目のRequest $requestはindex.blade.phpの
-    // /posts/createからweb.phpを通してデータをまるまる受け取ってる
 
     public function create(Request $request)
     {
@@ -39,7 +35,6 @@ class PostsController extends Controller
             'post' => $post,
             'user_id' => $id,
         ]);
-
         return redirect('top');
     }
 
@@ -47,16 +42,14 @@ class PostsController extends Controller
     public function update(Request $request)
     {
         $id = $request->input('id');
-        $up_post = $request->input('upPost');
-        // 52行目の=は省略できる ->updateの->の部分にもしっかり意味がある
-        Post::where('id','=', $id)->update(['post' => $up_post]);
+        $post = $request->input('upPost');
+        // Post::where('id','=', $id)の=は省略できる
+        Post::where('id','=', $id)->update(['post' => $post]);
         return redirect('top');
     }
 
-    //2022.12.23 削除用メソッド
     public function delete($id)
     {
-        // 60行目には=が省略されてる ->deleteの->の部分にもしっかり意味がある
         Post::where('id', $id)->delete();
         return redirect('top');
     }
