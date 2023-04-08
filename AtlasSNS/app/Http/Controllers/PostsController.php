@@ -25,16 +25,11 @@ class PostsController extends Controller
 
     public function create(Request $request)
     {
-        $post = $request->input('newPost');
         // Auth::user()->idとAuth::id()は同じ意味 Auth::id()は省略型
         // Auth::はログインしてるユーザーの情報が取れる この場合はログインしてるユーザーのidが取れる
         $id = Auth::id();//Auth::id();のidの部分はidしか省略できない
-        // ddとはデバック関数である 変数に何が入ってるか確認できる
-        // dd($id);
-        Post::insert([
-            'post' => $post,
-            'user_id' => $id,
-        ]);
+        $post = $request->input('newPost');
+        Post::insert(['post' => $post,'user_id' => $id,]);
         return redirect('top');
     }
 
