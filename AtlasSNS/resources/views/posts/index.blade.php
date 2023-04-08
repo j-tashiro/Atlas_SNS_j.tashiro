@@ -12,42 +12,37 @@
         </div>
     {!! Form::close() !!}
 
-
-<!-- 21行目の$postとPostsController.phpの22行目のpostが連動してる 単語は何でも大丈夫 連動さえしてれば-->
-<!-- 21行目の$listsと24行目と25行目の$listsが連動してる -->
-<!-- 24行目のpostはテーブルの中のpostカラム-->
-<!-- 25行目のcreated_atはテーブルの中のcreated_atカラム -->
 <!-- foreachの後は($複数形 as $単数形) が一番綺麗  -->
-@foreach ($post as $lists)
+<!-- ($posts as $post)の$postと'posts'=>$post,のpostsが連動している 単語は何でも大丈夫 -->
+@foreach ($posts as $post)
 <!-- 2023.04.07 ログインユーザーとフォローしているユーザーのつぶやきのみを表示 -->
-@if (auth()->user()->isFollowing($lists->user_id)or(Auth::id()==$lists->user_id))
+    @if (auth()->user()->isFollowing($post->user_id)or(Auth::id()==$post->user_id))
             <tr>
                 <div class="content">
-                    <td>{{ $lists->post }}</td>
-                    <td>{{ $lists->created_at }}</td>
-
+                    <th><img src="{{ \Storage::url($post->user->image) }}"></th>
+                    <th>{{ $post->user->username }}</th>
+                    <td>{{ $post->post }}</td>
+                    <td>{{ $post->created_at }}</td>
 
                     <!-- 投稿の編集ボタン js-modal-openでscript.jsの$('.js-modal-open')にデータを送ってる-->
-                    <td><a class="js-modal-open" href="" post="{{ $lists->post }}" post_id="{{ $lists->id }}"><img src="images/edit.png" alt="編集" width="50" height="50"></a></td>
+                    <td><a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="images/edit.png" alt="編集" width="50" height="50"></a></td>
 
-
-
-                    <td><a class="btn-danger" href="/post/{{$lists->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="images/trash-h.png" alt="削除" width="60" height="60"></a></td>
+                    <td><a class="btn-danger" href="/post/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="images/trash-h.png" alt="削除" width="60" height="60"></a></td>
                 </div>
             </tr>
 
 
-<!-- モーダルの中身 -->
-<div class="modal js-modal">
+    <!-- モーダルの中身 -->
+    <div class="modal js-modal">
         <div class="modal__bg js-modal-close"></div>
         <div class="modal__content">
             <!-- 43行目とweb.phpの59行目が連動してる -->
             <form action="/post/update" method="POST">
-            <!-- 46行目のnameのupPostとPostsController.phpの50行目のupPostがリンクしている -->
-            <!-- 46行目のmodal_postはscript.jsの26行目のmodal_postから受け取ったもの -->
+                <!-- 46行目のnameのupPostとPostsController.phpの50行目のupPostがリンクしている -->
+                <!-- 46行目のmodal_postはscript.jsの26行目のmodal_postから受け取ったもの -->
                 <textarea name="updatePost" rows="10" cols="100" class="modal_post"></textarea>
-            <!-- 49行目のnameのidとPostsController.phpの49行目とリンクしている -->
-            <!-- 49行目のmodal_idはscript.jsの28行目のmodal_idから受け取ったもの -->
+                <!-- 49行目のnameのidとPostsController.phpの49行目とリンクしている -->
+                <!-- 49行目のmodal_idはscript.jsの28行目のmodal_idから受け取ったもの -->
                 <input type="hidden" name="id" class="modal_id">
                 <input type="image" src="images/edit.png">
                 {{ csrf_field() }}

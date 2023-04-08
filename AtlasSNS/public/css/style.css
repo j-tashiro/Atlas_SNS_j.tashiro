@@ -14,18 +14,7 @@ h1 img{
 /* ログインページ */
 
 
-/* 投稿フォームの設置 レイアウト */
-.post_group{
-  display: flex;
-}
-.form_post{
-  max-width: 900px;
-  width: 100%;
-}
-.post_img{
-  max-width: 100px;
-  width: 100%;
-}
+
 /* 検索フォームのレイアウト */
 .all_search{
   display: flex;
@@ -157,8 +146,21 @@ header{
 
 
 
-/* 2023.01.16 ログインユーザーのつぶやきを編集 */
+/* 2023.04.08 index.blade.php */
+/* 投稿フォームの設置 レイアウト */
+.post_group{
+  display: flex;
+}
+.form_post{
+  max-width: 900px;
+  width: 100%;
+}
+.post_img{
+  max-width: 100px;
+  width: 100%;
+}
 .content{
+  display: flex;
   margin: 0 auto;
   padding: 40px;
 }

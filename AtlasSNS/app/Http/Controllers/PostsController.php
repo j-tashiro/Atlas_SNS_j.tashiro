@@ -16,8 +16,8 @@ class PostsController extends Controller
     //use App\Post;のPostとPost::のPostが連動している
     public function read()
     {
-        $list = Post::get();
-        return view('posts.index',['post'=>$list]);
+        $post = Post::get();
+        return view('posts.index',['posts'=>$post]);
     }
 
     // ログインしてるユーザー(id)と新しい投稿(post)を紐づける必要がある
