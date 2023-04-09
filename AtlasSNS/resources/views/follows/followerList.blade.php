@@ -11,7 +11,6 @@
         @endforeach
 </div>
 
-
 @foreach ($posts as $post)
     <div class="follower_list">
         <img src="{{ \Storage::url($post->user->image) }}">

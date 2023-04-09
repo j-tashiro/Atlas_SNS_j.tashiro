@@ -14,7 +14,6 @@
         @endforeach
 </div>
 
-
 @foreach ($posts as $post)
     <div class="follow_list">
         <!-- https://www.wakuwakubank.com/posts/377-laravel-relation-1/ -->
