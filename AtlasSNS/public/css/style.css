@@ -273,7 +273,16 @@ label{
 
 
 /* フォローリスト */
+h2{
+  font-size: 30px;
+  margin-right: 50px;
+}
 .follow_content{
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.follow_image{
+  margin-right: 20px;
 }
