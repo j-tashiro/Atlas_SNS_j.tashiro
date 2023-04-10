@@ -62,10 +62,10 @@ Route::get('/userSearch','UsersController@userSearch');
 Route::post('/userSearch','UsersController@userSearch');
 
 // 2023.04.06 フォローリスト
-Route::get('/follow-list','FollowsController@followList');
+Route::get('/followList','FollowsController@followList');
 
 // 2023.04.06 フォロワーリスト
-Route::get('/follower-list','FollowsController@followerList');
+Route::get('/followerList','FollowsController@followerList');
 
 // 2023.04.06 他ユーザープロフィール
 Route::get('/user/{id}','FollowsController@user');

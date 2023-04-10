@@ -72,7 +72,7 @@
 
                 <br>
 
-                <p class="btn"><a href="/follow-list">フォローリスト</a></p>
+                <p class="btn"><a href="/followList">フォローリスト</a></p>
 
                 <br>
 
@@ -85,7 +85,7 @@
 
                 <br>
 
-                <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
+                <p class="btn"><a href="/followerList">フォロワーリスト</a></p>
 
                 <br>
                 <br>
