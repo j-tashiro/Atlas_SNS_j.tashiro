@@ -18,9 +18,16 @@
     <div class="follow_list">
         <!-- https://www.wakuwakubank.com/posts/377-laravel-relation-1/ -->
         <!-- $post->user->imageと$post->user->usernameのuserはpost.phpのuserメソッドを指してる -->
+        <div class="">
         <img src="{{ \Storage::url($post->user->image) }}">
+        <div class="">
         {{ $post->user->username }}
         {{ $post->post }}
+        </div>
+        
+        </div>
+        
+        
         {{ $post->created_at }}
     </div>
 @endforeach
