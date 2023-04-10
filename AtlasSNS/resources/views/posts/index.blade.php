@@ -19,16 +19,15 @@
 @foreach ($posts as $post)
 <!-- 2023.04.07 ログインユーザーとフォローしているユーザーのつぶやきのみを表示 -->
     @if (auth()->user()->isFollowing($post->user_id)or(Auth::id()==$post->user_id))
-            <tr>
                 <div class="post_content follow_lists">
                     <div class="follow_list">
-                        <th><a href="/user/{{$post->user->id}}"><img src="{{ \Storage::url($post->user->image) }}"></a></th>
+                        <a href="/user/{{$post->user->id}}"><img src="{{ \Storage::url($post->user->image) }}"></a>
                             <div class="username_post">
-                                <th>{{ $post->user->username }}</th>
-                                <td>{{ $post->post }}</td>
+                                <p>{{ $post->user->username }}</p>
+                                <p>{{ $post->post }}</p>
                             </div>
                     </div>
-                        <td>{{ $post->created_at }}</td>
+                        <p>{{ $post->created_at }}</p>
 
                         @if (Auth::id()==$post->user_id)
                         <div class="">
@@ -42,7 +41,6 @@
                         </div>
                         @endif
                 </div>
-            </tr>
 
 
     <!-- モーダルの中身 -->
