@@ -45,10 +45,12 @@ h1 img{
   max-width: 100px;
   width: 100%;
 }
+
+
+
+/* 2023.04.11 修正の必要あり */
 .post_content{
-  display: flex;
-  margin: 0 auto;
-  padding: 40px;
+  
 }
 .post_content.img{
   background-image: url(images/trash-h.png);
@@ -56,6 +58,8 @@ h1 img{
 .post_content.img a img:hover{
   background-image: url(images/trash.png);
 }
+
+
 
 .modal{
   display: none;
@@ -295,14 +299,14 @@ h2{
   width: 100%;
   margin: 30px auto;
 }
-.follow_list{
+.follow_list {
   display: flex;
   align-items: center;
 }
 .follow_list img {
   margin-right: 20px;
 }
-.username_post{
+.username_post {
   display: flex;
   flex-direction: column;
 }

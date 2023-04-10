@@ -20,21 +20,27 @@
 <!-- 2023.04.07 ログインユーザーとフォローしているユーザーのつぶやきのみを表示 -->
     @if (auth()->user()->isFollowing($post->user_id)or(Auth::id()==$post->user_id))
             <tr>
-                <div class="post_content">
-                    <th><a href="/user/{{$post->user->id}}"><img src="{{ \Storage::url($post->user->image) }}"></a></th>
-                    <th>{{ $post->user->username }}</th>
-                    <td>{{ $post->post }}</td>
-                    <td>{{ $post->created_at }}</td>
+                <div class="post_content follow_lists">
+                    <div class="follow_list">
+                        <th><a href="/user/{{$post->user->id}}"><img src="{{ \Storage::url($post->user->image) }}"></a></th>
+                            <div class="username_post">
+                                <th>{{ $post->user->username }}</th>
+                                <td>{{ $post->post }}</td>
+                            </div>
+                    </div>
+                        <td>{{ $post->created_at }}</td>
 
-                    @if (Auth::id()==$post->user_id)
-                    <!-- 投稿の編集ボタン js-modal-openでscript.jsの$('.js-modal-open')にデータを送ってる-->
-                    <td><a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="images/edit.png" alt="編集" width="50" height="50"></a></td>
+                        @if (Auth::id()==$post->user_id)
+                        <div class="">
+                        <!-- 投稿の編集ボタン js-modal-openでscript.jsの$('.js-modal-open')にデータを送ってる-->
+                        <td><a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="images/edit.png" alt="編集" width="50" height="50"></a></td>
 
-                    <td><a class="btn-danger" href="/post/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">
-                            <img src="images/trash-h.png" alt="削除" class="image" width="60" height="60">
-                            <!-- <img src="images/trash.png" alt="削除"> -->
-                        </a></td>
-                    @endif
+                        <td><a class="btn-danger" href="/post/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">
+                                <img src="images/trash-h.png" alt="削除" class="image" width="60" height="60">
+                                <!-- <img src="images/trash.png" alt="削除"> -->
+                            </a></td>
+                        </div>
+                        @endif
                 </div>
             </tr>
 
