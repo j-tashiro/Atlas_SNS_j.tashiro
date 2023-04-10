@@ -75,7 +75,7 @@ public function update(Request $request){
 }
 
     // 2023.02.14 検索入力フォームの設置
-    public function search(Request $request){
+    public function userSearch(Request $request){
         $search_word = $request->input('searchWord');
         // Laravel あいまい検索 で調べると分かりやすい
         if(!empty($search_word)){
@@ -88,7 +88,7 @@ public function update(Request $request){
             // $users = User::where('id' , '!=' , Auth::user()->id)->get();
             $users = User::where('id' , '!=' , Auth::id(),)->get();
         }
-        return view('users.search',['searchWord'=>$search_word,'users'=>$users]);
+        return view('users.userSearch',['searchWord'=>$search_word,'users'=>$users]);
     }
 
     // フォロー 2023.03.10 フォローボタン

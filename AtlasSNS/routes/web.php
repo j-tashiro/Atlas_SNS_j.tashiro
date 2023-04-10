@@ -58,8 +58,8 @@ Route::post('/post/update', 'PostsController@update');
 Route::get('/post/{id}/delete','PostsController@delete');
 
 //2023.02.07 検索入力フォームの設置
-Route::get('/search','UsersController@search');
-Route::post('/search','UsersController@search');
+Route::get('/userSearch','UsersController@userSearch');
+Route::post('/userSearch','UsersController@userSearch');
 
 // 2023.04.06 フォローリスト
 Route::get('/follow-list','FollowsController@followList');

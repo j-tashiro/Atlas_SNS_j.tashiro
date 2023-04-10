@@ -5,7 +5,7 @@
 
 <div class="main_content">
     <div class="search_content">
-        {!! Form::open(['url' => '/search']) !!}
+        {!! Form::open(['url' => '/userSearch']) !!}
             <div class="search_group"><!--required 意味 必要-->
                 {!! Form::input('text', 'searchWord', null, ['required', 'class' => 'form_search', 'placeholder' => 'ユーザー名']) !!}
                 <!-- <input type="text" name="searchWord" value="" class="form_search" placeholder="ユーザー名"> -->

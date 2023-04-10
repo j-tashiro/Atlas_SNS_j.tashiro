@@ -93,7 +93,7 @@
 
                 <div class="search_btn">
                     <br>
-                    <p class="btn"><a href="/search">ユーザー検索</a></p>
+                    <p class="btn"><a href="/userSearch">ユーザー検索</a></p>
                 </div>
 
             </div>
