@@ -272,7 +272,9 @@ label{
 
 
 
-/* フォローリスト */
+/* 2023.04.10
+followList.blade.php
+followerList.blade.php */
 h2{
   font-size: 30px;
   margin-right: 50px;

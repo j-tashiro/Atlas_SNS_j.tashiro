@@ -7,7 +7,6 @@
     <img src="{{ \Storage::url($user->image) }}">
     {{ $user->username }}
     {{ $user->bio }}
-    {{ $user->created_at }}
     @if (auth()->user()->isFollowing($user->id))
         <p class="btn red"><a href="/users/{{ $user->id }}/unfollow">フォローを解除</a></p>
         @else
