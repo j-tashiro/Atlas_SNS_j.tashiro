@@ -21,7 +21,7 @@
     @if (auth()->user()->isFollowing($post->user_id)or(Auth::id()==$post->user_id))
             <tr>
                 <div class="post_content">
-                    <th><img src="{{ \Storage::url($post->user->image) }}"></th>
+                    <th><a href="/user/{{$post->user->id}}"><img src="{{ \Storage::url($post->user->image) }}"></a></th>
                     <th>{{ $post->user->username }}</th>
                     <td>{{ $post->post }}</td>
                     <td>{{ $post->created_at }}</td>
