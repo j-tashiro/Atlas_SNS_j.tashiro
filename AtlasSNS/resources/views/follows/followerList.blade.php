@@ -12,11 +12,15 @@
 </div>
 
 @foreach ($posts as $post)
-    <div class="follower_list">
-        <img src="{{ \Storage::url($post->user->image) }}">
-        {{ $post->user->username }}
-        {{ $post->post }}
-        {{ $post->created_at }}
+    <div class="follow_lists">
+        <div class="follow_list">
+            <img src="{{ \Storage::url($post->user->image) }}">
+                <div class="username_post">
+                    <p>{{ $post->user->username }}</p>
+                    <p>{{ $post->post }}</p>
+                </div>
+        </div>
+        <p>{{ $post->created_at }}</p>
     </div>
 @endforeach
 

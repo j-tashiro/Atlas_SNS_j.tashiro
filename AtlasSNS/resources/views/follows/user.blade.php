@@ -16,7 +16,7 @@
 </div>
 
 @foreach($posts as $post)
-    <div class="follow_list">
+    <div class="follow_lists">
         <img src="{{ \Storage::url($post->user->image) }}">
         {{ $post->user->username }}
         {{ $post->post }}

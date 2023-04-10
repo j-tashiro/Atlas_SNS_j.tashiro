@@ -15,20 +15,17 @@
 </div>
 
 @foreach ($posts as $post)
-    <div class="follow_list">
+    <div class="follow_lists">
         <!-- https://www.wakuwakubank.com/posts/377-laravel-relation-1/ -->
         <!-- $post->user->imageと$post->user->usernameのuserはpost.phpのuserメソッドを指してる -->
-        <div class="">
-        <img src="{{ \Storage::url($post->user->image) }}">
-        <div class="">
-        {{ $post->user->username }}
-        {{ $post->post }}
+        <div class="follow_list">
+            <img src="{{ \Storage::url($post->user->image) }}">
+                <div class="username_post">
+                    <p>{{ $post->user->username }}</p>
+                    <p>{{ $post->post }}</p>
+                </div>
         </div>
-        
-        </div>
-        
-        
-        {{ $post->created_at }}
+        <p>{{ $post->created_at }}</p>
     </div>
 @endforeach
 
