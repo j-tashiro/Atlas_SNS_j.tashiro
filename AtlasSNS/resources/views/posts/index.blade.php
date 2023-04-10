@@ -26,6 +26,7 @@
                     <td>{{ $post->post }}</td>
                     <td>{{ $post->created_at }}</td>
 
+                    @if (Auth::id()==$post->user_id)
                     <!-- 投稿の編集ボタン js-modal-openでscript.jsの$('.js-modal-open')にデータを送ってる-->
                     <td><a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="images/edit.png" alt="編集" width="50" height="50"></a></td>
 
@@ -33,6 +34,7 @@
                             <img src="images/trash-h.png" alt="削除" class="image" width="60" height="60">
                             <!-- <img src="images/trash.png" alt="削除"> -->
                         </a></td>
+                    @endif
                 </div>
             </tr>
 
