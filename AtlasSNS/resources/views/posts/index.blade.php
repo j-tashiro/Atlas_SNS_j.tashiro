@@ -27,10 +27,11 @@
                                 <p>{{ $post->post }}</p>
                             </div>
                     </div>
+                    <div class="">
                         <p>{{ $post->created_at }}</p>
 
                         @if (Auth::id()==$post->user_id)
-                        <div class="">
+                        <div class="update_delete">
                         <!-- 投稿の編集ボタン js-modal-openでscript.jsの$('.js-modal-open')にデータを送ってる-->
                         <td><a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="images/edit.png" alt="編集" width="50" height="50"></a></td>
 
@@ -40,6 +41,7 @@
                             </a></td>
                         </div>
                         @endif
+                    </div>
                 </div>
 
 
