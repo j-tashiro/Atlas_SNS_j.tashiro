@@ -7,8 +7,10 @@
 <div class="main_content">
     {!! Form::open(['url' => '/post/create']) !!}
         <div class="post_group">
-            <p>ユーザーアイコン</p>
+            <div class="user_post">
+            <img src="{{ \Storage::url(Auth::user()->image) }}" alt="ユーザーアイコン" width="64" height="64">
             {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form_post', 'placeholder' => '投稿内容を入力してください']) !!}
+            </div>
             {!! Form::image('images/post.png', 'img', ['class' => 'post_img']) !!}
         </div>
     {!! Form::close() !!}

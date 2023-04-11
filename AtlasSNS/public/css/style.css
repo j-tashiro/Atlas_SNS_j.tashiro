@@ -33,13 +33,16 @@ h1 img{
 /* 2023.04.08 index.blade.php */
 .post_group{
   display: flex;
+  justify-content: space-around;
+  max-width: 1000px;
+  width: 100%;
+}
+.user_post{
+  display: flex;
 }
 .form_post{
   border: none;
-}
-.form_post{
-  max-width: 900px;
-  width: 100%;
+  width: 400px;
 }
 .post_img{
   max-width: 100px;
@@ -295,7 +298,7 @@ h2{
 .follow_lists{
   display: flex;
   justify-content: space-between;
-  max-width: 1100px;
+  max-width: 900px;
   width: 100%;
   margin: 30px auto;
 }
