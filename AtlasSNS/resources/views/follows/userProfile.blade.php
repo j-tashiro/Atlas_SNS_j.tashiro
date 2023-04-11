@@ -3,6 +3,7 @@
 @section('content')
 
 <!-- 2023.04.06 他ユーザープロフィール -->
+<!-- 他プロフィール other profile -->
 <div class="main_content user_profile">
     <img src="{{ \Storage::url($user->image) }}">
     {{ $user->username }}
