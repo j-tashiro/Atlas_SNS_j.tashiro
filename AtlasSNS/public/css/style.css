@@ -33,16 +33,12 @@ h1 img{
 /* 2023.04.08 index.blade.php */
 .post_group{
   display: flex;
-  justify-content: space-around;
-  max-width: 1000px;
-  width: 100%;
 }
 .user_post{
   display: flex;
 }
 .form_post{
   border: none;
-  width: 400px;
 }
 .post_img{
   max-width: 100px;
@@ -258,7 +254,8 @@ label{
   margin-top: 40px;
 }
 .input{
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
   background-color: silver;
 }
 .profile_button{
