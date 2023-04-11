@@ -39,12 +39,12 @@ class FollowsController extends Controller
     }
 
     // 2023.04.06 他ユーザープロフィール
-    public function user($id)
+    public function userProfile($id)
     {
         // ->get();は繰り返す時(foreach)に使う
         // ->first();は単体で表示する時に使う
         $user = User::where('id', $id)->first();
         $post = Post::with('user')->where('user_id', $id)->get();
-        return view('follows.user',['user'=>$user,'posts'=>$post,]);
+        return view('follows.userProfile',['user'=>$user,'posts'=>$post,]);
     }
 }

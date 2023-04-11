@@ -68,7 +68,7 @@ Route::get('/followList','FollowsController@followList');
 Route::get('/followerList','FollowsController@followerList');
 
 // 2023.04.06 他ユーザープロフィール
-Route::get('/user/{id}','FollowsController@user');
+Route::get('/user/{id}','FollowsController@userProfile');
 
 // 2023.03.21 プロフィール表示
 Route::get('/profile','UsersController@profile');
