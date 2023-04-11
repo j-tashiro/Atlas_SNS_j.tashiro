@@ -26,6 +26,7 @@
             <div class="">
                 <h1><a href="/top"><img src="{{ asset('images/atlas.png') }}"></a></h1>
                     <p>{{ Auth::user()->username }}さん</p>
+                    <img src="{{ \Storage::url(Auth::user()->image) }}" alt="ユーザーアイコン" width="64" height="64">
                     <!-- http://taustation.com/laravel-login-user-acquisition/ -->
             </div>
         </div>
