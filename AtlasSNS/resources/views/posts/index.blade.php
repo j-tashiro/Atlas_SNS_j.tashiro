@@ -21,6 +21,7 @@
 @foreach ($posts as $post)
 <!-- 2023.04.07 ログインユーザーとフォローしているユーザーのつぶやきのみを表示 -->
     @if (auth()->user()->isFollowing($post->user_id)or(Auth::id()==$post->user_id))
+            <div class="follow_border">
                 <div class="post_content follow_lists">
                     <div class="follow_list">
                         <a href="/otherProfile/{{$post->user->id}}"><img src="{{ \Storage::url($post->user->image) }}"></a>
@@ -45,6 +46,7 @@
                         @endif
                     </div>
                 </div>
+            </div>
 
 
     <!-- モーダルの中身 -->
