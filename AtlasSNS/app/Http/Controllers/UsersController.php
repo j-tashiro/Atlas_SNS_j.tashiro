@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Validator;
 class UsersController extends Controller
 {
     // 2023.03.21 プロフィール編集
-    public function profile(){
+    public function userProfile(){
         $user = Auth::user();
-        return view('users.profile',['user' => $user]);
+        return view('users.userProfile',['user' => $user]);
     }
 
     // 2023.03.27 プロフィール編集 バリデーション

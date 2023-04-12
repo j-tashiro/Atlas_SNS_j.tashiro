@@ -9,7 +9,7 @@
         <!-- アットマークはコメントアウトしても無駄 超重要 -->
         @foreach ($users as $user)
             <div class="follow_image">
-                <a href="/user/{{$user->id}}"><img src="{{ \Storage::url($user->image) }}"></a>
+                <a href="/otherProfile/{{$user->id}}"><img src="{{ \Storage::url($user->image) }}"></a>
             </div>
         @endforeach
 </div>
