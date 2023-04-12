@@ -3,7 +3,7 @@
 @section('content')
 
 <!--  2023.03.21 プロフィール編集 -->
-{!! Form::open(['url' => '/profile/update']) !!}
+{!! Form::open(['url' => '/profileUpdate']) !!}
 {!! Form::hidden('id',$user->id) !!}
 
 

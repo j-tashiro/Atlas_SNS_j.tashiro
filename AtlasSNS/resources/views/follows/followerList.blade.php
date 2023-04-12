@@ -12,6 +12,7 @@
 </div>
 
 @foreach ($posts as $post)
+<div class="follow_border">
     <div class="follow_lists">
         <div class="follow_list">
             <a href="/otherProfile/{{$post->user->id}}"><img src="{{ \Storage::url($post->user->image) }}"></a>
@@ -22,6 +23,7 @@
         </div>
         <p>{{ $post->created_at }}</p>
     </div>
+</div>
 @endforeach
 
 @endsection

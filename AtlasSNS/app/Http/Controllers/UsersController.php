@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Validator;
 
 class UsersController extends Controller
 {
-    // 2023.03.21 プロフィール編集
     public function userProfile(){
         $user = Auth::user();
         return view('users.userProfile',['user' => $user]);
@@ -34,14 +33,14 @@ class UsersController extends Controller
             // 第3引数=.$data['mail']. .チェックの対象外にしたいデータがあるレコードの主キー.
             // 第4引数=mail チェックの対象外にしたいデータがあるレコードの主キーのカラム名
             'password' => 'required|confirmed|min:8|max:20|string',
-            'bio' => 'max:150|string',
-            'image' => '',
+            'bio' => 'nullable|max:150|string',
+            'image' => 'nullable',
         ]);
     }
 
 
 // 2023.03.27
-public function update(Request $request){
+public function profileUpdate(Request $request){
     if($request->isMethod('post')){
     $data = $request->input();
 

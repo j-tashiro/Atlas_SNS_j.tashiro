@@ -15,6 +15,7 @@
 </div>
 
 @foreach ($posts as $post)
+<div class="follow_border">
     <div class="follow_lists">
         <!-- https://www.wakuwakubank.com/posts/377-laravel-relation-1/ -->
         <!-- $post->user->imageと$post->user->usernameのuserはpost.phpのuserメソッドを指してる -->
@@ -27,6 +28,7 @@
         </div>
         <p>{{ $post->created_at }}</p>
     </div>
+</div>
 @endforeach
 
 @endsection

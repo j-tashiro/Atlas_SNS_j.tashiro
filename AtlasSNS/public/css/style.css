@@ -292,6 +292,9 @@ h2{
 .follow_image{
   margin-right: 20px;
 }
+.follow_border{
+  border-bottom: 1px solid #C0C0C0;
+}
 .follow_lists{
   display: flex;
   justify-content: space-between;
@@ -312,4 +315,5 @@ h2{
 }
 .username_post p{
   margin-top: 10px;
+  
 }

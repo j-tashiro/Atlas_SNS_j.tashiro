@@ -74,8 +74,8 @@ Route::get('/otherProfile/{id}','FollowsController@otherProfile');
 Route::get('/userProfile','UsersController@userProfile');
 
 // 2023.03.22 プロフィール編集
-Route::get('/profile/update','UsersController@update');
-Route::post('/profile/update','UsersController@update');
+Route::get('/profileUpdate','UsersController@profileUpdate');
+Route::post('/profileUpdate','UsersController@profileUpdate');
 
 
 
