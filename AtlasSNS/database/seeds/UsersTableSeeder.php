@@ -53,5 +53,53 @@ class UsersTableSeeder extends Seeder
             //2022.10.19 bcryptはパスワードを暗号化する
             'bio' => '中村 五郎です！'
         ]);
+
+        DB::table('users')->insert([
+            'username' => '佐藤 六郎',
+            'mail' => 'rokuro.sato@gmail.com',
+            'password' => bcrypt('password'),
+            //2022.10.19 bcryptはパスワードを暗号化する
+            'bio' => '佐藤 六郎です！'
+        ]);
+
+        DB::table('users')->insert([
+            'username' => 'A',
+            'mail' => 'AAA@gmail.com',
+            'password' => bcrypt('password'),
+            //2022.10.19 bcryptはパスワードを暗号化する
+            'bio' => 'A!'
+        ]);
+
+        DB::table('users')->insert([
+            'username' => 'B',
+            'mail' => 'BBB@gmail.com',
+            'password' => bcrypt('password'),
+            //2022.10.19 bcryptはパスワードを暗号化する
+            'bio' => 'B!'
+        ]);
+
+        DB::table('users')->insert([
+            'username' => 'C',
+            'mail' => 'CCC@gmail.com',
+            'password' => bcrypt('password'),
+            //2022.10.19 bcryptはパスワードを暗号化する
+            'bio' => 'C!'
+        ]);
+
+        DB::table('users')->insert([
+            'username' => 'D',
+            'mail' => 'DDD@gmail.com',
+            'password' => bcrypt('password'),
+            //2022.10.19 bcryptはパスワードを暗号化する
+            'bio' => 'D!'
+        ]);
+
+        DB::table('users')->insert([
+            'username' => 'E',
+            'mail' => 'EEE@gmail.com',
+            'password' => bcrypt('password'),
+            //2022.10.19 bcryptはパスワードを暗号化する
+            'bio' => 'E!'
+        ]);
     }
 }
