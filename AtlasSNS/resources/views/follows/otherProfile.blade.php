@@ -6,8 +6,8 @@
 <!-- 他プロフィール otherProfile -->
 <div class="main_content user_profile">
     <img src="{{ \Storage::url($user->image) }}">
-    {{ $user->username }}
-    {{ $user->bio }}
+    <p>name{{ $user->username }}</p>
+    <p>bio{{ $user->bio }}</p>
     @if (auth()->user()->isFollowing($user->id))
         <p class="btn red"><a href="/users/{{ $user->id }}/unfollow">フォローを解除</a></p>
         @else

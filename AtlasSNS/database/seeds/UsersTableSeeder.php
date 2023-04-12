@@ -12,8 +12,15 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        //
         //以下を追加します。
+        DB::table('users')->insert([
+            'username' => '田代 偽物',
+            'mail' => 'nisemono.tashiro@gmail.com',
+            'password' => bcrypt('password'),
+            //2022.10.19 bcryptはパスワードを暗号化する
+            'bio' => '偽物です！'
+        ]);
+
         DB::table('users')->insert([
             'username' => '田代 潤太郎',
             'mail' => 'juntaro.tashiro@gmail.com',
@@ -100,6 +107,22 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('password'),
             //2022.10.19 bcryptはパスワードを暗号化する
             'bio' => 'E!'
+        ]);
+
+        DB::table('users')->insert([
+            'username' => 'F',
+            'mail' => 'FFF@gmail.com',
+            'password' => bcrypt('password'),
+            //2022.10.19 bcryptはパスワードを暗号化する
+            'bio' => 'F!'
+        ]);
+
+        DB::table('users')->insert([
+            'username' => 'G',
+            'mail' => 'GGG@gmail.com',
+            'password' => bcrypt('password'),
+            //2022.10.19 bcryptはパスワードを暗号化する
+            'bio' => 'G!'
         ]);
     }
 }
