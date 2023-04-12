@@ -286,6 +286,7 @@ h2{
 .follow_content{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   margin-top: 20px;
 }
