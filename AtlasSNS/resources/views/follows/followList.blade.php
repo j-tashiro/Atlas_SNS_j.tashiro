@@ -19,7 +19,7 @@
         <!-- https://www.wakuwakubank.com/posts/377-laravel-relation-1/ -->
         <!-- $post->user->imageと$post->user->usernameのuserはpost.phpのuserメソッドを指してる -->
         <div class="follow_list">
-            <a href="/user/{{$post->user->id}}"><img src="{{ \Storage::url($post->user->image) }}"></a>
+            <a href="/otherProfile/{{$post->user->id}}"><img src="{{ \Storage::url($post->user->image) }}"></a>
                 <div class="username_post">
                     <p>{{ $post->user->username }}</p>
                     <p>{{ $post->post }}</p>

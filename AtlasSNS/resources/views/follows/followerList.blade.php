@@ -14,7 +14,7 @@
 @foreach ($posts as $post)
     <div class="follow_lists">
         <div class="follow_list">
-            <a href="/user/{{$post->user->id}}"><img src="{{ \Storage::url($post->user->image) }}"></a>
+            <a href="/otherProfile/{{$post->user->id}}"><img src="{{ \Storage::url($post->user->image) }}"></a>
                 <div class="username_post">
                     <p>{{ $post->user->username }}</p>
                     <p>{{ $post->post }}</p>
