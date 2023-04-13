@@ -316,5 +316,24 @@ h2{
 }
 .username_post p{
   margin-top: 10px;
-  
+}
+.other_profile{
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  margin: 30px auto;
+}
+.username_bio{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.other_username{
+  display: flex;
+  margin-top: 10px;
+}
+.other_bio{
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
 }
