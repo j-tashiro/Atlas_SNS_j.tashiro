@@ -323,6 +323,10 @@ h2{
   width: 100%;
   margin: 30px auto;
 }
+.other_profile img {
+  width: 64px;
+  height: 64px;
+}
 .username_bio{
   display: flex;
   flex-direction: column;
@@ -336,4 +340,8 @@ h2{
   display: flex;
   margin-top: 10px;
   align-items: center;
+}
+.follow_btn{
+  margin-left: 580px;
+  margin-top: 40px;
 }
