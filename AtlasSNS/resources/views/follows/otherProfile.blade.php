@@ -10,17 +10,18 @@
 
             <div class="username_bio">
 
-                <div class="other_username">
+                <div class="other_title">
                     <p>name</p>
-                    <p>{{ $user->username }}</p>
+                    <p class="other_bio">bio</p>
                 </div>
 
-                <div class="other_bio">
-                    <p>bio</p>
-                    <p>{{ $user->bio }}</p>
+                <div class="other_content">
+                    <p>{{ $user->username }}</p>
+                    <p class="other_bio">{{ $user->bio }}</p>
+                </div>
 
-                    </div>
             </div>
+
             <div class="follow_btn">
                     @if (auth()->user()->isFollowing($user->id))
                         <p class="btn red"><a href="/users/{{ $user->id }}/unfollow">フォローを解除</a></p>

@@ -317,31 +317,33 @@ h2{
 .username_post p{
   margin-top: 10px;
 }
+/* otherProfile.blade.php */
 .other_profile{
   display: flex;
   max-width: 1000px;
   width: 100%;
   margin: 30px auto;
 }
-.other_profile img {
-  width: 64px;
+.other_profile img{
   height: 64px;
+  width: 64px;
 }
 .username_bio{
   display: flex;
-  flex-direction: column;
+}
+.other_title{
+  margin-top: 10px;
   margin-left: 20px;
 }
-.other_username{
-  display: flex;
-  margin-top: 10px;
-}
 .other_bio{
-  display: flex;
-  margin-top: 10px;
-  align-items: center;
+  margin-top: 50px;
 }
+.other_content{
+  margin-top: 10px;
+  margin-left: 100px;
+}
+/*
 .follow_btn{
   margin-left: 580px;
   margin-top: 40px;
-}
+} */
