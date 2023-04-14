@@ -34,7 +34,7 @@ class UsersController extends Controller
             // 第4引数=mail チェックの対象外にしたいデータがあるレコードの主キーのカラム名
             'password' => 'required|confirmed|min:8|max:20|string',
             'bio' => 'nullable|max:150|string',
-            'image' => 'nullable',
+            'image' => '',
         ]);
     }
 
@@ -45,6 +45,8 @@ public function profileUpdate(Request $request){
     $data = $request->input();
 
     $validator = $this->validator($data);
+
+    // dd($request["image"]); //ここがnullだとエラーになる？
 
     // バリデーションに引っかかった場合
     if($validator->fails()){

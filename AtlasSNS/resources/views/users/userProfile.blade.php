@@ -2,8 +2,8 @@
 
 @section('content')
 
-<!--  2023.03.21 プロフィール編集 -->
-{!! Form::open(['url' => '/profileUpdate']) !!}
+<!-- 'files' => 'true'がenctype属性 -->
+{!! Form::open(['url' => '/profileUpdate',]) !!}
 {!! Form::hidden('id',$user->id) !!}
 
 
