@@ -66,7 +66,7 @@ public function profileUpdate(Request $request){
         // https://qiita.com/rope19181/items/931968e9e40d2dcad690
         // $image = $request->file("image")->getClientOriginalName();でファイル名のみを取得している
         $image = $request->file("image")->getClientOriginalName();
-        $path = $request->file("image")->storeAs("public/album_covers", $filenameToStore);
+        $request->file("image")->storeAs("public", $image);
 
         user::where('id','=', $id)->update([
             'username' => $username,
