@@ -32,16 +32,31 @@ h1 img{
 
 
 /* 2023.04.08 index.blade.php */
-.post_group{
+.main_content{
   display: flex;
 }
+.post_group{
+  display: flex;
+  margin-left: 80px;
+}
 .user_post{
+  display: flex;
+  align-items: center;
+}
+.form_post{
+  margin-left: 20px;
+  width: 700px;
+  height: 70px;
+  border: none;
+}
+/* .user_post{
   display: flex;
 }
 .form_post{
   border: none;
-}
+} */
 .post_img{
+  padding-top: 50px;
   max-width: 100px;
   width: 100%;
 }
@@ -158,9 +173,6 @@ header{
 #side-bar{
   flex: 0 0 19%;
   border-left: 1px solid #727272;
-}
-#confirm p{
-  
 }
 .side_bar{
   margin-left: 20px;
