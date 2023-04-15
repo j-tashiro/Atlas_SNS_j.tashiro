@@ -199,7 +199,7 @@ header{
 
 
 
-/* 2022年10月29日 */
+/* 2022年10月29日 アコーディオンメニュー*/
 .menu_btn{
   width: 100px;
   height: 100px;
@@ -220,13 +220,10 @@ header{
   transition: 0.5s ease;
   transform: translate(-50%, -40%) rotate(135deg);
 }
-
 .inn.is-open{
   top: 60%;
   transform: translate(-50%, -60%) rotate(-45deg);
 }
-
-
 .menu{
   position: absolute;
   top: 60px;
@@ -238,7 +235,6 @@ header{
   pointer-events: none;
   transform: translateY(-30px);
 }
-
 .menu{
   opacity: 1;
   transform: translateY(0);
