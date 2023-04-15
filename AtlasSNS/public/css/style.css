@@ -156,17 +156,20 @@ header{
   flex: 0 0 19%;
   border-left: 1px solid #727272;
 }
-#confirm{
-  /* margin: 20px; */
+#confirm p{
+  
 }
-.follows_count{
+.side_bar{
+  margin-left: 20px;
+}
+.follow_count{
   display: flex;
 }
-.followers_count{
-  display: flex;
+.count_content{
+  margin-right: 20px;
 }
-.search_btn{
-  border-top: 1px solid #727272;
+.followList_btn a{
+  text-align: right;
 }
 
 

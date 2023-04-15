@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- 'files' => 'true'がenctype属性 -->
-{!! Form::open(['url' => '/profileUpdate',]) !!}
+{!! Form::open(['url' => '/profileUpdate','route' => 'upload', 'method' => 'post', 'enctype' => 'multipart/form-data']) !!}
 {!! Form::hidden('id',$user->id) !!}
 
 

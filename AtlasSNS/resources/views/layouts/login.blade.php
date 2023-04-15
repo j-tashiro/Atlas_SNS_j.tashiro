@@ -55,50 +55,38 @@
 
         </div>
 
-
-            <div id="confirm">
-
-            <a href="/userProfile">プロフィール編集</a>
-            <a href="/logout">ログアウト</a>
-
-                <p>{{ Auth::user()->username }}さんの</p>
+        <div id="confirm">
+                <a href="/userProfile">プロフィール編集</a>
+                <a href="/logout">ログアウト</a>
+            <div class="side_bar">
                 <br>
-                <div class="follows_count">
-                <p>フォロー数</p>
-                <!-- 2023.03.30 内容を理解してないのにできてしまった -->
-                <!-- Redmine #1478の二枚目の画像を参考にした -->
-                <p>{{ Auth::user()->follows()->count() }}名</p>
-                <p></p>
-                </div>
-
+                    <p>{{ Auth::user()->username }}さんの</p>
                 <br>
-
-                <p class="btn"><a href="/followList">フォローリスト</a></p>
-
+                    <div class="follow_count">
+                        <p class="count_content">フォロー数</p>
+                        <!-- 2023.03.30 内容を理解してないのにできてしまった -->
+                        <!-- Redmine #1478の二枚目の画像を参考にした -->
+                        <p>{{ Auth::user()->follows()->count() }}名</p>
+                    </div>
                 <br>
-
-                <div class="followers_count">
-                <p>フォロワー数</p>
-                <!-- 2023.03.30 内容を理解してないのにできてしまった -->
-                <p>{{ Auth::user()->followers()->count() }}名</p>
-                <p></p>
-                </div>
-
+                    <p class="btn followList_btn"><a href="/followList">フォローリスト</a></p>
                 <br>
-
-                <p class="btn"><a href="/followerList">フォロワーリスト</a></p>
-
+                    <div class="follow_count">
+                        <p class="count_content">フォロワー数</p>
+                        <p>{{ Auth::user()->followers()->count() }}名</p>
+                    </div>
+                <br>
+                    <p class="btn followList_btn"><a href="/followerList">フォロワーリスト</a></p>
                 <br>
                 <br>
                 <br>
-
-                <div class="search_btn">
-                    <br>
-                    <p class="btn"><a href="/userSearch">ユーザー検索</a></p>
-                </div>
+                    <div class="search_btn">
+                        <br>
+                        <p class="btn"><a href="/userSearch">ユーザー検索</a></p>
+                    </div>
 
             </div>
-
+        </div>
         </div>
     </div>
 
