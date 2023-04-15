@@ -64,6 +64,7 @@ public function profileUpdate(Request $request){
         // $image = $request->input('image');
         // 画像だけ読み込み方や更新の仕方が違う
         // https://qiita.com/rope19181/items/931968e9e40d2dcad690
+        // $image = $request->file("image")->getClientOriginalName();でファイル名のみを取得している
         $image = $request->file("image")->getClientOriginalName();
         $path = $request->file("image")->storeAs("public/album_covers", $filenameToStore);
 
