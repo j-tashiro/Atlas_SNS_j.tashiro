@@ -34,7 +34,6 @@
                         <!-- https://b-risk.jp/blog/2021/11/accordion/ -->
                         <div class="">
                             <button type="button" class="menu_btn">
-                                <br>
                                 <span class="inn"></span>
                             </button>
 

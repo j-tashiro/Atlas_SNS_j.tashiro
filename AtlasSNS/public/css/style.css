@@ -40,6 +40,7 @@ header{
 .header_right{
   display: flex;
   align-items: center;
+  margin-right: 20px;
 }
 /* 2023.04.08 index.blade.php */
 .main_content{
@@ -200,7 +201,6 @@ header{
 
 /* 2022年10月29日 */
 .menu_btn{
-  /* position: absolute; */
   width: 60px;
   height: 60px;
   top: 10px;
@@ -214,7 +214,7 @@ header{
   display: block;
   content: "";
   top: 40%;
-  left: 80%;
+  left: 50%;
   width: 15px;
   height: 15px;
   border-top: 1px solid #000;
