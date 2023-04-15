@@ -34,7 +34,7 @@ class UsersController extends Controller
             // 第4引数=mail チェックの対象外にしたいデータがあるレコードの主キーのカラム名
             'password' => 'required|confirmed|min:8|max:20|string',
             'bio' => 'nullable|max:150|string',
-            'image' => '',
+            'image' => 'nullable|file|mimes:jpeg,png,bmp,gif,svg',
         ]);
     }
 
@@ -45,8 +45,6 @@ public function profileUpdate(Request $request){
     $data = $request->input();
 
     $validator = $this->validator($data);
-
-    // dd($request["image"]); //ここがnullだとエラーになる？
 
     // バリデーションに引っかかった場合
     if($validator->fails()){
@@ -62,7 +60,7 @@ public function profileUpdate(Request $request){
         $password = $request->input('password');
         $bio = $request->input('bio');
         // $image = $request->input('image');
-        // 画像だけ読み込み方や更新の仕方が違う
+        // 画像だけ読み込み方や更新の仕方が違う→画像は画像データと画像に
         // https://qiita.com/rope19181/items/931968e9e40d2dcad690
         // $image = $request->file("image")->getClientOriginalName();でファイル名のみを取得している
         $image = $request->file("image")->getClientOriginalName();
