@@ -28,19 +28,10 @@
                     <p>{{ Auth::user()->username }}さん</p>
                     <img src="{{ \Storage::url(Auth::user()->image) }}" alt="ユーザーアイコン">
                     <!-- http://taustation.com/laravel-login-user-acquisition/ -->
-            </div>
-        </div>
-    </header>
 
-    <div id="row">
-        <div id="container">
-            @yield('content')
-        </div >
-        <div id="side-bar">
 
-        <!--  2022年10月29日 アコーディオンメニュー -->
-                <!-- https://b-risk.jp/blog/2021/11/accordion/ -->
-        <div class="">
+
+                    <div class="">
                 <button type="button" class="menu_btn ">
                     <span class="inn"></span>
                 </button>
@@ -52,8 +43,23 @@
                             <li><a href="/logout">ログアウト</a></li>
                         </ul>
                     </nav>
+                    </div>
 
+
+
+                </div>
         </div>
+    </header>
+
+    <div id="row">
+        <div id="container">
+            @yield('content')
+        </div >
+        <div id="side-bar">
+
+        <!--  2022年10月29日 アコーディオンメニュー -->
+                <!-- https://b-risk.jp/blog/2021/11/accordion/ -->
+
 
         <div id="confirm">
                 <a href="/userProfile">プロフィール編集</a>
@@ -80,12 +86,11 @@
                 <br>
                 <br>
                 <br>
-                    <div class="search_btn">
-                        <br>
-                        <p class="btn"><a href="/userSearch">ユーザー検索</a></p>
-                    </div>
-
             </div>
+                <div class="search_btn">
+                    <br>
+                    <p class="btn btn_center"><a href="/userSearch">ユーザー検索</a></p>
+                </div>
         </div>
         </div>
     </div>
