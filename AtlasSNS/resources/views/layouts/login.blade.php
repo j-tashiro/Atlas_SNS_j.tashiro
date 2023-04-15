@@ -23,31 +23,31 @@
 
     <header>
         <div class="header_content" >
-            <div class="">
-                <h1><a href="/top"><img src="{{ asset('images/atlas.png') }}"></a></h1>
-                    <p>{{ Auth::user()->username }}さん</p>
-                    <img src="{{ \Storage::url(Auth::user()->image) }}" alt="ユーザーアイコン">
+            <h1><a href="/top"><img src="{{ asset('images/atlas.png') }}"></a></h1>
+                <div class="header_right">
                     <!-- http://taustation.com/laravel-login-user-acquisition/ -->
+                    <p>{{ Auth::user()->username }}さん</p>
 
 
 
-                    <div class="">
-                <button type="button" class="menu_btn ">
-                    <span class="inn"></span>
-                </button>
+                        <div class="">
+                            <button type="button" class="menu_btn ">
+                                <span class="inn"></span>
+                            </button>
 
-                    <nav class="menu">
-                        <ul>
-                            <li><a href="/top">HOME</a></li>
-                            <li><a href="/userProfile">プロフィール編集</a></li>
-                            <li><a href="/logout">ログアウト</a></li>
-                        </ul>
-                    </nav>
-                    </div>
+                            <nav class="menu">
+                                <ul>
+                                    <li><a href="/top">HOME</a></li>
+                                    <li><a href="/userProfile">プロフィール編集</a></li>
+                                    <li><a href="/logout">ログアウト</a></li>
+                                </ul>
+                            </nav>
+                        </div>
 
 
 
-                </div>
+                    <img src="{{ \Storage::url(Auth::user()->image) }}" alt="ユーザーアイコン">
+            </div>
         </div>
     </header>
 

@@ -150,8 +150,12 @@ header{
 }
 .header_content{
   display: flex;
+  justify-content: space-between;
 }
-
+.header_right{
+  display: flex;
+  align-items: center;
+}
 
 /* main content */
 #row{
