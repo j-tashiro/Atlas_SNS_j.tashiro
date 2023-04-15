@@ -30,8 +30,11 @@
 
 
 
+                        <!-- 2023年4月16日 アコーディオンメニュー -->
+                        <!-- https://b-risk.jp/blog/2021/11/accordion/ -->
                         <div class="">
-                            <button type="button" class="menu_btn ">
+                            <button type="button" class="menu_btn">
+                                <br>
                                 <span class="inn"></span>
                             </button>
 
@@ -55,37 +58,33 @@
         <div id="container">
             @yield('content')
         </div >
-        <div id="side-bar">
+            <div id="side-bar">
 
-        <!--  2022年10月29日 アコーディオンメニュー -->
-                <!-- https://b-risk.jp/blog/2021/11/accordion/ -->
-
-
-        <div id="confirm">
-                <a href="/userProfile">プロフィール編集</a>
-                <a href="/logout">ログアウト</a>
-            <div class="side_bar">
-                <br>
-                    <p>{{ Auth::user()->username }}さんの</p>
-                <br>
-                    <div class="follow_count">
-                        <p class="count_content">フォロー数</p>
-                        <!-- Redmine #1478の二枚目の画像を参考にした -->
-                        <p>{{ Auth::user()->follows()->count() }}名</p>
+                <div id="confirm">
+                        <a href="/userProfile">プロフィール編集</a>
+                        <a href="/logout">ログアウト</a>
+                    <div class="side_bar">
+                        <br>
+                            <p>{{ Auth::user()->username }}さんの</p>
+                        <br>
+                            <div class="follow_count">
+                                <p class="count_content">フォロー数</p>
+                                <!-- Redmine #1478の二枚目の画像を参考にした -->
+                                <p>{{ Auth::user()->follows()->count() }}名</p>
+                            </div>
+                        <br>
+                            <p class="btn followList_btn"><a href="/followList">フォローリスト</a></p>
+                        <br>
+                            <div class="follow_count">
+                                <p class="count_content">フォロワー数</p>
+                                <p>{{ Auth::user()->followers()->count() }}名</p>
+                            </div>
+                        <br>
+                            <p class="btn followList_btn"><a href="/followerList">フォロワーリスト</a></p>
+                        <br>
+                        <br>
+                        <br>
                     </div>
-                <br>
-                    <p class="btn followList_btn"><a href="/followList">フォローリスト</a></p>
-                <br>
-                    <div class="follow_count">
-                        <p class="count_content">フォロワー数</p>
-                        <p>{{ Auth::user()->followers()->count() }}名</p>
-                    </div>
-                <br>
-                    <p class="btn followList_btn"><a href="/followerList">フォロワーリスト</a></p>
-                <br>
-                <br>
-                <br>
-            </div>
                 <div class="search_btn">
                     <br>
                     <p class="btn btn_center"><a href="/userSearch">ユーザー検索</a></p>
