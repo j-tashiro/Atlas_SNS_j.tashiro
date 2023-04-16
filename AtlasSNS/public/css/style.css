@@ -65,6 +65,9 @@ header{
   max-width: 100px;
   width: 100%;
 }
+.update_delete{
+  display: flex;
+}
 
 
 
