@@ -16,7 +16,7 @@ class PostsController extends Controller
     //use App\Post;のPostとPost::のPostが連動している
     public function read()
     {
-        $post = Post::get();
+        $post = Post::get()->sortByDesc('created_at');
         return view('posts.index',['posts'=>$post]);
     }
 

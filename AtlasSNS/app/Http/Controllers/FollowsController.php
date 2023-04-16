@@ -24,7 +24,7 @@ class FollowsController extends Controller
         // Post::with('user')のuserはPost.phpのuserメソッドと連動している
         // ->whereIn('user_id', $following_id)は
         // 全てのid(user_id)とフォローしてるid($following_id)のなかで被ってるidだけgetしてる
-        $posts = Post::with('user')->whereIn('user_id', $following_id)->get();
+        $posts = Post::with('user')->whereIn('user_id', $following_id)->get()->sortByDesc('created_at');
         $users = User::whereIn('id', $following_id)->get();
         return view('follows.followList',['users'=>$users,'posts'=>$posts]);
     }
@@ -33,7 +33,7 @@ class FollowsController extends Controller
     public function followerList()
     {
         $followed_id = Auth::user()->followers()->pluck('following_id');
-        $posts = Post::with('user')->whereIn('user_id', $followed_id)->get();
+        $posts = Post::with('user')->whereIn('user_id', $followed_id)->get()->sortByDesc('created_at');
         $users = User::whereIn('id', $followed_id)->get();
         return view('follows.followerList',['users'=>$users,'posts'=>$posts]);
     }
@@ -44,7 +44,7 @@ class FollowsController extends Controller
         // ->get();は繰り返す時(foreach)に使う
         // ->first();は単体で表示する時に使う
         $user = User::where('id', $id)->first();
-        $post = Post::with('user')->where('user_id', $id)->get();
+        $post = Post::with('user')->where('user_id', $id)->get()->sortByDesc('created_at');
         return view('follows.otherProfile',['user'=>$user,'posts'=>$post,]);
     }
 }
