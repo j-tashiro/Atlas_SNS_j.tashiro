@@ -348,6 +348,8 @@ h2{
 }
 .username_post p{
   margin-top: 10px;
+  max-width: 600px;
+  width: 100%;
 }
 /* otherProfile.blade.php */
 .other_profile{
