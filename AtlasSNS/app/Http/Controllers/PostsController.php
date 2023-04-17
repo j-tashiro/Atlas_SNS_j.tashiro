@@ -20,6 +20,11 @@ class PostsController extends Controller
         return view('posts.index',['posts'=>$post]);
     }
 
+    protected function validator(array $data){
+        return Validator::make($data, [
+            'post' => 'required|min:1|max:150|string',
+        ]);
+    }
     // ログインしてるユーザー(id)と新しい投稿(post)を紐づける必要がある
     public function create(Request $request)
     {
