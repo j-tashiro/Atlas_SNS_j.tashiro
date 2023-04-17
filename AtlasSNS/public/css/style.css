@@ -125,6 +125,10 @@ header{
   position: absolute;
   transform: translate(-50%,-50%);
 }
+/* 拡大・縮小を禁止し、サイズを固定する */
+textarea {
+  resize: none;
+}
 .modal_post{
   width: 100%;
   height: 100%;
