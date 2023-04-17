@@ -75,7 +75,6 @@ header{
 .post_delete{
   position: relative;
 }
-/* trash.png=img:nth-child(2) */
 .post_delete img:nth-child(1){
   position: absolute;
   opacity: 0;
@@ -88,7 +87,6 @@ header{
   /* top: 50%;
   left: 50%; */
 }
-/* trash.png=img:nth-child(2) */
 .post_delete img:nth-child(2){
   position: absolute;
   opacity: 1;
@@ -149,9 +147,6 @@ header{
 .search_img{
   max-width: 100px;
   width: 100%;
-}
-.search_Word{
-  
 }
 .image_username{
   display: flex;
