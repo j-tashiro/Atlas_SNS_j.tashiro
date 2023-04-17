@@ -68,10 +68,13 @@
                 <!-- 49行目のnameのidとPostsController.phpの49行目とリンクしている -->
                 <!-- 49行目のmodal_idはscript.jsの28行目のmodal_idから受け取ったもの -->
                 <input type="hidden" name="id" class="modal_id">
-                <input type="image" src="images/edit.png" width="60" height="60" >
+                <div class="close_layout">
+                    <input type="image" src="images/edit.png" width="60" height="60" >
+                    <a class="js-modal-close" href="">閉じる</a>
+                </div>
                 {{ csrf_field() }}
             </form>
-            <a class="js-modal-close" href="">閉じる</a>
+            <!-- <a class="js-modal-close" href="">閉じる</a> -->
         </div>
     </div>
 
