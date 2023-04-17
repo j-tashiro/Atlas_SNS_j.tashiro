@@ -68,22 +68,38 @@ header{
 .update_delete{
   display: flex;
   justify-content: end;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   max-width: 900px;
   width: 100%;
 }
-
-
-
-/* 2023.04.11 修正の必要あり */
-.post_content{
-  
+.post_delete{
+  position: relative;
 }
-.post_content.img{
-  background-image: url(images/trash-h.png);
+/* trash.png=img:nth-child(2) */
+.post_delete img:nth-child(1){
+  position: absolute;
+  opacity: 0;
+  /* top: 50%;
+  left: 50%; */
 }
-.post_content.img a img:hover{
-  background-image: url(images/trash.png);
+.post_delete:hover img:nth-child(1){
+  position: absolute;
+  opacity: 1;
+  /* top: 50%;
+  left: 50%; */
+}
+/* trash.png=img:nth-child(2) */
+.post_delete img:nth-child(2){
+  position: absolute;
+  opacity: 1;
+  /* top: 50%;
+  left: 50%; */
+}
+.post_delete:hover img:nth-child(2){
+  position: absolute;
+  opacity: 0;
+  /* top: 50%;
+  left: 50%; */
 }
 
 

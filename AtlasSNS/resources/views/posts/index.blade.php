@@ -41,10 +41,13 @@
                         <!-- 投稿の編集ボタン js-modal-openでscript.jsの$('.js-modal-open')にデータを送ってる-->
                         <a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="images/edit.png" alt="編集" width="50" height="50"></a>
 
-                        <a class="btn-danger" href="/post/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">
-                            <img src="images/trash-h.png" alt="削除" class="image" width="60" height="60">
-                            <!-- <img src="images/trash.png" alt="削除"> -->
-                        </a>
+                        <div class="post_delete">
+                            <a class="btn-danger" href="/post/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">
+                                <img src="images/trash.png" alt="削除"  width="60" height="60">
+                                <img src="images/trash-h.png" alt="削除"  width="60" height="60">
+                            </a>
+                        </div>
+
                     </div>
                 @endif
 
