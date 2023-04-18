@@ -31,6 +31,7 @@
 
 
                         <!-- 2023年4月16日 アコーディオンメニュー -->
+                        <!-- https://www.omakase.net/blog/2022/05/css-accordion.html -->
                         <div class="accordion_content">
                             <input id="block-01" type="checkbox" class="toggle">
                                 <label class="Label" for="block-01"></label>
