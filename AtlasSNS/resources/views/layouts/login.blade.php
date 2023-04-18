@@ -60,8 +60,6 @@
             <div id="side-bar">
 
                 <div id="confirm">
-                        <a href="/userProfile">プロフィール編集</a>
-                        <a href="/logout">ログアウト</a>
                     <div class="side_bar">
                         <br>
                             <p>{{ Auth::user()->username }}さんの</p>

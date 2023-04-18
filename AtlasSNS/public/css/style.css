@@ -252,6 +252,7 @@ textarea {
   transform: translate(-50%, -40%) rotate(135deg);
 }exit
 .inn.is-open{
+  display: block;
   top: 60%;
   transform: translate(-50%, -60%) rotate(-45deg);
 }
