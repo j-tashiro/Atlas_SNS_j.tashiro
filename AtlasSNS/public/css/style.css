@@ -263,6 +263,8 @@ textarea {
 .accordion_menu {		/*本文*/
 	height: 0;
 	overflow: hidden;
+  /* position: absolute;は単体で使うこともできる
+  その場合はパソコンの画面サイズが親要素になる */
   position: absolute;
   top: 12%;
   right: 0;
