@@ -275,6 +275,7 @@ textarea {
 }
 .accordion_menu li a{
   display: block;
+  color: #727272;
 }
 .accordion_menu li:hover{
   background:#000055;
