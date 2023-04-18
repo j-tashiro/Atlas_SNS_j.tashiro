@@ -230,56 +230,50 @@ textarea {
 
 
 
-/* 2022年10月29日 アコーディオンメニュー*/
-.menu_btn{
-  width: 100px;
-  height: 100px;
-  top: 10px;
-  right: 70px;
-  background-color: #186AC9;
-  border: none;
+/* 2023年4月18日 アコーディオンメニュー*/
+/*ベース*/
+.toggle {
+	display: none;
 }
-.inn{
-  display: block;
-  content: "";
-  top: 40%;
-  left: 50%;
-  width: 15px;
-  height: 15px;
-  border-top: 1px solid #000;
-  border-right: 1px solid #000;
-  transition: 0.5s ease;
-  transform: translate(-50%, -40%) rotate(135deg);
-}exit
-.inn.is-open{
-  display: block;
-  top: 60%;
-  transform: translate(-50%, -60%) rotate(-45deg);
+.Label {		/*タイトル*/
+	padding: 10px;
+  width: 10px;
+	display: block;
+	background:#186AC9;
+	background:#019ac6;
 }
-.menu{
-  position: absolute;
-  top: 60px;
-  width: 20%;
-  right: 0px;
-  background-color: white;
-  opacity: 0;
-  transition: .3s ease-in-out;
-  pointer-events: none;
-  transform: translateY(-30px);
+.Label::before{		/*矢印*/
+	content:"";
+	width: 6px;
+	height: 6px;
+	border-top: 2px solid #fff;
+	border-right: 2px solid #fff;
+	-webkit-transform: rotate(45deg);
+	position: absolute;
+	top:calc( 50% - 3px );
+	right: 20px;
+	transform: rotate(135deg);
 }
-.menu{
-  opacity: 1;
-  transform: translateY(0);
+.Label,
+.content {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transform: translateZ(0);
+	transition: all 0.3s;
 }
-.menu li {
-  height: 60px;
-  border-top: 1px solid #000;
-  display: none;
-  text-align: center;
-  border-bottom: 1px solid #000;
+.content {		/*本文*/
+	height: 0;
+	padding:0 20px;
+	overflow: hidden;
 }
-
-
+.toggle:checked + .Label + .content {	/*開閉時*/
+	height: auto;
+	padding:20px ;
+	transition: all .3s;
+}
+.toggle:checked + .Label::before {
+	transform: rotate(-45deg) !important;
+}
 
 
 

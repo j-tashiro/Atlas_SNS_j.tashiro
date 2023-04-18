@@ -5,9 +5,9 @@
 $('.inn').click(function(){
     $(this).toggleClass('is-open');
     if($(this).hasClass('is-open')){
-        $('.menu ul li').fadeIn().addClass('is-open')}
+        $('.menu').fadeIn().addClass('is-open')}
     else{
-        $('.menu ul li').fadeOut().removeClass('is-open')}
+        $('.menu').fadeOut().removeClass('is-open')}
     // $(this).siblings('.menu').toggleClass('is-open');
 });
 

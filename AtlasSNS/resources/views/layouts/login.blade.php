@@ -31,19 +31,18 @@
 
 
                         <!-- 2023年4月16日 アコーディオンメニュー -->
-                        <!-- https://b-risk.jp/blog/2021/11/accordion/ -->
-                        <div class="">
-                            <button type="button" class="menu_btn">
-                                <span class="inn"></span>
-                            </button>
-
-                            <nav class="menu">
-                                <ul>
-                                    <li><a href="/top">HOME</a></li>
-                                    <li><a href="/userProfile">プロフィール編集</a></li>
-                                    <li><a href="/logout">ログアウト</a></li>
-                                </ul>
-                            </nav>
+                        <div class="accordion">
+                            <input id="block-01" type="checkbox" class="toggle">
+                                <label class="Label" for="block-01"></label>
+                                    <div class="content">
+                                        <nav class="menu">
+                                            <ul>
+                                                <li><a href="/top">HOME</a></li>
+                                                <li><a href="/userProfile">プロフィール編集</a></li>
+                                                <li><a href="/logout">ログアウト</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
                         </div>
 
 
