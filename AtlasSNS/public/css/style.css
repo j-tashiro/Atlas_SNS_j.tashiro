@@ -264,11 +264,23 @@ textarea {
 	height: 0;
 	overflow: hidden;
   position: absolute;
+  top: 12%;
   right: 0;
   width: 20%;
 }
+.accordion_menu li{
+  line-height: 85px;
+  background: #fff;
+  border: 1px solid black;
+}
+.accordion_menu li a{
+  display: block;
+}
 .accordion_menu li:hover{
   background:#000055;
+}
+.accordion_menu li a:hover{
+  color: #fff;
 }
 .toggle:checked + .Label + .accordion_menu {	/*開閉時*/
 	height: auto;
