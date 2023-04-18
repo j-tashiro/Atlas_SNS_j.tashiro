@@ -240,7 +240,6 @@ textarea {
   width: 10px;
 	display: block;
 	background:#186AC9;
-	background:#019ac6;
 }
 .Label::before{		/*矢印*/
 	content:"";
@@ -255,20 +254,25 @@ textarea {
 	transform: rotate(135deg);
 }
 .Label,
-.content {
+.accordion_menu {
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	transform: translateZ(0);
 	transition: all 0.3s;
 }
-.content {		/*本文*/
+.accordion_menu {		/*本文*/
 	height: 0;
-	padding:0 20px;
 	overflow: hidden;
+  position: absolute;
+  right: 0;
+  width: 20%;
 }
-.toggle:checked + .Label + .content {	/*開閉時*/
+.accordion_menu li:hover{
+  background:#000055;
+}
+.toggle:checked + .Label + .accordion_menu {	/*開閉時*/
 	height: auto;
-	padding:20px ;
+  text-align: center;
 	transition: all .3s;
 }
 .toggle:checked + .Label::before {

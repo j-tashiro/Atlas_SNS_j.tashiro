@@ -31,11 +31,11 @@
 
 
                         <!-- 2023年4月16日 アコーディオンメニュー -->
-                        <div class="accordion">
+                        <div class="accordion_content">
                             <input id="block-01" type="checkbox" class="toggle">
                                 <label class="Label" for="block-01"></label>
-                                    <div class="content">
-                                        <nav class="menu">
+                                    <div class="accordion_menu">
+                                        <nav>
                                             <ul>
                                                 <li><a href="/top">HOME</a></li>
                                                 <li><a href="/userProfile">プロフィール編集</a></li>
