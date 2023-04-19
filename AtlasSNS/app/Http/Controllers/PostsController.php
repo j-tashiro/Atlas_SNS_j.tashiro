@@ -22,7 +22,7 @@ class PostsController extends Controller
 
     protected function validator(array $data){
         return Validator::make($data, [
-            'post' => 'required|min:1|max:150|string',
+            'post' => 'min:1|max:150|string',
         ]);
     }
     // ログインしてるユーザー(id)と新しい投稿(post)を紐づける必要がある
