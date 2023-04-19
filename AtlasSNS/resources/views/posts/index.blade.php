@@ -4,6 +4,10 @@
 @section('content')
 <h2></h2>
 
+@foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+@endforeach
+
 <div class="main_content">
     {!! Form::open(['url' => '/post/create']) !!}
         <div class="post_group">

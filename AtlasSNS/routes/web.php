@@ -79,10 +79,6 @@ Route::post('/profileUpdate','UsersController@profileUpdate');
 
 
 
-
-
-
-
 // 2023.03.10 フォローボタン
 // ログイン状態
 
