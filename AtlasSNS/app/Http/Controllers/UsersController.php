@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use Illuminate\Support\Facades\Validator;
 
-
 class UsersController extends Controller
 {
     public function userProfile(){
