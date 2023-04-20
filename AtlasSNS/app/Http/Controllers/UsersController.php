@@ -121,8 +121,6 @@ public function profileUpdate(Request $request){
         }
     }
 
-
-
 }
 
 
