@@ -6,8 +6,9 @@
 <div class="main_content">
     <div class="search_content">
         {!! Form::open(['url' => '/userSearch']) !!}
-            <div class="search_group"><!--required 意味 必要-->
-                {!! Form::input('text', 'searchWord', null, ['required', 'class' => 'form_search', 'placeholder' => 'ユーザー名']) !!}
+            <div class="search_group"><!--required 意味 必要 この場合入力しないと駄目という意味-->
+                <!-- {!! Form::input('text', 'searchWord', '', ['required', 'class' => 'form_search', 'placeholder' => 'ユーザー名']) !!} -->
+                {!! Form::input('text', 'searchWord', '', ['class' => 'form_search', 'placeholder' => 'ユーザー名']) !!}
                 <!-- <input type="text" name="searchWord" value="" class="form_search" placeholder="ユーザー名"> -->
                 {!! Form::image('images/post.png', 'img', ['class' => 'search_img']) !!}
                 <!-- <input type="image" src="images/post.png" class="search_img" name="img" > -->
