@@ -59,7 +59,7 @@ public function profileUpdate(Request $request){
         $password = $request->input('password');
         $bio = $request->input('bio');
         // $image = $request->input('image');
-        // 画像だけ読み込み方や更新の仕方が違う→画像は画像データと画像に
+        // 画像だけ読み込み方や更新の仕方が違う→画像は画像データと画像につける名前が必要
         // https://qiita.com/rope19181/items/931968e9e40d2dcad690
         // $image = $request->file("image")->getClientOriginalName();でファイル名のみを取得している
         $image = $request->file("image")->getClientOriginalName();
