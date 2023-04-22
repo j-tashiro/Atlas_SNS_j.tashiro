@@ -30,7 +30,6 @@ return [
         'array'   => 'The :attribute must have between :min and :max items.',
     ],
     'boolean'              => 'The :attribute field must be true or false.',
-    'confirmed'            => 'The :attribute confirmation does not match.',
     'date'                 => 'The :attribute is not a valid date.',
     'date_format'          => 'The :attribute does not match the format :format.',
     'different'            => 'The :attribute and :other must be different.',
@@ -68,7 +67,7 @@ return [
     'numeric'              => 'The :attribute must be a number.',
     'present'              => 'The :attribute field must be present.',
     'regex'                => 'The :attribute format is invalid.',
-    // 2023.4.21. バリデーション 確認必須
+    // 2023.4.22. バリデーション 確認必須
     'required'             => ':attributeは必須項目です。',
     'email'                => ':attributeは正しいメールアドレスの形式で入力してください。',
     'unique'               => 'このメールアドレスは既に存在しています。',
@@ -78,6 +77,7 @@ return [
     'max'                  => [
         'string' => ':attributeは:max文字以下で入力してください。',
     ],
+    'confirmed'            => 'パスワードが確認用と一致しません。',
 
     'required_if'          => 'The :attribute field is required when :other is :value.',
     'required_unless'      => 'The :attribute field is required unless :other is in :values.',
