@@ -71,8 +71,12 @@ return [
     // 2023.4.21. バリデーション 確認必須
     'required'             => ':attributeは必須項目です。',
     'email'                => ':attributeは正しいメールアドレスの形式で入力してください。',
-
-    'password'             => ':attributeは:min文字以上で入力してください。',
+    'min'                  => [
+        'string' => ':attributeは:min文字以上で入力してください。',
+    ],
+    'max'                  => [
+        'string' => ':attributeは:max文字以下で入力してください。',
+    ],
 
     'required_if'          => 'The :attribute field is required when :other is :value.',
     'required_unless'      => 'The :attribute field is required unless :other is in :values.',
