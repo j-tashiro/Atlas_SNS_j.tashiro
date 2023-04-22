@@ -71,6 +71,7 @@ return [
     // 2023.4.21. バリデーション 確認必須
     'required'             => ':attributeは必須項目です。',
     'email'                => ':attributeは正しいメールアドレスの形式で入力してください。',
+    'unique'               => 'このメールアドレスは既に存在しています。',
     'min'                  => [
         'string' => ':attributeは:min文字以上で入力してください。',
     ],
@@ -93,7 +94,6 @@ return [
     ],
     'string'               => 'The :attribute must be a string.',
     'timezone'             => 'The :attribute must be a valid zone.',
-    'unique'               => 'The :attribute has already been taken.',
     'uploaded'             => 'The :attribute failed to upload.',
     'url'                  => 'The :attribute format is invalid.',
 
