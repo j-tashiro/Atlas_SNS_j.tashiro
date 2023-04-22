@@ -33,7 +33,8 @@ class UsersController extends Controller
             // 第4引数=mail チェックの対象外にしたいデータがあるレコードの主キーのカラム名
             'password' => 'required|confirmed|min:8|max:20|string',
             'bio' => 'nullable|max:150|string',
-            'image' => 'nullable|file|mimes:jpg,png,bmp,gif,svg',
+            // 'image' => 'nullable|file|mimes:jpg,png,bmp,gif,svg|extension:jpg,png,bmp,gif,svg',
+            'image' => 'nullable|file|mimetypes:image/jpeg,image/bmp,image/gif,image/svg+xml',
         ]);
     }
 
