@@ -365,6 +365,7 @@ h2{
   margin-top: 20px;
 }
 .follow_image{
+  /* display: flex; */
   margin-right: 20px;
 }
 .follow_border{
