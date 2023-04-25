@@ -7,11 +7,13 @@
     <h2>Follow List</h2>
         <!-- foreachの後は($複数形 as $単数形) が一番綺麗  -->
         <!-- アットマークはコメントアウトしても無駄 超重要 -->
+        
         @foreach ($users as $user)
             <div class="follow_image">
                 <a href="/otherProfile/{{$user->id}}"><img src="{{ \Storage::url($user->image) }}"></a>
             </div>
         @endforeach
+       
 </div>
 
 @foreach ($posts as $post)
