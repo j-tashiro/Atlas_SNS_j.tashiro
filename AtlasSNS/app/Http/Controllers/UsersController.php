@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 // use App\User;のUserとUser.phpの10行目のclass Userを同じ名前にすることcontrollerとmodelが連結される modelはテーブルと連結してる
-// User::が情報を受け取れるようになる
+// Auth::user();が情報を受け取れるようになる
 use App\User;
 use Illuminate\Support\Facades\Validator;
 
@@ -105,6 +105,8 @@ public function profileUpdate(Request $request){
         if(!$is_following) {
             // フォローしていなければフォローする
             $follower->follow($id);
+            // $this->follows()->attach($id);
+            // $follower->follows()->attach($id); 上と同じ意味
             return back();
         }
     }
