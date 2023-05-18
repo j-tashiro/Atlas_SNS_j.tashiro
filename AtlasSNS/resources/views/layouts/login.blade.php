@@ -66,7 +66,7 @@
                         <br>
                             <div class="follow_count">
                                 <p class="count_content">フォロー数</p>
-                                <!-- Redmine #1478の二枚目の画像を参考にした -->
+                                <!-- レッドマイン #1478の二枚目の画像を参考にした -->
                                 <p>{{ Auth::user()->follows()->count() }}名</p>
                             </div>
                         <br>
